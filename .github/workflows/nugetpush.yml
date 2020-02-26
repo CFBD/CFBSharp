@@ -1,0 +1,22 @@
+name: NuGet Publish
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.100'
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.NUGET_KEY}}
+    - name: Build package
+      run: dotnet build
+    - name: Pack package
+      run: dotnet pack --configuration Release
+    - name: Publish package
+      run: dotnet nuget push ./src/CFBSharp/bin/Release/*.nupkg 
