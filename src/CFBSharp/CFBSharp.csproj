@@ -14,9 +14,12 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <RootNamespace>CFBSharp</RootNamespace>
-    <Version>1.24.8</Version>
+    <Version>1.24.9</Version>
     <RepositoryUrl>https://github.com/BlueSCar/CFBSharp.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PackageIconUrl>https://cfbd-public.s3.us-east-2.amazonaws.com/package_logo.png</PackageIconUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>CFB;NCAAF;NCAA;football</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
