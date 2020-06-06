@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getlines"></a>
 # **GetLines**
-> ICollection<GameLines> GetLines (int? year, int? week = null, string seasonType = null, string team = null, string home = null, string away = null, string conference = null)
+> ICollection<GameLines> GetLines (int? gameId = null, int? year = null, int? week = null, string seasonType = null, string team = null, string home = null, string away = null, string conference = null)
 
 Get betting line information
 
@@ -30,7 +30,8 @@ namespace Example
         public void main()
         {
             var apiInstance = new BettingApi();
-            var year = 56;  // int? | Year/season filter for games
+            var gameId = 56;  // int? | Game id filter (optional) 
+            var year = 56;  // int? | Year/season filter for games (optional) 
             var week = 56;  // int? | Week filter (optional) 
             var seasonType = seasonType_example;  // string | Season type filter (regular or postseason) (optional)  (default to regular)
             var team = team_example;  // string | Team (optional) 
@@ -41,7 +42,7 @@ namespace Example
             try
             {
                 // Get betting line information
-                ICollection&lt;GameLines&gt; result = apiInstance.GetLines(year, week, seasonType, team, home, away, conference);
+                ICollection&lt;GameLines&gt; result = apiInstance.GetLines(gameId, year, week, seasonType, team, home, away, conference);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,7 +58,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int?**| Year/season filter for games | 
+ **gameId** | **int?**| Game id filter | [optional] 
+ **year** | **int?**| Year/season filter for games | [optional] 
  **week** | **int?**| Week filter | [optional] 
  **seasonType** | **string**| Season type filter (regular or postseason) | [optional] [default to regular]
  **team** | **string**| Team | [optional] 
