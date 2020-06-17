@@ -4,9 +4,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int?** |  | [optional] 
+**Season** | **int?** |  | [optional] 
+**Week** | **int?** |  | [optional] 
+**SeasonType** | **string** |  | [optional] 
 **HomeTeam** | **string** |  | [optional] 
+**HomeConference** | **string** |  | [optional] 
 **HomeScore** | **int?** |  | [optional] 
 **AwayTeam** | **string** |  | [optional] 
+**AwayConference** | **string** |  | [optional] 
 **AwayScore** | **int?** |  | [optional] 
 **Lines** | [**List&lt;GameLinesLines&gt;**](GameLinesLines.md) |  | [optional] 
 
