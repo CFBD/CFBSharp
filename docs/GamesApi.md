@@ -5,6 +5,7 @@ All URIs are relative to *https://api.collegefootballdata.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetAdvancedBoxScore**](GamesApi.md#getadvancedboxscore) | **GET** /game/box/advanced | Get advanced box score
+[**GetGameMedia**](GamesApi.md#getgamemedia) | **GET** /games/media | Get game media information (TV, radio, etc)
 [**GetGames**](GamesApi.md#getgames) | **GET** /games | Get game information
 [**GetPlayerGameStats**](GamesApi.md#getplayergamestats) | **GET** /games/players | Get player statistics by game
 [**GetTeamGameStats**](GamesApi.md#getteamgamestats) | **GET** /games/teams | Get team statistics by game
@@ -60,6 +61,77 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ICollection<BoxScore>**](BoxScore.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getgamemedia"></a>
+# **GetGameMedia**
+> ICollection<GameMedia> GetGameMedia (int? year, int? year2 = null, int? seasonType = null, string team = null, string conference = null, string mediaType = null)
+
+Get game media information (TV, radio, etc)
+
+Game media information (TV, radio, etc)
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using CFBSharp.Api;
+using CFBSharp.Client;
+using CFBSharp.Model;
+
+namespace Example
+{
+    public class GetGameMediaExample
+    {
+        public void main()
+        {
+            var apiInstance = new GamesApi();
+            var year = 56;  // int? | Year filter
+            var year2 = 56;  // int? | Week filter (optional) 
+            var seasonType = 56;  // int? | Season type filter (regular, postseason, or both) (optional) 
+            var team = team_example;  // string | Team filter (optional) 
+            var conference = conference_example;  // string | Conference filter (optional) 
+            var mediaType = mediaType_example;  // string | Media type filter (tv, radio, web, ppv, or mobile) (optional) 
+
+            try
+            {
+                // Get game media information (TV, radio, etc)
+                ICollection&lt;GameMedia&gt; result = apiInstance.GetGameMedia(year, year2, seasonType, team, conference, mediaType);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling GamesApi.GetGameMedia: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int?**| Year filter | 
+ **year2** | **int?**| Week filter | [optional] 
+ **seasonType** | **int?**| Season type filter (regular, postseason, or both) | [optional] 
+ **team** | **string**| Team filter | [optional] 
+ **conference** | **string**| Conference filter | [optional] 
+ **mediaType** | **string**| Media type filter (tv, radio, web, ppv, or mobile) | [optional] 
+
+### Return type
+
+[**ICollection<GameMedia>**](GameMedia.md)
 
 ### Authorization
 

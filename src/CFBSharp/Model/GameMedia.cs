@@ -23,40 +23,44 @@ using SwaggerDateConverter = CFBSharp.Client.SwaggerDateConverter;
 namespace CFBSharp.Model
 {
     /// <summary>
-    /// TeamMatchupGames
+    /// GameMedia
     /// </summary>
     [DataContract]
-    public partial class TeamMatchupGames :  IEquatable<TeamMatchupGames>
+    public partial class GameMedia :  IEquatable<GameMedia>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TeamMatchupGames" /> class.
+        /// Initializes a new instance of the <see cref="GameMedia" /> class.
         /// </summary>
+        /// <param name="id">id.</param>
         /// <param name="season">season.</param>
         /// <param name="week">week.</param>
         /// <param name="seasonType">seasonType.</param>
-        /// <param name="date">date.</param>
-        /// <param name="neutralSite">neutralSite.</param>
-        /// <param name="venue">venue.</param>
         /// <param name="homeTeam">homeTeam.</param>
-        /// <param name="homeScore">homeScore.</param>
+        /// <param name="homeConference">homeConference.</param>
         /// <param name="awayTeam">awayTeam.</param>
-        /// <param name="awayScore">awayScore.</param>
-        /// <param name="winner">winner.</param>
-        public TeamMatchupGames(int? season = default(int?), int? week = default(int?), string seasonType = default(string), string date = default(string), bool? neutralSite = default(bool?), string venue = default(string), string homeTeam = default(string), int? homeScore = default(int?), string awayTeam = default(string), int? awayScore = default(int?), string winner = default(string))
+        /// <param name="awayConference">awayConference.</param>
+        /// <param name="mediaType">mediaType.</param>
+        /// <param name="outlet">outlet.</param>
+        public GameMedia(int? id = default(int?), int? season = default(int?), int? week = default(int?), string seasonType = default(string), string homeTeam = default(string), string homeConference = default(string), string awayTeam = default(string), string awayConference = default(string), string mediaType = default(string), string outlet = default(string))
         {
+            this.Id = id;
             this.Season = season;
             this.Week = week;
             this.SeasonType = seasonType;
-            this.Date = date;
-            this.NeutralSite = neutralSite;
-            this.Venue = venue;
             this.HomeTeam = homeTeam;
-            this.HomeScore = homeScore;
+            this.HomeConference = homeConference;
             this.AwayTeam = awayTeam;
-            this.AwayScore = awayScore;
-            this.Winner = winner;
+            this.AwayConference = awayConference;
+            this.MediaType = mediaType;
+            this.Outlet = outlet;
         }
         
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name="id", EmitDefaultValue=false)]
+        public int? Id { get; set; }
+
         /// <summary>
         /// Gets or Sets Season
         /// </summary>
@@ -72,26 +76,8 @@ namespace CFBSharp.Model
         /// <summary>
         /// Gets or Sets SeasonType
         /// </summary>
-        [DataMember(Name="season_type", EmitDefaultValue=false)]
+        [DataMember(Name="seasonType", EmitDefaultValue=false)]
         public string SeasonType { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Date
-        /// </summary>
-        [DataMember(Name="date", EmitDefaultValue=false)]
-        public string Date { get; set; }
-
-        /// <summary>
-        /// Gets or Sets NeutralSite
-        /// </summary>
-        [DataMember(Name="neutralSite", EmitDefaultValue=false)]
-        public bool? NeutralSite { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Venue
-        /// </summary>
-        [DataMember(Name="venue", EmitDefaultValue=false)]
-        public string Venue { get; set; }
 
         /// <summary>
         /// Gets or Sets HomeTeam
@@ -100,10 +86,10 @@ namespace CFBSharp.Model
         public string HomeTeam { get; set; }
 
         /// <summary>
-        /// Gets or Sets HomeScore
+        /// Gets or Sets HomeConference
         /// </summary>
-        [DataMember(Name="homeScore", EmitDefaultValue=false)]
-        public int? HomeScore { get; set; }
+        [DataMember(Name="homeConference", EmitDefaultValue=false)]
+        public string HomeConference { get; set; }
 
         /// <summary>
         /// Gets or Sets AwayTeam
@@ -112,16 +98,22 @@ namespace CFBSharp.Model
         public string AwayTeam { get; set; }
 
         /// <summary>
-        /// Gets or Sets AwayScore
+        /// Gets or Sets AwayConference
         /// </summary>
-        [DataMember(Name="awayScore", EmitDefaultValue=false)]
-        public int? AwayScore { get; set; }
+        [DataMember(Name="awayConference", EmitDefaultValue=false)]
+        public string AwayConference { get; set; }
 
         /// <summary>
-        /// Gets or Sets Winner
+        /// Gets or Sets MediaType
         /// </summary>
-        [DataMember(Name="winner", EmitDefaultValue=false)]
-        public string Winner { get; set; }
+        [DataMember(Name="mediaType", EmitDefaultValue=false)]
+        public string MediaType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Outlet
+        /// </summary>
+        [DataMember(Name="outlet", EmitDefaultValue=false)]
+        public string Outlet { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -130,18 +122,17 @@ namespace CFBSharp.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TeamMatchupGames {\n");
+            sb.Append("class GameMedia {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Season: ").Append(Season).Append("\n");
             sb.Append("  Week: ").Append(Week).Append("\n");
             sb.Append("  SeasonType: ").Append(SeasonType).Append("\n");
-            sb.Append("  Date: ").Append(Date).Append("\n");
-            sb.Append("  NeutralSite: ").Append(NeutralSite).Append("\n");
-            sb.Append("  Venue: ").Append(Venue).Append("\n");
             sb.Append("  HomeTeam: ").Append(HomeTeam).Append("\n");
-            sb.Append("  HomeScore: ").Append(HomeScore).Append("\n");
+            sb.Append("  HomeConference: ").Append(HomeConference).Append("\n");
             sb.Append("  AwayTeam: ").Append(AwayTeam).Append("\n");
-            sb.Append("  AwayScore: ").Append(AwayScore).Append("\n");
-            sb.Append("  Winner: ").Append(Winner).Append("\n");
+            sb.Append("  AwayConference: ").Append(AwayConference).Append("\n");
+            sb.Append("  MediaType: ").Append(MediaType).Append("\n");
+            sb.Append("  Outlet: ").Append(Outlet).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -162,20 +153,25 @@ namespace CFBSharp.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TeamMatchupGames);
+            return this.Equals(input as GameMedia);
         }
 
         /// <summary>
-        /// Returns true if TeamMatchupGames instances are equal
+        /// Returns true if GameMedia instances are equal
         /// </summary>
-        /// <param name="input">Instance of TeamMatchupGames to be compared</param>
+        /// <param name="input">Instance of GameMedia to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TeamMatchupGames input)
+        public bool Equals(GameMedia input)
         {
             if (input == null)
                 return false;
 
             return 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
                 (
                     this.Season == input.Season ||
                     (this.Season != null &&
@@ -192,29 +188,14 @@ namespace CFBSharp.Model
                     this.SeasonType.Equals(input.SeasonType))
                 ) && 
                 (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
-                ) && 
-                (
-                    this.NeutralSite == input.NeutralSite ||
-                    (this.NeutralSite != null &&
-                    this.NeutralSite.Equals(input.NeutralSite))
-                ) && 
-                (
-                    this.Venue == input.Venue ||
-                    (this.Venue != null &&
-                    this.Venue.Equals(input.Venue))
-                ) && 
-                (
                     this.HomeTeam == input.HomeTeam ||
                     (this.HomeTeam != null &&
                     this.HomeTeam.Equals(input.HomeTeam))
                 ) && 
                 (
-                    this.HomeScore == input.HomeScore ||
-                    (this.HomeScore != null &&
-                    this.HomeScore.Equals(input.HomeScore))
+                    this.HomeConference == input.HomeConference ||
+                    (this.HomeConference != null &&
+                    this.HomeConference.Equals(input.HomeConference))
                 ) && 
                 (
                     this.AwayTeam == input.AwayTeam ||
@@ -222,14 +203,19 @@ namespace CFBSharp.Model
                     this.AwayTeam.Equals(input.AwayTeam))
                 ) && 
                 (
-                    this.AwayScore == input.AwayScore ||
-                    (this.AwayScore != null &&
-                    this.AwayScore.Equals(input.AwayScore))
+                    this.AwayConference == input.AwayConference ||
+                    (this.AwayConference != null &&
+                    this.AwayConference.Equals(input.AwayConference))
                 ) && 
                 (
-                    this.Winner == input.Winner ||
-                    (this.Winner != null &&
-                    this.Winner.Equals(input.Winner))
+                    this.MediaType == input.MediaType ||
+                    (this.MediaType != null &&
+                    this.MediaType.Equals(input.MediaType))
+                ) && 
+                (
+                    this.Outlet == input.Outlet ||
+                    (this.Outlet != null &&
+                    this.Outlet.Equals(input.Outlet))
                 );
         }
 
@@ -242,28 +228,26 @@ namespace CFBSharp.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Season != null)
                     hashCode = hashCode * 59 + this.Season.GetHashCode();
                 if (this.Week != null)
                     hashCode = hashCode * 59 + this.Week.GetHashCode();
                 if (this.SeasonType != null)
                     hashCode = hashCode * 59 + this.SeasonType.GetHashCode();
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.NeutralSite != null)
-                    hashCode = hashCode * 59 + this.NeutralSite.GetHashCode();
-                if (this.Venue != null)
-                    hashCode = hashCode * 59 + this.Venue.GetHashCode();
                 if (this.HomeTeam != null)
                     hashCode = hashCode * 59 + this.HomeTeam.GetHashCode();
-                if (this.HomeScore != null)
-                    hashCode = hashCode * 59 + this.HomeScore.GetHashCode();
+                if (this.HomeConference != null)
+                    hashCode = hashCode * 59 + this.HomeConference.GetHashCode();
                 if (this.AwayTeam != null)
                     hashCode = hashCode * 59 + this.AwayTeam.GetHashCode();
-                if (this.AwayScore != null)
-                    hashCode = hashCode * 59 + this.AwayScore.GetHashCode();
-                if (this.Winner != null)
-                    hashCode = hashCode * 59 + this.Winner.GetHashCode();
+                if (this.AwayConference != null)
+                    hashCode = hashCode * 59 + this.AwayConference.GetHashCode();
+                if (this.MediaType != null)
+                    hashCode = hashCode * 59 + this.MediaType.GetHashCode();
+                if (this.Outlet != null)
+                    hashCode = hashCode * 59 + this.Outlet.GetHashCode();
                 return hashCode;
             }
         }
