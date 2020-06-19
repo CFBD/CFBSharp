@@ -147,7 +147,7 @@ No authorization required
 
 <a name="playersearch"></a>
 # **PlayerSearch**
-> ICollection<PlayerSearchResult> PlayerSearch (string searchTerm, string position = null, string team = null)
+> ICollection<PlayerSearchResult> PlayerSearch (string searchTerm, string position = null, string team = null, int? year = null)
 
 Search for players
 
@@ -171,11 +171,12 @@ namespace Example
             var searchTerm = searchTerm_example;  // string | Term to search on
             var position = position_example;  // string | Position abbreviation filter (optional) 
             var team = team_example;  // string | Team filter (optional) 
+            var year = 56;  // int? | Year filter (optional) 
 
             try
             {
                 // Search for players
-                ICollection&lt;PlayerSearchResult&gt; result = apiInstance.PlayerSearch(searchTerm, position, team);
+                ICollection&lt;PlayerSearchResult&gt; result = apiInstance.PlayerSearch(searchTerm, position, team, year);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -194,6 +195,7 @@ Name | Type | Description  | Notes
  **searchTerm** | **string**| Term to search on | 
  **position** | **string**| Position abbreviation filter | [optional] 
  **team** | **string**| Team filter | [optional] 
+ **year** | **int?**| Year filter | [optional] 
 
 ### Return type
 
