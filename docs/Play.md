@@ -5,6 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int?** |  | [optional] 
 **DriveId** | **int?** |  | [optional] 
+**DriveNumber** | **int?** |  | [optional] 
+**PlayNumber** | **int?** |  | [optional] 
 **Offense** | **string** |  | [optional] 
 **OffenseConference** | **string** |  | [optional] 
 **OffenseScore** | **int?** |  | [optional] 
