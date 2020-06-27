@@ -15,7 +15,7 @@
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <RootNamespace>CFBSharp</RootNamespace>
     <Version>2.0.1</Version>
-    <RepositoryUrl>https://github.com/BlueSCar/CFBSharp.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/cfbd/CFBSharp.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageIconUrl>https://cfbd-public.s3.us-east-2.amazonaws.com/package_logo.png</PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
