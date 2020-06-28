@@ -75,7 +75,7 @@ No authorization required
 
 <a name="getgamemedia"></a>
 # **GetGameMedia**
-> ICollection<GameMedia> GetGameMedia (int? year, int? week = null, int? seasonType = null, string team = null, string conference = null, string mediaType = null)
+> ICollection<GameMedia> GetGameMedia (int? year, int? week = null, string seasonType = null, string team = null, string conference = null, string mediaType = null)
 
 Get game media information (TV, radio, etc)
 
@@ -98,7 +98,7 @@ namespace Example
             var apiInstance = new GamesApi();
             var year = 56;  // int? | Year filter
             var week = 56;  // int? | Week filter (optional) 
-            var seasonType = 56;  // int? | Season type filter (regular, postseason, or both) (optional) 
+            var seasonType = seasonType_example;  // string | Season type filter (regular, postseason, or both) (optional) 
             var team = team_example;  // string | Team filter (optional) 
             var conference = conference_example;  // string | Conference filter (optional) 
             var mediaType = mediaType_example;  // string | Media type filter (tv, radio, web, ppv, or mobile) (optional) 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **year** | **int?**| Year filter | 
  **week** | **int?**| Week filter | [optional] 
- **seasonType** | **int?**| Season type filter (regular, postseason, or both) | [optional] 
+ **seasonType** | **string**| Season type filter (regular, postseason, or both) | [optional] 
  **team** | **string**| Team filter | [optional] 
  **conference** | **string**| Conference filter | [optional] 
  **mediaType** | **string**| Media type filter (tv, radio, web, ppv, or mobile) | [optional] 
