@@ -39,7 +39,7 @@ namespace Example
             var startWeek = 56;  // int? | Start week filter (optional) 
             var endWeek = 56;  // int? | Start week filter (optional) 
             var seasonType = seasonType_example;  // string | Season type filter (regular, postseason, or both) (optional) 
-            var category = category_example;  // string | Start category filter (e.g. passing) (optional) 
+            var category = category_example;  // string | Stat category filter (e.g. passing) (optional) 
 
             try
             {
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
  **startWeek** | **int?**| Start week filter | [optional] 
  **endWeek** | **int?**| Start week filter | [optional] 
  **seasonType** | **string**| Season type filter (regular, postseason, or both) | [optional] 
- **category** | **string**| Start category filter (e.g. passing) | [optional] 
+ **category** | **string**| Stat category filter (e.g. passing) | [optional] 
 
 ### Return type
 
