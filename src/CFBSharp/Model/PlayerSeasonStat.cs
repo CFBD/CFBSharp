@@ -23,26 +23,32 @@ using SwaggerDateConverter = CFBSharp.Client.SwaggerDateConverter;
 namespace CFBSharp.Model
 {
     /// <summary>
-    /// AdvancedSeasonStat
+    /// PlayerSeasonStat
     /// </summary>
     [DataContract]
-    public partial class AdvancedSeasonStat :  IEquatable<AdvancedSeasonStat>
+    public partial class PlayerSeasonStat :  IEquatable<PlayerSeasonStat>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AdvancedSeasonStat" /> class.
+        /// Initializes a new instance of the <see cref="PlayerSeasonStat" /> class.
         /// </summary>
         /// <param name="season">season.</param>
+        /// <param name="playerId">playerId.</param>
+        /// <param name="player">player.</param>
         /// <param name="team">team.</param>
         /// <param name="conference">conference.</param>
-        /// <param name="offense">offense.</param>
-        /// <param name="defense">defense.</param>
-        public AdvancedSeasonStat(int? season = default(int?), string team = default(string), string conference = default(string), AdvancedSeasonStatOffense offense = default(AdvancedSeasonStatOffense), AdvancedSeasonStatDefense defense = default(AdvancedSeasonStatDefense))
+        /// <param name="category">category.</param>
+        /// <param name="statType">statType.</param>
+        /// <param name="stat">stat.</param>
+        public PlayerSeasonStat(int? season = default(int?), int? playerId = default(int?), string player = default(string), string team = default(string), string conference = default(string), string category = default(string), string statType = default(string), decimal? stat = default(decimal?))
         {
             this.Season = season;
+            this.PlayerId = playerId;
+            this.Player = player;
             this.Team = team;
             this.Conference = conference;
-            this.Offense = offense;
-            this.Defense = defense;
+            this.Category = category;
+            this.StatType = statType;
+            this.Stat = stat;
         }
         
         /// <summary>
@@ -50,6 +56,18 @@ namespace CFBSharp.Model
         /// </summary>
         [DataMember(Name="season", EmitDefaultValue=false)]
         public int? Season { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PlayerId
+        /// </summary>
+        [DataMember(Name="playerId", EmitDefaultValue=false)]
+        public int? PlayerId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Player
+        /// </summary>
+        [DataMember(Name="player", EmitDefaultValue=false)]
+        public string Player { get; set; }
 
         /// <summary>
         /// Gets or Sets Team
@@ -64,16 +82,22 @@ namespace CFBSharp.Model
         public string Conference { get; set; }
 
         /// <summary>
-        /// Gets or Sets Offense
+        /// Gets or Sets Category
         /// </summary>
-        [DataMember(Name="offense", EmitDefaultValue=false)]
-        public AdvancedSeasonStatOffense Offense { get; set; }
+        [DataMember(Name="category", EmitDefaultValue=false)]
+        public string Category { get; set; }
 
         /// <summary>
-        /// Gets or Sets Defense
+        /// Gets or Sets StatType
         /// </summary>
-        [DataMember(Name="defense", EmitDefaultValue=false)]
-        public AdvancedSeasonStatDefense Defense { get; set; }
+        [DataMember(Name="statType", EmitDefaultValue=false)]
+        public string StatType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Stat
+        /// </summary>
+        [DataMember(Name="stat", EmitDefaultValue=false)]
+        public decimal? Stat { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -82,12 +106,15 @@ namespace CFBSharp.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AdvancedSeasonStat {\n");
+            sb.Append("class PlayerSeasonStat {\n");
             sb.Append("  Season: ").Append(Season).Append("\n");
+            sb.Append("  PlayerId: ").Append(PlayerId).Append("\n");
+            sb.Append("  Player: ").Append(Player).Append("\n");
             sb.Append("  Team: ").Append(Team).Append("\n");
             sb.Append("  Conference: ").Append(Conference).Append("\n");
-            sb.Append("  Offense: ").Append(Offense).Append("\n");
-            sb.Append("  Defense: ").Append(Defense).Append("\n");
+            sb.Append("  Category: ").Append(Category).Append("\n");
+            sb.Append("  StatType: ").Append(StatType).Append("\n");
+            sb.Append("  Stat: ").Append(Stat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -108,15 +135,15 @@ namespace CFBSharp.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AdvancedSeasonStat);
+            return this.Equals(input as PlayerSeasonStat);
         }
 
         /// <summary>
-        /// Returns true if AdvancedSeasonStat instances are equal
+        /// Returns true if PlayerSeasonStat instances are equal
         /// </summary>
-        /// <param name="input">Instance of AdvancedSeasonStat to be compared</param>
+        /// <param name="input">Instance of PlayerSeasonStat to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AdvancedSeasonStat input)
+        public bool Equals(PlayerSeasonStat input)
         {
             if (input == null)
                 return false;
@@ -126,6 +153,16 @@ namespace CFBSharp.Model
                     this.Season == input.Season ||
                     (this.Season != null &&
                     this.Season.Equals(input.Season))
+                ) && 
+                (
+                    this.PlayerId == input.PlayerId ||
+                    (this.PlayerId != null &&
+                    this.PlayerId.Equals(input.PlayerId))
+                ) && 
+                (
+                    this.Player == input.Player ||
+                    (this.Player != null &&
+                    this.Player.Equals(input.Player))
                 ) && 
                 (
                     this.Team == input.Team ||
@@ -138,14 +175,19 @@ namespace CFBSharp.Model
                     this.Conference.Equals(input.Conference))
                 ) && 
                 (
-                    this.Offense == input.Offense ||
-                    (this.Offense != null &&
-                    this.Offense.Equals(input.Offense))
+                    this.Category == input.Category ||
+                    (this.Category != null &&
+                    this.Category.Equals(input.Category))
                 ) && 
                 (
-                    this.Defense == input.Defense ||
-                    (this.Defense != null &&
-                    this.Defense.Equals(input.Defense))
+                    this.StatType == input.StatType ||
+                    (this.StatType != null &&
+                    this.StatType.Equals(input.StatType))
+                ) && 
+                (
+                    this.Stat == input.Stat ||
+                    (this.Stat != null &&
+                    this.Stat.Equals(input.Stat))
                 );
         }
 
@@ -160,14 +202,20 @@ namespace CFBSharp.Model
                 int hashCode = 41;
                 if (this.Season != null)
                     hashCode = hashCode * 59 + this.Season.GetHashCode();
+                if (this.PlayerId != null)
+                    hashCode = hashCode * 59 + this.PlayerId.GetHashCode();
+                if (this.Player != null)
+                    hashCode = hashCode * 59 + this.Player.GetHashCode();
                 if (this.Team != null)
                     hashCode = hashCode * 59 + this.Team.GetHashCode();
                 if (this.Conference != null)
                     hashCode = hashCode * 59 + this.Conference.GetHashCode();
-                if (this.Offense != null)
-                    hashCode = hashCode * 59 + this.Offense.GetHashCode();
-                if (this.Defense != null)
-                    hashCode = hashCode * 59 + this.Defense.GetHashCode();
+                if (this.Category != null)
+                    hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.StatType != null)
+                    hashCode = hashCode * 59 + this.StatType.GetHashCode();
+                if (this.Stat != null)
+                    hashCode = hashCode * 59 + this.Stat.GetHashCode();
                 return hashCode;
             }
         }

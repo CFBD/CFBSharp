@@ -4,10 +4,84 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**GetPlayerSeasonStats**](PlayersApi.md#getplayerseasonstats) | **GET** /stats/player/season | Get player stats aggregated by season
 [**GetPlayerUsage**](PlayersApi.md#getplayerusage) | **GET** /player/usage | Get player usage metrics for the season
 [**GetReturningProduction**](PlayersApi.md#getreturningproduction) | **GET** /player/returning | Get returning production metrics
 [**PlayerSearch**](PlayersApi.md#playersearch) | **GET** /player/search | Search for players
 
+
+<a name="getplayerseasonstats"></a>
+# **GetPlayerSeasonStats**
+> ICollection<PlayerSeasonStat> GetPlayerSeasonStats (int? year, string team = null, string conference = null, int? startWeek = null, int? endWeek = null, string seasonType = null, string category = null)
+
+Get player stats aggregated by season
+
+Season player stats
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using CFBSharp.Api;
+using CFBSharp.Client;
+using CFBSharp.Model;
+
+namespace Example
+{
+    public class GetPlayerSeasonStatsExample
+    {
+        public void main()
+        {
+            var apiInstance = new PlayersApi();
+            var year = 56;  // int? | Year filter
+            var team = team_example;  // string | Team filter (optional) 
+            var conference = conference_example;  // string | Conference abbreviation filter (optional) 
+            var startWeek = 56;  // int? | Start week filter (optional) 
+            var endWeek = 56;  // int? | Start week filter (optional) 
+            var seasonType = seasonType_example;  // string | Season type filter (regular, postseason, or both) (optional) 
+            var category = category_example;  // string | Start category filter (e.g. passing) (optional) 
+
+            try
+            {
+                // Get player stats aggregated by season
+                ICollection&lt;PlayerSeasonStat&gt; result = apiInstance.GetPlayerSeasonStats(year, team, conference, startWeek, endWeek, seasonType, category);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling PlayersApi.GetPlayerSeasonStats: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int?**| Year filter | 
+ **team** | **string**| Team filter | [optional] 
+ **conference** | **string**| Conference abbreviation filter | [optional] 
+ **startWeek** | **int?**| Start week filter | [optional] 
+ **endWeek** | **int?**| Start week filter | [optional] 
+ **seasonType** | **string**| Season type filter (regular, postseason, or both) | [optional] 
+ **category** | **string**| Start category filter (e.g. passing) | [optional] 
+
+### Return type
+
+[**ICollection<PlayerSeasonStat>**](PlayerSeasonStat.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getplayerusage"></a>
 # **GetPlayerUsage**
