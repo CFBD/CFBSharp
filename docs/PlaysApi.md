@@ -4,17 +4,17 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetPlayStatTypes**](PlaysApi.md#getplaystattypes) | **GET** /play/stat/types | Get play stat type lists
-[**GetPlayStats**](PlaysApi.md#getplaystats) | **GET** /play/stats | Get play statistics
-[**GetPlayTypes**](PlaysApi.md#getplaytypes) | **GET** /play/types | Get play type list
-[**GetPlays**](PlaysApi.md#getplays) | **GET** /plays | Get play information. Requires either a week or team to be specified.
+[**GetPlayStatTypes**](PlaysApi.md#getplaystattypes) | **GET** /play/stat/types | Types of player play stats
+[**GetPlayStats**](PlaysApi.md#getplaystats) | **GET** /play/stats | Play stats by play
+[**GetPlayTypes**](PlaysApi.md#getplaytypes) | **GET** /play/types | Play types
+[**GetPlays**](PlaysApi.md#getplays) | **GET** /plays | Play by play data
 
 
 <a name="getplaystattypes"></a>
 # **GetPlayStatTypes**
 > ICollection<PlayStatType> GetPlayStatTypes ()
 
-Get play stat type lists
+Types of player play stats
 
 Type of play stats
 
@@ -36,7 +36,7 @@ namespace Example
 
             try
             {
-                // Get play stat type lists
+                // Types of player play stats
                 ICollection&lt;PlayStatType&gt; result = apiInstance.GetPlayStatTypes();
                 Debug.WriteLine(result);
             }
@@ -71,7 +71,7 @@ No authorization required
 # **GetPlayStats**
 > ICollection<PlayStat> GetPlayStats (int? year = null, int? week = null, string team = null, int? gameId = null, int? athleteId = null, int? statTypeId = null, string seasonType = null)
 
-Get play statistics
+Play stats by play
 
 Gets player stats associated by play (limit 1000)
 
@@ -100,7 +100,7 @@ namespace Example
 
             try
             {
-                // Get play statistics
+                // Play stats by play
                 ICollection&lt;PlayStat&gt; result = apiInstance.GetPlayStats(year, week, team, gameId, athleteId, statTypeId, seasonType);
                 Debug.WriteLine(result);
             }
@@ -144,7 +144,7 @@ No authorization required
 # **GetPlayTypes**
 > ICollection<PlayType> GetPlayTypes ()
 
-Get play type list
+Play types
 
 Types of plays
 
@@ -166,7 +166,7 @@ namespace Example
 
             try
             {
-                // Get play type list
+                // Play types
                 ICollection&lt;PlayType&gt; result = apiInstance.GetPlayTypes();
                 Debug.WriteLine(result);
             }
@@ -201,9 +201,9 @@ No authorization required
 # **GetPlays**
 > ICollection<Play> GetPlays (int? year, string seasonType = null, int? week = null, string team = null, string offense = null, string defense = null, string conference = null, string offenseConference = null, string defenseConference = null, int? playType = null)
 
-Get play information. Requires either a week or team to be specified.
+Play by play data
 
-Play results
+Get play data and results. Requires either a week or team to be specified.
 
 ### Example
 ```csharp
@@ -233,7 +233,7 @@ namespace Example
 
             try
             {
-                // Get play information. Requires either a week or team to be specified.
+                // Play by play data
                 ICollection&lt;Play&gt; result = apiInstance.GetPlays(year, seasonType, week, team, offense, defense, conference, offenseConference, defenseConference, playType);
                 Debug.WriteLine(result);
             }

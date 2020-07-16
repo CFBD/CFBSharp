@@ -4,18 +4,18 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetConferenceSPRatings**](RatingsApi.md#getconferencespratings) | **GET** /ratings/sp/conferences | Get average SP+ historical rating data by conference
-[**GetSPRatings**](RatingsApi.md#getspratings) | **GET** /ratings/sp | Get SP+ historical rating data (requires either a year or team specified)
-[**GetSRSRatings**](RatingsApi.md#getsrsratings) | **GET** /ratings/srs | Get SRS historical rating data (requires either a year or team specified)
+[**GetConferenceSPRatings**](RatingsApi.md#getconferencespratings) | **GET** /ratings/sp/conferences | Historical SP+ ratings by conference
+[**GetSPRatings**](RatingsApi.md#getspratings) | **GET** /ratings/sp | Historical SP+ ratings
+[**GetSRSRatings**](RatingsApi.md#getsrsratings) | **GET** /ratings/srs | Historical SRS ratings
 
 
 <a name="getconferencespratings"></a>
 # **GetConferenceSPRatings**
 > ICollection<ConferenceSPRating> GetConferenceSPRatings (int? year = null, string conference = null)
 
-Get average SP+ historical rating data by conference
+Historical SP+ ratings by conference
 
-Conference average SP+ ratings by year
+Get average SP+ historical rating data by conference
 
 ### Example
 ```csharp
@@ -37,7 +37,7 @@ namespace Example
 
             try
             {
-                // Get average SP+ historical rating data by conference
+                // Historical SP+ ratings by conference
                 ICollection&lt;ConferenceSPRating&gt; result = apiInstance.GetConferenceSPRatings(year, conference);
                 Debug.WriteLine(result);
             }
@@ -76,7 +76,7 @@ No authorization required
 # **GetSPRatings**
 > ICollection<TeamSPRating> GetSPRatings (int? year = null, string team = null)
 
-Get SP+ historical rating data (requires either a year or team specified)
+Historical SP+ ratings
 
 SP+ rating data
 
@@ -100,7 +100,7 @@ namespace Example
 
             try
             {
-                // Get SP+ historical rating data (requires either a year or team specified)
+                // Historical SP+ ratings
                 ICollection&lt;TeamSPRating&gt; result = apiInstance.GetSPRatings(year, team);
                 Debug.WriteLine(result);
             }
@@ -139,9 +139,9 @@ No authorization required
 # **GetSRSRatings**
 > ICollection<TeamSRSRating> GetSRSRatings (int? year = null, string team = null, string conference = null)
 
-Get SRS historical rating data (requires either a year or team specified)
+Historical SRS ratings
 
-SRS rating data
+SRS rating data (requires either a year or team specified)
 
 ### Example
 ```csharp
@@ -164,7 +164,7 @@ namespace Example
 
             try
             {
-                // Get SRS historical rating data (requires either a year or team specified)
+                // Historical SRS ratings
                 ICollection&lt;TeamSRSRating&gt; result = apiInstance.GetSRSRatings(year, team, conference);
                 Debug.WriteLine(result);
             }

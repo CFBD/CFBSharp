@@ -4,14 +4,14 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetLines**](BettingApi.md#getlines) | **GET** /lines | Get betting line information
+[**GetLines**](BettingApi.md#getlines) | **GET** /lines | Betting lines
 
 
 <a name="getlines"></a>
 # **GetLines**
 > ICollection<GameLines> GetLines (int? gameId = null, int? year = null, int? week = null, string seasonType = null, string team = null, string home = null, string away = null, string conference = null)
 
-Get betting line information
+Betting lines
 
 Closing betting lines
 
@@ -41,7 +41,7 @@ namespace Example
 
             try
             {
-                // Get betting line information
+                // Betting lines
                 ICollection&lt;GameLines&gt; result = apiInstance.GetLines(gameId, year, week, seasonType, team, home, away, conference);
                 Debug.WriteLine(result);
             }

@@ -4,14 +4,14 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetRankings**](RankingsApi.md#getrankings) | **GET** /rankings | Get historical rankings and polls
+[**GetRankings**](RankingsApi.md#getrankings) | **GET** /rankings | Historical polls and rankings
 
 
 <a name="getrankings"></a>
 # **GetRankings**
 > ICollection<RankingWeek> GetRankings (int? year, int? week = null, string seasonType = null)
 
-Get historical rankings and polls
+Historical polls and rankings
 
 Poll rankings
 
@@ -36,7 +36,7 @@ namespace Example
 
             try
             {
-                // Get historical rankings and polls
+                // Historical polls and rankings
                 ICollection&lt;RankingWeek&gt; result = apiInstance.GetRankings(year, week, seasonType);
                 Debug.WriteLine(result);
             }

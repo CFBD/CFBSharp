@@ -4,21 +4,21 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAdvancedBoxScore**](GamesApi.md#getadvancedboxscore) | **GET** /game/box/advanced | Get advanced box score
-[**GetGameMedia**](GamesApi.md#getgamemedia) | **GET** /games/media | Get game media information (TV, radio, etc)
-[**GetGames**](GamesApi.md#getgames) | **GET** /games | Get game information
-[**GetPlayerGameStats**](GamesApi.md#getplayergamestats) | **GET** /games/players | Get player statistics by game
-[**GetTeamGameStats**](GamesApi.md#getteamgamestats) | **GET** /games/teams | Get team statistics by game
-[**GetTeamRecords**](GamesApi.md#getteamrecords) | **GET** /records | Get records by year
+[**GetAdvancedBoxScore**](GamesApi.md#getadvancedboxscore) | **GET** /game/box/advanced | Advanced box scores
+[**GetGameMedia**](GamesApi.md#getgamemedia) | **GET** /games/media | Game media information and schedules
+[**GetGames**](GamesApi.md#getgames) | **GET** /games | Games and results
+[**GetPlayerGameStats**](GamesApi.md#getplayergamestats) | **GET** /games/players | Player game stats
+[**GetTeamGameStats**](GamesApi.md#getteamgamestats) | **GET** /games/teams | Team game stats
+[**GetTeamRecords**](GamesApi.md#getteamrecords) | **GET** /records | Team records
 
 
 <a name="getadvancedboxscore"></a>
 # **GetAdvancedBoxScore**
 > ICollection<BoxScore> GetAdvancedBoxScore (int? gameId)
 
-Get advanced box score
+Advanced box scores
 
-Advanced box score
+Get advanced box score data
 
 ### Example
 ```csharp
@@ -39,7 +39,7 @@ namespace Example
 
             try
             {
-                // Get advanced box score
+                // Advanced box scores
                 ICollection&lt;BoxScore&gt; result = apiInstance.GetAdvancedBoxScore(gameId);
                 Debug.WriteLine(result);
             }
@@ -77,7 +77,7 @@ No authorization required
 # **GetGameMedia**
 > ICollection<GameMedia> GetGameMedia (int? year, int? week = null, string seasonType = null, string team = null, string conference = null, string mediaType = null)
 
-Get game media information (TV, radio, etc)
+Game media information and schedules
 
 Game media information (TV, radio, etc)
 
@@ -105,7 +105,7 @@ namespace Example
 
             try
             {
-                // Get game media information (TV, radio, etc)
+                // Game media information and schedules
                 ICollection&lt;GameMedia&gt; result = apiInstance.GetGameMedia(year, week, seasonType, team, conference, mediaType);
                 Debug.WriteLine(result);
             }
@@ -148,9 +148,9 @@ No authorization required
 # **GetGames**
 > ICollection<Game> GetGames (int? year, int? week = null, string seasonType = null, string team = null, string home = null, string away = null, string conference = null, int? id = null)
 
-Get game information
+Games and results
 
-Game results
+Get game results
 
 ### Example
 ```csharp
@@ -178,7 +178,7 @@ namespace Example
 
             try
             {
-                // Get game information
+                // Games and results
                 ICollection&lt;Game&gt; result = apiInstance.GetGames(year, week, seasonType, team, home, away, conference, id);
                 Debug.WriteLine(result);
             }
@@ -223,9 +223,9 @@ No authorization required
 # **GetPlayerGameStats**
 > ICollection<PlayerGame> GetPlayerGameStats (int? year, int? week = null, string seasonType = null, string team = null, string conference = null, string category = null, int? gameId = null)
 
-Get player statistics by game
-
 Player game stats
+
+Player stats broken down by game
 
 ### Example
 ```csharp
@@ -252,7 +252,7 @@ namespace Example
 
             try
             {
-                // Get player statistics by game
+                // Player game stats
                 ICollection&lt;PlayerGame&gt; result = apiInstance.GetPlayerGameStats(year, week, seasonType, team, conference, category, gameId);
                 Debug.WriteLine(result);
             }
@@ -296,9 +296,9 @@ No authorization required
 # **GetTeamGameStats**
 > ICollection<TeamGame> GetTeamGameStats (int? year, int? week = null, string seasonType = null, string team = null, string conference = null, int? gameId = null)
 
-Get team statistics by game
-
 Team game stats
+
+Team stats broken down by game
 
 ### Example
 ```csharp
@@ -324,7 +324,7 @@ namespace Example
 
             try
             {
-                // Get team statistics by game
+                // Team game stats
                 ICollection&lt;TeamGame&gt; result = apiInstance.GetTeamGameStats(year, week, seasonType, team, conference, gameId);
                 Debug.WriteLine(result);
             }
@@ -367,9 +367,9 @@ No authorization required
 # **GetTeamRecords**
 > ICollection<TeamRecord> GetTeamRecords (int? year = null, string team = null, string conference = null)
 
-Get records by year
+Team records
 
-Team records by year
+Get team records by year
 
 ### Example
 ```csharp
@@ -392,7 +392,7 @@ namespace Example
 
             try
             {
-                // Get records by year
+                // Team records
                 ICollection&lt;TeamRecord&gt; result = apiInstance.GetTeamRecords(year, team, conference);
                 Debug.WriteLine(result);
             }

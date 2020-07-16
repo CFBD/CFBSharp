@@ -4,17 +4,17 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetPlayerSeasonStats**](PlayersApi.md#getplayerseasonstats) | **GET** /stats/player/season | Get player stats aggregated by season
-[**GetPlayerUsage**](PlayersApi.md#getplayerusage) | **GET** /player/usage | Get player usage metrics for the season
-[**GetReturningProduction**](PlayersApi.md#getreturningproduction) | **GET** /player/returning | Get returning production metrics
-[**PlayerSearch**](PlayersApi.md#playersearch) | **GET** /player/search | Search for players
+[**GetPlayerSeasonStats**](PlayersApi.md#getplayerseasonstats) | **GET** /stats/player/season | Player stats by season
+[**GetPlayerUsage**](PlayersApi.md#getplayerusage) | **GET** /player/usage | Player usage metrics broken down by season
+[**GetReturningProduction**](PlayersApi.md#getreturningproduction) | **GET** /player/returning | Team returning production metrics
+[**PlayerSearch**](PlayersApi.md#playersearch) | **GET** /player/search | Search for player information
 
 
 <a name="getplayerseasonstats"></a>
 # **GetPlayerSeasonStats**
 > ICollection<PlayerSeasonStat> GetPlayerSeasonStats (int? year, string team = null, string conference = null, int? startWeek = null, int? endWeek = null, string seasonType = null, string category = null)
 
-Get player stats aggregated by season
+Player stats by season
 
 Season player stats
 
@@ -43,7 +43,7 @@ namespace Example
 
             try
             {
-                // Get player stats aggregated by season
+                // Player stats by season
                 ICollection&lt;PlayerSeasonStat&gt; result = apiInstance.GetPlayerSeasonStats(year, team, conference, startWeek, endWeek, seasonType, category);
                 Debug.WriteLine(result);
             }
@@ -87,7 +87,7 @@ No authorization required
 # **GetPlayerUsage**
 > ICollection<PlayerUsage> GetPlayerUsage (int? year, string team = null, string conference = null, string position = null, int? playerId = null, bool? excludeGarbageTime = null)
 
-Get player usage metrics for the season
+Player usage metrics broken down by season
 
 Player usage metrics by season
 
@@ -115,7 +115,7 @@ namespace Example
 
             try
             {
-                // Get player usage metrics for the season
+                // Player usage metrics broken down by season
                 ICollection&lt;PlayerUsage&gt; result = apiInstance.GetPlayerUsage(year, team, conference, position, playerId, excludeGarbageTime);
                 Debug.WriteLine(result);
             }
@@ -158,7 +158,7 @@ No authorization required
 # **GetReturningProduction**
 > ICollection<ReturningProduction> GetReturningProduction (int? year = null, string team = null, string conference = null)
 
-Get returning production metrics
+Team returning production metrics
 
 Returning production metrics
 
@@ -183,7 +183,7 @@ namespace Example
 
             try
             {
-                // Get returning production metrics
+                // Team returning production metrics
                 ICollection&lt;ReturningProduction&gt; result = apiInstance.GetReturningProduction(year, team, conference);
                 Debug.WriteLine(result);
             }
@@ -223,7 +223,7 @@ No authorization required
 # **PlayerSearch**
 > ICollection<PlayerSearchResult> PlayerSearch (string searchTerm, string position = null, string team = null, int? year = null)
 
-Search for players
+Search for player information
 
 Search for players
 
@@ -249,7 +249,7 @@ namespace Example
 
             try
             {
-                // Search for players
+                // Search for player information
                 ICollection&lt;PlayerSearchResult&gt; result = apiInstance.PlayerSearch(searchTerm, position, team, year);
                 Debug.WriteLine(result);
             }

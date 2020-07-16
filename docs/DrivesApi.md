@@ -4,16 +4,16 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetDrvies**](DrivesApi.md#getdrvies) | **GET** /drives | Get drive information
+[**GetDrvies**](DrivesApi.md#getdrvies) | **GET** /drives | Drive data and results
 
 
 <a name="getdrvies"></a>
 # **GetDrvies**
 > ICollection<Drive> GetDrvies (int? year, string seasonType = null, int? week = null, string team = null, string offense = null, string defense = null, string conference = null, string offenseConference = null, string defenseConference = null)
 
-Get drive information
+Drive data and results
 
-Drive results
+Get game drives
 
 ### Example
 ```csharp
@@ -42,7 +42,7 @@ namespace Example
 
             try
             {
-                // Get drive information
+                // Drive data and results
                 ICollection&lt;Drive&gt; result = apiInstance.GetDrvies(year, seasonType, week, team, offense, defense, conference, offenseConference, defenseConference);
                 Debug.WriteLine(result);
             }

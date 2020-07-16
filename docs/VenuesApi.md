@@ -4,14 +4,14 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetVenues**](VenuesApi.md#getvenues) | **GET** /venues | Get venue information
+[**GetVenues**](VenuesApi.md#getvenues) | **GET** /venues | Arena and venue information
 
 
 <a name="getvenues"></a>
 # **GetVenues**
 > ICollection<Venue> GetVenues ()
 
-Get venue information
+Arena and venue information
 
 Venues
 
@@ -33,7 +33,7 @@ namespace Example
 
             try
             {
-                // Get venue information
+                // Arena and venue information
                 ICollection&lt;Venue&gt; result = apiInstance.GetVenues();
                 Debug.WriteLine(result);
             }

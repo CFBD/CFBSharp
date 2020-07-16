@@ -4,16 +4,16 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetRecruitingGroups**](RecruitingApi.md#getrecruitinggroups) | **GET** /recruiting/groups | Get position group aggregated ratings
-[**GetRecruitingPlayers**](RecruitingApi.md#getrecruitingplayers) | **GET** /recruiting/players | Get player recruiting rankings and data. Requires either a year or team to be specified.
-[**GetRecruitingTeams**](RecruitingApi.md#getrecruitingteams) | **GET** /recruiting/teams | Get team recruiting rankings
+[**GetRecruitingGroups**](RecruitingApi.md#getrecruitinggroups) | **GET** /recruiting/groups | Recruit position group ratings
+[**GetRecruitingPlayers**](RecruitingApi.md#getrecruitingplayers) | **GET** /recruiting/players | Player recruiting ratings and rankings
+[**GetRecruitingTeams**](RecruitingApi.md#getrecruitingteams) | **GET** /recruiting/teams | Team recruiting rankings and ratings
 
 
 <a name="getrecruitinggroups"></a>
 # **GetRecruitingGroups**
 > ICollection<PositionGroupRecruitingRating> GetRecruitingGroups (int? startYear = null, int? endYear = null, string team = null, string conference = null)
 
-Get position group aggregated ratings
+Recruit position group ratings
 
 Gets a list of aggregated statistics by team and position grouping
 
@@ -39,7 +39,7 @@ namespace Example
 
             try
             {
-                // Get position group aggregated ratings
+                // Recruit position group ratings
                 ICollection&lt;PositionGroupRecruitingRating&gt; result = apiInstance.GetRecruitingGroups(startYear, endYear, team, conference);
                 Debug.WriteLine(result);
             }
@@ -80,9 +80,9 @@ No authorization required
 # **GetRecruitingPlayers**
 > ICollection<Recruit> GetRecruitingPlayers (int? year = null, string classification = null, string position = null, string state = null, string team = null)
 
-Get player recruiting rankings and data. Requires either a year or team to be specified.
+Player recruiting ratings and rankings
 
-Player recruiting rankings
+Get player recruiting rankings and data. Requires either a year or team to be specified.
 
 ### Example
 ```csharp
@@ -107,7 +107,7 @@ namespace Example
 
             try
             {
-                // Get player recruiting rankings and data. Requires either a year or team to be specified.
+                // Player recruiting ratings and rankings
                 ICollection&lt;Recruit&gt; result = apiInstance.GetRecruitingPlayers(year, classification, position, state, team);
                 Debug.WriteLine(result);
             }
@@ -149,7 +149,7 @@ No authorization required
 # **GetRecruitingTeams**
 > ICollection<TeamRecruitingRank> GetRecruitingTeams (int? year = null, string team = null)
 
-Get team recruiting rankings
+Team recruiting rankings and ratings
 
 Team recruiting rankings
 
@@ -173,7 +173,7 @@ namespace Example
 
             try
             {
-                // Get team recruiting rankings
+                // Team recruiting rankings and ratings
                 ICollection&lt;TeamRecruitingRank&gt; result = apiInstance.GetRecruitingTeams(year, team);
                 Debug.WriteLine(result);
             }

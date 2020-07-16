@@ -4,18 +4,18 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetFbsTeams**](TeamsApi.md#getfbsteams) | **GET** /teams/fbs | Get list of major division teams for a given year
-[**GetRoster**](TeamsApi.md#getroster) | **GET** /roster | Get team roster
-[**GetTalent**](TeamsApi.md#gettalent) | **GET** /talent | Get team talent rankings
-[**GetTeamMatchup**](TeamsApi.md#getteammatchup) | **GET** /teams/matchup | Get matchup history
-[**GetTeams**](TeamsApi.md#getteams) | **GET** /teams | Get team information
+[**GetFbsTeams**](TeamsApi.md#getfbsteams) | **GET** /teams/fbs | FBS team list
+[**GetRoster**](TeamsApi.md#getroster) | **GET** /roster | Team rosters
+[**GetTalent**](TeamsApi.md#gettalent) | **GET** /talent | Team talent composite rankings
+[**GetTeamMatchup**](TeamsApi.md#getteammatchup) | **GET** /teams/matchup | Team matchup history
+[**GetTeams**](TeamsApi.md#getteams) | **GET** /teams | Team information
 
 
 <a name="getfbsteams"></a>
 # **GetFbsTeams**
 > ICollection<Team> GetFbsTeams (int? year = null)
 
-Get list of major division teams for a given year
+FBS team list
 
 Information on major division teams
 
@@ -38,7 +38,7 @@ namespace Example
 
             try
             {
-                // Get list of major division teams for a given year
+                // FBS team list
                 ICollection&lt;Team&gt; result = apiInstance.GetFbsTeams(year);
                 Debug.WriteLine(result);
             }
@@ -76,7 +76,7 @@ No authorization required
 # **GetRoster**
 > ICollection<Player> GetRoster (string team, int? year = null)
 
-Get team roster
+Team rosters
 
 Roster data
 
@@ -100,7 +100,7 @@ namespace Example
 
             try
             {
-                // Get team roster
+                // Team rosters
                 ICollection&lt;Player&gt; result = apiInstance.GetRoster(team, year);
                 Debug.WriteLine(result);
             }
@@ -139,7 +139,7 @@ No authorization required
 # **GetTalent**
 > ICollection<TeamTalent> GetTalent (int? year = null)
 
-Get team talent rankings
+Team talent composite rankings
 
 Team talent composite
 
@@ -162,7 +162,7 @@ namespace Example
 
             try
             {
-                // Get team talent rankings
+                // Team talent composite rankings
                 ICollection&lt;TeamTalent&gt; result = apiInstance.GetTalent(year);
                 Debug.WriteLine(result);
             }
@@ -200,7 +200,7 @@ No authorization required
 # **GetTeamMatchup**
 > ICollection<TeamMatchup> GetTeamMatchup (string team1, string team2, int? minYear = null, int? maxYear = null)
 
-Get matchup history
+Team matchup history
 
 Matchup history
 
@@ -226,7 +226,7 @@ namespace Example
 
             try
             {
-                // Get matchup history
+                // Team matchup history
                 ICollection&lt;TeamMatchup&gt; result = apiInstance.GetTeamMatchup(team1, team2, minYear, maxYear);
                 Debug.WriteLine(result);
             }
@@ -267,9 +267,9 @@ No authorization required
 # **GetTeams**
 > ICollection<Team> GetTeams (string conference = null)
 
-Get team information
-
 Team information
+
+Get team information
 
 ### Example
 ```csharp
@@ -290,7 +290,7 @@ namespace Example
 
             try
             {
-                // Get team information
+                // Team information
                 ICollection&lt;Team&gt; result = apiInstance.GetTeams(conference);
                 Debug.WriteLine(result);
             }

@@ -4,20 +4,20 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetGamePPA**](MetricsApi.md#getgameppa) | **GET** /ppa/games | Get team game averages for Predicted Points Added (PPA)
-[**GetPlayerGamePPA**](MetricsApi.md#getplayergameppa) | **GET** /ppa/players/games | Get player game averages for Predicted Points Added (PPA)
-[**GetPlayerSeasonPPA**](MetricsApi.md#getplayerseasonppa) | **GET** /ppa/players/season | Get player season averages for Predicted Points Added (PPA)
-[**GetPredictedPoints**](MetricsApi.md#getpredictedpoints) | **GET** /ppa/predicted | Calculate Predicted Points
-[**GetPregameWinProbabilities**](MetricsApi.md#getpregamewinprobabilities) | **GET** /metrics/wp/pregame | Get pregame win probabilities
-[**GetTeamPPA**](MetricsApi.md#getteamppa) | **GET** /ppa/teams | Get team averages for Predicted Points Added (PPA)
-[**GetWinProbabilityData**](MetricsApi.md#getwinprobabilitydata) | **GET** /metrics/wp | Get win probability chart data
+[**GetGamePPA**](MetricsApi.md#getgameppa) | **GET** /ppa/games | Team Predicated Points Added (PPA/EPA) by game
+[**GetPlayerGamePPA**](MetricsApi.md#getplayergameppa) | **GET** /ppa/players/games | Player Predicated Points Added (PPA/EPA) broken down by game
+[**GetPlayerSeasonPPA**](MetricsApi.md#getplayerseasonppa) | **GET** /ppa/players/season | Player Predicated Points Added (PPA/EPA) broken down by season
+[**GetPredictedPoints**](MetricsApi.md#getpredictedpoints) | **GET** /ppa/predicted | Predicted Points (i.e. Expected Points or EP)
+[**GetPregameWinProbabilities**](MetricsApi.md#getpregamewinprobabilities) | **GET** /metrics/wp/pregame | Pregame win probability data
+[**GetTeamPPA**](MetricsApi.md#getteamppa) | **GET** /ppa/teams | Predicted Points Added (PPA/EPA) data by team
+[**GetWinProbabilityData**](MetricsApi.md#getwinprobabilitydata) | **GET** /metrics/wp | Win probability chart data
 
 
 <a name="getgameppa"></a>
 # **GetGamePPA**
 > ICollection<GamePPA> GetGamePPA (int? year, int? week = null, string team = null, string conference = null, bool? excludeGarbageTime = null)
 
-Get team game averages for Predicted Points Added (PPA)
+Team Predicated Points Added (PPA/EPA) by game
 
 Predicted Points Added (PPA) by game
 
@@ -44,7 +44,7 @@ namespace Example
 
             try
             {
-                // Get team game averages for Predicted Points Added (PPA)
+                // Team Predicated Points Added (PPA/EPA) by game
                 ICollection&lt;GamePPA&gt; result = apiInstance.GetGamePPA(year, week, team, conference, excludeGarbageTime);
                 Debug.WriteLine(result);
             }
@@ -86,7 +86,7 @@ No authorization required
 # **GetPlayerGamePPA**
 > ICollection<PlayerGamePPA> GetPlayerGamePPA (int? year = null, int? week = null, string team = null, string position = null, int? playerId = null, string threshold = null, bool? excludeGarbageTime = null)
 
-Get player game averages for Predicted Points Added (PPA)
+Player Predicated Points Added (PPA/EPA) broken down by game
 
 Predicted Points Added (PPA) by player game
 
@@ -115,7 +115,7 @@ namespace Example
 
             try
             {
-                // Get player game averages for Predicted Points Added (PPA)
+                // Player Predicated Points Added (PPA/EPA) broken down by game
                 ICollection&lt;PlayerGamePPA&gt; result = apiInstance.GetPlayerGamePPA(year, week, team, position, playerId, threshold, excludeGarbageTime);
                 Debug.WriteLine(result);
             }
@@ -159,7 +159,7 @@ No authorization required
 # **GetPlayerSeasonPPA**
 > ICollection<PlayerSeasonPPA> GetPlayerSeasonPPA (int? year = null, string team = null, string conference = null, string position = null, int? playerId = null, string threshold = null, bool? excludeGarbageTime = null)
 
-Get player season averages for Predicted Points Added (PPA)
+Player Predicated Points Added (PPA/EPA) broken down by season
 
 Predicted Points Added (PPA) by player season
 
@@ -188,7 +188,7 @@ namespace Example
 
             try
             {
-                // Get player season averages for Predicted Points Added (PPA)
+                // Player Predicated Points Added (PPA/EPA) broken down by season
                 ICollection&lt;PlayerSeasonPPA&gt; result = apiInstance.GetPlayerSeasonPPA(year, team, conference, position, playerId, threshold, excludeGarbageTime);
                 Debug.WriteLine(result);
             }
@@ -232,7 +232,7 @@ No authorization required
 # **GetPredictedPoints**
 > ICollection<PredictedPoints> GetPredictedPoints (int? down, int? distance)
 
-Calculate Predicted Points
+Predicted Points (i.e. Expected Points or EP)
 
 Predicted Points
 
@@ -256,7 +256,7 @@ namespace Example
 
             try
             {
-                // Calculate Predicted Points
+                // Predicted Points (i.e. Expected Points or EP)
                 ICollection&lt;PredictedPoints&gt; result = apiInstance.GetPredictedPoints(down, distance);
                 Debug.WriteLine(result);
             }
@@ -295,7 +295,7 @@ No authorization required
 # **GetPregameWinProbabilities**
 > ICollection<PregameWP> GetPregameWinProbabilities (int? year = null, int? week = null, string team = null, string seasonType = null)
 
-Get pregame win probabilities
+Pregame win probability data
 
 Pregame win probabilities
 
@@ -321,7 +321,7 @@ namespace Example
 
             try
             {
-                // Get pregame win probabilities
+                // Pregame win probability data
                 ICollection&lt;PregameWP&gt; result = apiInstance.GetPregameWinProbabilities(year, week, team, seasonType);
                 Debug.WriteLine(result);
             }
@@ -362,7 +362,7 @@ No authorization required
 # **GetTeamPPA**
 > ICollection<TeamPPA> GetTeamPPA (int? year = null, string team = null, string conference = null, bool? excludeGarbageTime = null)
 
-Get team averages for Predicted Points Added (PPA)
+Predicted Points Added (PPA/EPA) data by team
 
 Predicted Points Added (PPA)
 
@@ -388,7 +388,7 @@ namespace Example
 
             try
             {
-                // Get team averages for Predicted Points Added (PPA)
+                // Predicted Points Added (PPA/EPA) data by team
                 ICollection&lt;TeamPPA&gt; result = apiInstance.GetTeamPPA(year, team, conference, excludeGarbageTime);
                 Debug.WriteLine(result);
             }
@@ -429,7 +429,7 @@ No authorization required
 # **GetWinProbabilityData**
 > ICollection<PlayWP> GetWinProbabilityData (int? gameId, bool? adjustForSpread = null)
 
-Get win probability chart data
+Win probability chart data
 
 Win probability data
 
@@ -453,7 +453,7 @@ namespace Example
 
             try
             {
-                // Get win probability chart data
+                // Win probability chart data
                 ICollection&lt;PlayWP&gt; result = apiInstance.GetWinProbabilityData(gameId, adjustForSpread);
                 Debug.WriteLine(result);
             }

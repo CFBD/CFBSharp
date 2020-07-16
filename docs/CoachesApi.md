@@ -4,14 +4,14 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCoaches**](CoachesApi.md#getcoaches) | **GET** /coaches | Get coach records and school history
+[**GetCoaches**](CoachesApi.md#getcoaches) | **GET** /coaches | Coaching records and history
 
 
 <a name="getcoaches"></a>
 # **GetCoaches**
 > InlineResponse200 GetCoaches (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null)
 
-Get coach records and school history
+Coaching records and history
 
 Coaching history
 
@@ -39,7 +39,7 @@ namespace Example
 
             try
             {
-                // Get coach records and school history
+                // Coaching records and history
                 InlineResponse200 result = apiInstance.GetCoaches(firstName, lastName, team, year, minYear, maxYear);
                 Debug.WriteLine(result);
             }

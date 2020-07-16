@@ -4,16 +4,16 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetConferences**](ConferencesApi.md#getconferences) | **GET** /conferences | Get conference list
+[**GetConferences**](ConferencesApi.md#getconferences) | **GET** /conferences | Conferences
 
 
 <a name="getconferences"></a>
 # **GetConferences**
 > ICollection<Conference> GetConferences ()
 
-Get conference list
-
 Conferences
+
+Get conference list
 
 ### Example
 ```csharp
@@ -33,7 +33,7 @@ namespace Example
 
             try
             {
-                // Get conference list
+                // Conferences
                 ICollection&lt;Conference&gt; result = apiInstance.GetConferences();
                 Debug.WriteLine(result);
             }

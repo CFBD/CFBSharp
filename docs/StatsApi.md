@@ -4,17 +4,17 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAdvancedTeamGameStats**](StatsApi.md#getadvancedteamgamestats) | **GET** /stats/game/advanced | Get advanced game team stats
-[**GetAdvancedTeamSeasonStats**](StatsApi.md#getadvancedteamseasonstats) | **GET** /stats/season/advanced | Get advanced season team stats
-[**GetStatCategories**](StatsApi.md#getstatcategories) | **GET** /stats/categories | Get stat category list
-[**GetTeamSeasonStats**](StatsApi.md#getteamseasonstats) | **GET** /stats/season | Get season team stats
+[**GetAdvancedTeamGameStats**](StatsApi.md#getadvancedteamgamestats) | **GET** /stats/game/advanced | Advanced team metrics by game
+[**GetAdvancedTeamSeasonStats**](StatsApi.md#getadvancedteamseasonstats) | **GET** /stats/season/advanced | Advanced team metrics by season
+[**GetStatCategories**](StatsApi.md#getstatcategories) | **GET** /stats/categories | Team stat categories
+[**GetTeamSeasonStats**](StatsApi.md#getteamseasonstats) | **GET** /stats/season | Team statistics by season
 
 
 <a name="getadvancedteamgamestats"></a>
 # **GetAdvancedTeamGameStats**
 > ICollection<AdvancedGameStat> GetAdvancedTeamGameStats (int? year = null, int? week = null, string team = null, string opponent = null, bool? excludeGarbageTime = null, string seasonType = null)
 
-Get advanced game team stats
+Advanced team metrics by game
 
 Advanced team game stats
 
@@ -42,7 +42,7 @@ namespace Example
 
             try
             {
-                // Get advanced game team stats
+                // Advanced team metrics by game
                 ICollection&lt;AdvancedGameStat&gt; result = apiInstance.GetAdvancedTeamGameStats(year, week, team, opponent, excludeGarbageTime, seasonType);
                 Debug.WriteLine(result);
             }
@@ -85,7 +85,7 @@ No authorization required
 # **GetAdvancedTeamSeasonStats**
 > ICollection<AdvancedSeasonStat> GetAdvancedTeamSeasonStats (int? year = null, string team = null, bool? excludeGarbageTime = null, int? startWeek = null, int? endWeek = null)
 
-Get advanced season team stats
+Advanced team metrics by season
 
 Advanced team season stats
 
@@ -112,7 +112,7 @@ namespace Example
 
             try
             {
-                // Get advanced season team stats
+                // Advanced team metrics by season
                 ICollection&lt;AdvancedSeasonStat&gt; result = apiInstance.GetAdvancedTeamSeasonStats(year, team, excludeGarbageTime, startWeek, endWeek);
                 Debug.WriteLine(result);
             }
@@ -154,7 +154,7 @@ No authorization required
 # **GetStatCategories**
 > ICollection<string> GetStatCategories ()
 
-Get stat category list
+Team stat categories
 
 Stat category list
 
@@ -176,7 +176,7 @@ namespace Example
 
             try
             {
-                // Get stat category list
+                // Team stat categories
                 ICollection&lt;string&gt; result = apiInstance.GetStatCategories();
                 Debug.WriteLine(result);
             }
@@ -211,7 +211,7 @@ No authorization required
 # **GetTeamSeasonStats**
 > ICollection<TeamSeasonStat> GetTeamSeasonStats (int? year = null, string team = null, string conference = null, int? startWeek = null, int? endWeek = null)
 
-Get season team stats
+Team statistics by season
 
 Team season stats
 
@@ -238,7 +238,7 @@ namespace Example
 
             try
             {
-                // Get season team stats
+                // Team statistics by season
                 ICollection&lt;TeamSeasonStat&gt; result = apiInstance.GetTeamSeasonStats(year, team, conference, startWeek, endWeek);
                 Debug.WriteLine(result);
             }
