@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **Down** | **int?** |  | [optional] 
 **Distance** | **int?** |  | [optional] 
 **YardsGained** | **int?** |  | [optional] 
+**Scoring** | **bool?** |  | [optional] 
 **PlayType** | **string** |  | [optional] 
 **PlayText** | **string** |  | [optional] 
 **Ppa** | **decimal?** |  | [optional] 
