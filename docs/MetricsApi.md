@@ -427,7 +427,7 @@ No authorization required
 
 <a name="getwinprobabilitydata"></a>
 # **GetWinProbabilityData**
-> ICollection<PlayWP> GetWinProbabilityData (int? gameId, bool? adjustForSpread = null)
+> ICollection<PlayWP> GetWinProbabilityData (int? gameId)
 
 Win probability chart data
 
@@ -449,12 +449,11 @@ namespace Example
         {
             var apiInstance = new MetricsApi();
             var gameId = 56;  // int? | Game id filter
-            var adjustForSpread = true;  // bool? | Toggles pregame spread adjustments (optional)  (default to true)
 
             try
             {
                 // Win probability chart data
-                ICollection&lt;PlayWP&gt; result = apiInstance.GetWinProbabilityData(gameId, adjustForSpread);
+                ICollection&lt;PlayWP&gt; result = apiInstance.GetWinProbabilityData(gameId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -471,7 +470,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gameId** | **int?**| Game id filter | 
- **adjustForSpread** | **bool?**| Toggles pregame spread adjustments | [optional] [default to true]
 
 ### Return type
 
