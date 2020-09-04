@@ -37,8 +37,8 @@ namespace CFBSharp.Api
         /// <param name="year">Year filter (optional)</param>
         /// <param name="minYear">Minimum year filter (inclusive) (optional)</param>
         /// <param name="maxYear">Maximum year filter (inclusive) (optional)</param>
-        /// <returns>InlineResponse200</returns>
-        InlineResponse200 GetCoaches (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null);
+        /// <returns>ICollection&lt;InlineResponse200&gt;</returns>
+        ICollection<InlineResponse200> GetCoaches (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null);
 
         /// <summary>
         /// Coaching records and history
@@ -53,8 +53,8 @@ namespace CFBSharp.Api
         /// <param name="year">Year filter (optional)</param>
         /// <param name="minYear">Minimum year filter (inclusive) (optional)</param>
         /// <param name="maxYear">Maximum year filter (inclusive) (optional)</param>
-        /// <returns>ApiResponse of InlineResponse200</returns>
-        ApiResponse<InlineResponse200> GetCoachesWithHttpInfo (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null);
+        /// <returns>ApiResponse of ICollection&lt;InlineResponse200&gt;</returns>
+        ApiResponse<ICollection<InlineResponse200>> GetCoachesWithHttpInfo (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -70,8 +70,8 @@ namespace CFBSharp.Api
         /// <param name="year">Year filter (optional)</param>
         /// <param name="minYear">Minimum year filter (inclusive) (optional)</param>
         /// <param name="maxYear">Maximum year filter (inclusive) (optional)</param>
-        /// <returns>Task of InlineResponse200</returns>
-        System.Threading.Tasks.Task<InlineResponse200> GetCoachesAsync (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null);
+        /// <returns>Task of ICollection&lt;InlineResponse200&gt;</returns>
+        System.Threading.Tasks.Task<ICollection<InlineResponse200>> GetCoachesAsync (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null);
 
         /// <summary>
         /// Coaching records and history
@@ -86,8 +86,8 @@ namespace CFBSharp.Api
         /// <param name="year">Year filter (optional)</param>
         /// <param name="minYear">Minimum year filter (inclusive) (optional)</param>
         /// <param name="maxYear">Maximum year filter (inclusive) (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse200>> GetCoachesAsyncWithHttpInfo (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null);
+        /// <returns>Task of ApiResponse (ICollection&lt;InlineResponse200&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ICollection<InlineResponse200>>> GetCoachesAsyncWithHttpInfo (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null);
         #endregion Asynchronous Operations
     }
 
@@ -198,10 +198,10 @@ namespace CFBSharp.Api
         /// <param name="year">Year filter (optional)</param>
         /// <param name="minYear">Minimum year filter (inclusive) (optional)</param>
         /// <param name="maxYear">Maximum year filter (inclusive) (optional)</param>
-        /// <returns>InlineResponse200</returns>
-        public InlineResponse200 GetCoaches (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null)
+        /// <returns>ICollection&lt;InlineResponse200&gt;</returns>
+        public ICollection<InlineResponse200> GetCoaches (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null)
         {
-             ApiResponse<InlineResponse200> localVarResponse = GetCoachesWithHttpInfo(firstName, lastName, team, year, minYear, maxYear);
+             ApiResponse<ICollection<InlineResponse200>> localVarResponse = GetCoachesWithHttpInfo(firstName, lastName, team, year, minYear, maxYear);
              return localVarResponse.Data;
         }
 
@@ -215,8 +215,8 @@ namespace CFBSharp.Api
         /// <param name="year">Year filter (optional)</param>
         /// <param name="minYear">Minimum year filter (inclusive) (optional)</param>
         /// <param name="maxYear">Maximum year filter (inclusive) (optional)</param>
-        /// <returns>ApiResponse of InlineResponse200</returns>
-        public ApiResponse< InlineResponse200 > GetCoachesWithHttpInfo (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null)
+        /// <returns>ApiResponse of ICollection&lt;InlineResponse200&gt;</returns>
+        public ApiResponse< ICollection<InlineResponse200> > GetCoachesWithHttpInfo (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null)
         {
 
             var localVarPath = "./coaches";
@@ -261,9 +261,9 @@ namespace CFBSharp.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<InlineResponse200>(localVarStatusCode,
+            return new ApiResponse<ICollection<InlineResponse200>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (InlineResponse200) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse200)));
+                (ICollection<InlineResponse200>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<InlineResponse200>)));
         }
 
         /// <summary>
@@ -276,10 +276,10 @@ namespace CFBSharp.Api
         /// <param name="year">Year filter (optional)</param>
         /// <param name="minYear">Minimum year filter (inclusive) (optional)</param>
         /// <param name="maxYear">Maximum year filter (inclusive) (optional)</param>
-        /// <returns>Task of InlineResponse200</returns>
-        public async System.Threading.Tasks.Task<InlineResponse200> GetCoachesAsync (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null)
+        /// <returns>Task of ICollection&lt;InlineResponse200&gt;</returns>
+        public async System.Threading.Tasks.Task<ICollection<InlineResponse200>> GetCoachesAsync (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null)
         {
-             ApiResponse<InlineResponse200> localVarResponse = await GetCoachesAsyncWithHttpInfo(firstName, lastName, team, year, minYear, maxYear);
+             ApiResponse<ICollection<InlineResponse200>> localVarResponse = await GetCoachesAsyncWithHttpInfo(firstName, lastName, team, year, minYear, maxYear);
              return localVarResponse.Data;
 
         }
@@ -294,8 +294,8 @@ namespace CFBSharp.Api
         /// <param name="year">Year filter (optional)</param>
         /// <param name="minYear">Minimum year filter (inclusive) (optional)</param>
         /// <param name="maxYear">Maximum year filter (inclusive) (optional)</param>
-        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse200>> GetCoachesAsyncWithHttpInfo (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null)
+        /// <returns>Task of ApiResponse (ICollection&lt;InlineResponse200&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ICollection<InlineResponse200>>> GetCoachesAsyncWithHttpInfo (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null)
         {
 
             var localVarPath = "./coaches";
@@ -340,9 +340,9 @@ namespace CFBSharp.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<InlineResponse200>(localVarStatusCode,
+            return new ApiResponse<ICollection<InlineResponse200>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (InlineResponse200) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse200)));
+                (ICollection<InlineResponse200>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<InlineResponse200>)));
         }
 
     }

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getcoaches"></a>
 # **GetCoaches**
-> InlineResponse200 GetCoaches (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null)
+> ICollection<InlineResponse200> GetCoaches (string firstName = null, string lastName = null, string team = null, int? year = null, int? minYear = null, int? maxYear = null)
 
 Coaching records and history
 
@@ -40,7 +40,7 @@ namespace Example
             try
             {
                 // Coaching records and history
-                InlineResponse200 result = apiInstance.GetCoaches(firstName, lastName, team, year, minYear, maxYear);
+                ICollection&lt;InlineResponse200&gt; result = apiInstance.GetCoaches(firstName, lastName, team, year, minYear, maxYear);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**ICollection<InlineResponse200>**](InlineResponse200.md)
 
 ### Authorization
 
