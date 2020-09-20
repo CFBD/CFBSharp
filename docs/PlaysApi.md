@@ -199,7 +199,7 @@ No authorization required
 
 <a name="getplays"></a>
 # **GetPlays**
-> ICollection<Play> GetPlays (int? year, string seasonType = null, int? week = null, string team = null, string offense = null, string defense = null, string conference = null, string offenseConference = null, string defenseConference = null, int? playType = null)
+> ICollection<Play> GetPlays (int? year, int? week, string seasonType = null, string team = null, string offense = null, string defense = null, string conference = null, string offenseConference = null, string defenseConference = null, int? playType = null)
 
 Play by play data
 
@@ -221,8 +221,8 @@ namespace Example
         {
             var apiInstance = new PlaysApi();
             var year = 56;  // int? | Year filter
+            var week = 56;  // int? | Week filter (required if team, offense, or defense, not specified)
             var seasonType = seasonType_example;  // string | Season type filter (optional)  (default to regular)
-            var week = 56;  // int? | Week filter (required if team, offense, or defense, not specified) (optional) 
             var team = team_example;  // string | Team filter (optional) 
             var offense = offense_example;  // string | Offensive team filter (optional) 
             var defense = defense_example;  // string | Defensive team filter (optional) 
@@ -234,7 +234,7 @@ namespace Example
             try
             {
                 // Play by play data
-                ICollection&lt;Play&gt; result = apiInstance.GetPlays(year, seasonType, week, team, offense, defense, conference, offenseConference, defenseConference, playType);
+                ICollection&lt;Play&gt; result = apiInstance.GetPlays(year, week, seasonType, team, offense, defense, conference, offenseConference, defenseConference, playType);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -251,8 +251,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **year** | **int?**| Year filter | 
+ **week** | **int?**| Week filter (required if team, offense, or defense, not specified) | 
  **seasonType** | **string**| Season type filter | [optional] [default to regular]
- **week** | **int?**| Week filter (required if team, offense, or defense, not specified) | [optional] 
  **team** | **string**| Team filter | [optional] 
  **offense** | **string**| Offensive team filter | [optional] 
  **defense** | **string**| Defensive team filter | [optional] 
