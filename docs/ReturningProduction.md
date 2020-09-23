@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Season** | **int?** |  | [optional] 
 **Team** | **string** |  | [optional] 
 **Conference** | **string** |  | [optional] 
 **TotalPPA** | **decimal?** |  | [optional] 
