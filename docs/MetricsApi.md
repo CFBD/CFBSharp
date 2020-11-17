@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="getgameppa"></a>
 # **GetGamePPA**
-> ICollection<GamePPA> GetGamePPA (int? year, int? week = null, string team = null, string conference = null, bool? excludeGarbageTime = null)
+> ICollection<GamePPA> GetGamePPA (int? year, int? week = null, string team = null, string conference = null, bool? excludeGarbageTime = null, string seasonType = null)
 
 Team Predicated Points Added (PPA/EPA) by game
 
@@ -41,11 +41,12 @@ namespace Example
             var team = team_example;  // string | Team filter (optional) 
             var conference = conference_example;  // string | Conference filter (optional) 
             var excludeGarbageTime = true;  // bool? | Filter to remove garbage time plays from calculations (optional) 
+            var seasonType = seasonType_example;  // string | Season type filter (regular or postseason) (optional)  (default to regular)
 
             try
             {
                 // Team Predicated Points Added (PPA/EPA) by game
-                ICollection&lt;GamePPA&gt; result = apiInstance.GetGamePPA(year, week, team, conference, excludeGarbageTime);
+                ICollection&lt;GamePPA&gt; result = apiInstance.GetGamePPA(year, week, team, conference, excludeGarbageTime, seasonType);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -66,6 +67,7 @@ Name | Type | Description  | Notes
  **team** | **string**| Team filter | [optional] 
  **conference** | **string**| Conference filter | [optional] 
  **excludeGarbageTime** | **bool?**| Filter to remove garbage time plays from calculations | [optional] 
+ **seasonType** | **string**| Season type filter (regular or postseason) | [optional] [default to regular]
 
 ### Return type
 
@@ -84,7 +86,7 @@ No authorization required
 
 <a name="getplayergameppa"></a>
 # **GetPlayerGamePPA**
-> ICollection<PlayerGamePPA> GetPlayerGamePPA (int? year = null, int? week = null, string team = null, string position = null, int? playerId = null, string threshold = null, bool? excludeGarbageTime = null)
+> ICollection<PlayerGamePPA> GetPlayerGamePPA (int? year = null, int? week = null, string team = null, string position = null, int? playerId = null, string threshold = null, bool? excludeGarbageTime = null, string seasonType = null)
 
 Player Predicated Points Added (PPA/EPA) broken down by game
 
@@ -112,11 +114,12 @@ namespace Example
             var playerId = 56;  // int? | Player id filter (optional) 
             var threshold = threshold_example;  // string | Minimum play threshold filter (optional) 
             var excludeGarbageTime = true;  // bool? | Filter to remove garbage time plays from calculations (optional) 
+            var seasonType = seasonType_example;  // string | Season type filter (regular or postseason) (optional)  (default to regular)
 
             try
             {
                 // Player Predicated Points Added (PPA/EPA) broken down by game
-                ICollection&lt;PlayerGamePPA&gt; result = apiInstance.GetPlayerGamePPA(year, week, team, position, playerId, threshold, excludeGarbageTime);
+                ICollection&lt;PlayerGamePPA&gt; result = apiInstance.GetPlayerGamePPA(year, week, team, position, playerId, threshold, excludeGarbageTime, seasonType);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -139,6 +142,7 @@ Name | Type | Description  | Notes
  **playerId** | **int?**| Player id filter | [optional] 
  **threshold** | **string**| Minimum play threshold filter | [optional] 
  **excludeGarbageTime** | **bool?**| Filter to remove garbage time plays from calculations | [optional] 
+ **seasonType** | **string**| Season type filter (regular or postseason) | [optional] [default to regular]
 
 ### Return type
 
