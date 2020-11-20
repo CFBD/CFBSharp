@@ -69,7 +69,7 @@ No authorization required
 
 <a name="getplaystats"></a>
 # **GetPlayStats**
-> ICollection<PlayStat> GetPlayStats (int? year = null, int? week = null, string team = null, int? gameId = null, int? athleteId = null, int? statTypeId = null, string seasonType = null)
+> ICollection<PlayStat> GetPlayStats (int? year = null, int? week = null, string team = null, int? gameId = null, int? athleteId = null, int? statTypeId = null, string seasonType = null, string conference = null)
 
 Play stats by play
 
@@ -97,11 +97,12 @@ namespace Example
             var athleteId = 56;  // int? | athleteId filter (from /roster endpoint) (optional) 
             var statTypeId = 56;  // int? | statTypeId filter (from /play/stat/types endpoint) (optional) 
             var seasonType = seasonType_example;  // string | regular, postseason, or both (optional) 
+            var conference = conference_example;  // string | conference abbreviation filter (optional) 
 
             try
             {
                 // Play stats by play
-                ICollection&lt;PlayStat&gt; result = apiInstance.GetPlayStats(year, week, team, gameId, athleteId, statTypeId, seasonType);
+                ICollection&lt;PlayStat&gt; result = apiInstance.GetPlayStats(year, week, team, gameId, athleteId, statTypeId, seasonType, conference);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -124,6 +125,7 @@ Name | Type | Description  | Notes
  **athleteId** | **int?**| athleteId filter (from /roster endpoint) | [optional] 
  **statTypeId** | **int?**| statTypeId filter (from /play/stat/types endpoint) | [optional] 
  **seasonType** | **string**| regular, postseason, or both | [optional] 
+ **conference** | **string**| conference abbreviation filter | [optional] 
 
 ### Return type
 
