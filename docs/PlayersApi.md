@@ -106,7 +106,7 @@ namespace Example
         public void main()
         {
             var apiInstance = new PlayersApi();
-            var year = 56;  // int? | Year filter (default to 2019)
+            var year = 56;  // int? | Year filter (default to 2020)
             var team = team_example;  // string | Team filter (optional) 
             var conference = conference_example;  // string | Conference abbreviation filter (optional) 
             var position = position_example;  // string | Position abbreviation filter (optional) 
@@ -132,7 +132,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int?**| Year filter | [default to 2019]
+ **year** | **int?**| Year filter | [default to 2020]
  **team** | **string**| Team filter | [optional] 
  **conference** | **string**| Conference abbreviation filter | [optional] 
  **position** | **string**| Position abbreviation filter | [optional] 
