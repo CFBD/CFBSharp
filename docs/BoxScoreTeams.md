@@ -3,7 +3,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Plays** | **decimal?** |  | [optional] 
 **Ppa** | [**List&lt;BoxScoreTeamsPpa&gt;**](BoxScoreTeamsPpa.md) |  | [optional] 
 **CumulativePpa** | [**List&lt;BoxScoreTeamsPpa&gt;**](BoxScoreTeamsPpa.md) |  | [optional] 
 **SuccessRates** | [**List&lt;BoxScoreTeamsSuccessRates&gt;**](BoxScoreTeamsSuccessRates.md) |  | [optional] 

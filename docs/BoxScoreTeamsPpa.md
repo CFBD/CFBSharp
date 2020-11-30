@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Team** | **string** |  | [optional] 
+**Plays** | **decimal?** |  | [optional] 
 **Overall** | [**BoxScoreTeamsOverall**](BoxScoreTeamsOverall.md) |  | [optional] 
 **Passing** | [**BoxScoreTeamsOverall**](BoxScoreTeamsOverall.md) |  | [optional] 
 **Rushing** | [**BoxScoreTeamsOverall**](BoxScoreTeamsOverall.md) |  | [optional] 
