@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="getadvancedboxscore"></a>
 # **GetAdvancedBoxScore**
-> ICollection<BoxScore> GetAdvancedBoxScore (int? gameId)
+> BoxScore GetAdvancedBoxScore (int? gameId)
 
 Advanced box scores
 
@@ -40,7 +40,7 @@ namespace Example
             try
             {
                 // Advanced box scores
-                ICollection&lt;BoxScore&gt; result = apiInstance.GetAdvancedBoxScore(gameId);
+                BoxScore result = apiInstance.GetAdvancedBoxScore(gameId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ICollection<BoxScore>**](BoxScore.md)
+[**BoxScore**](BoxScore.md)
 
 ### Authorization
 
