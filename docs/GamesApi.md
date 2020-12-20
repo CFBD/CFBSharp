@@ -5,6 +5,7 @@ All URIs are relative to *https://api.collegefootballdata.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetAdvancedBoxScore**](GamesApi.md#getadvancedboxscore) | **GET** /game/box/advanced | Advanced box scores
+[**GetCalendar**](GamesApi.md#getcalendar) | **GET** /calendar | Season calendar
 [**GetGameMedia**](GamesApi.md#getgamemedia) | **GET** /games/media | Game media information and schedules
 [**GetGames**](GamesApi.md#getgames) | **GET** /games | Games and results
 [**GetPlayerGameStats**](GamesApi.md#getplayergamestats) | **GET** /games/players | Player game stats
@@ -61,6 +62,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BoxScore**](BoxScore.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getcalendar"></a>
+# **GetCalendar**
+> ICollection<Week> GetCalendar (int? year)
+
+Season calendar
+
+Get calendar of weeks by season
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using CFBSharp.Api;
+using CFBSharp.Client;
+using CFBSharp.Model;
+
+namespace Example
+{
+    public class GetCalendarExample
+    {
+        public void main()
+        {
+            var apiInstance = new GamesApi();
+            var year = 56;  // int? | Year filter
+
+            try
+            {
+                // Season calendar
+                ICollection&lt;Week&gt; result = apiInstance.GetCalendar(year);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling GamesApi.GetCalendar: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int?**| Year filter | 
+
+### Return type
+
+[**ICollection<Week>**](Week.md)
 
 ### Authorization
 

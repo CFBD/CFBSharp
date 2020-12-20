@@ -23,26 +23,26 @@ using SwaggerDateConverter = CFBSharp.Client.SwaggerDateConverter;
 namespace CFBSharp.Model
 {
     /// <summary>
-    /// TeamPPA
+    /// Week
     /// </summary>
     [DataContract]
-    public partial class TeamPPA :  IEquatable<TeamPPA>
+    public partial class Week :  IEquatable<Week>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TeamPPA" /> class.
+        /// Initializes a new instance of the <see cref="Week" /> class.
         /// </summary>
         /// <param name="season">season.</param>
-        /// <param name="team">team.</param>
-        /// <param name="conference">conference.</param>
-        /// <param name="offense">offense.</param>
-        /// <param name="defense">defense.</param>
-        public TeamPPA(int? season = default(int?), string team = default(string), string conference = default(string), TeamPPAOffense offense = default(TeamPPAOffense), TeamPPAOffense defense = default(TeamPPAOffense))
+        /// <param name="week">week.</param>
+        /// <param name="seasonType">seasonType.</param>
+        /// <param name="firstGameStart">firstGameStart.</param>
+        /// <param name="lastGameStart">lastGameStart.</param>
+        public Week(int? season = default(int?), int? week = default(int?), string seasonType = default(string), string firstGameStart = default(string), string lastGameStart = default(string))
         {
             this.Season = season;
-            this.Team = team;
-            this.Conference = conference;
-            this.Offense = offense;
-            this.Defense = defense;
+            this._Week = week;
+            this.SeasonType = seasonType;
+            this.FirstGameStart = firstGameStart;
+            this.LastGameStart = lastGameStart;
         }
         
         /// <summary>
@@ -52,28 +52,28 @@ namespace CFBSharp.Model
         public int? Season { get; set; }
 
         /// <summary>
-        /// Gets or Sets Team
+        /// Gets or Sets _Week
         /// </summary>
-        [DataMember(Name="team", EmitDefaultValue=false)]
-        public string Team { get; set; }
+        [DataMember(Name="week", EmitDefaultValue=false)]
+        public int? _Week { get; set; }
 
         /// <summary>
-        /// Gets or Sets Conference
+        /// Gets or Sets SeasonType
         /// </summary>
-        [DataMember(Name="conference", EmitDefaultValue=false)]
-        public string Conference { get; set; }
+        [DataMember(Name="seasonType", EmitDefaultValue=false)]
+        public string SeasonType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Offense
+        /// Gets or Sets FirstGameStart
         /// </summary>
-        [DataMember(Name="offense", EmitDefaultValue=false)]
-        public TeamPPAOffense Offense { get; set; }
+        [DataMember(Name="firstGameStart", EmitDefaultValue=false)]
+        public string FirstGameStart { get; set; }
 
         /// <summary>
-        /// Gets or Sets Defense
+        /// Gets or Sets LastGameStart
         /// </summary>
-        [DataMember(Name="defense", EmitDefaultValue=false)]
-        public TeamPPAOffense Defense { get; set; }
+        [DataMember(Name="lastGameStart", EmitDefaultValue=false)]
+        public string LastGameStart { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -82,12 +82,12 @@ namespace CFBSharp.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TeamPPA {\n");
+            sb.Append("class Week {\n");
             sb.Append("  Season: ").Append(Season).Append("\n");
-            sb.Append("  Team: ").Append(Team).Append("\n");
-            sb.Append("  Conference: ").Append(Conference).Append("\n");
-            sb.Append("  Offense: ").Append(Offense).Append("\n");
-            sb.Append("  Defense: ").Append(Defense).Append("\n");
+            sb.Append("  _Week: ").Append(_Week).Append("\n");
+            sb.Append("  SeasonType: ").Append(SeasonType).Append("\n");
+            sb.Append("  FirstGameStart: ").Append(FirstGameStart).Append("\n");
+            sb.Append("  LastGameStart: ").Append(LastGameStart).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -108,15 +108,15 @@ namespace CFBSharp.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TeamPPA);
+            return this.Equals(input as Week);
         }
 
         /// <summary>
-        /// Returns true if TeamPPA instances are equal
+        /// Returns true if Week instances are equal
         /// </summary>
-        /// <param name="input">Instance of TeamPPA to be compared</param>
+        /// <param name="input">Instance of Week to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TeamPPA input)
+        public bool Equals(Week input)
         {
             if (input == null)
                 return false;
@@ -128,24 +128,24 @@ namespace CFBSharp.Model
                     this.Season.Equals(input.Season))
                 ) && 
                 (
-                    this.Team == input.Team ||
-                    (this.Team != null &&
-                    this.Team.Equals(input.Team))
+                    this._Week == input._Week ||
+                    (this._Week != null &&
+                    this._Week.Equals(input._Week))
                 ) && 
                 (
-                    this.Conference == input.Conference ||
-                    (this.Conference != null &&
-                    this.Conference.Equals(input.Conference))
+                    this.SeasonType == input.SeasonType ||
+                    (this.SeasonType != null &&
+                    this.SeasonType.Equals(input.SeasonType))
                 ) && 
                 (
-                    this.Offense == input.Offense ||
-                    (this.Offense != null &&
-                    this.Offense.Equals(input.Offense))
+                    this.FirstGameStart == input.FirstGameStart ||
+                    (this.FirstGameStart != null &&
+                    this.FirstGameStart.Equals(input.FirstGameStart))
                 ) && 
                 (
-                    this.Defense == input.Defense ||
-                    (this.Defense != null &&
-                    this.Defense.Equals(input.Defense))
+                    this.LastGameStart == input.LastGameStart ||
+                    (this.LastGameStart != null &&
+                    this.LastGameStart.Equals(input.LastGameStart))
                 );
         }
 
@@ -160,14 +160,14 @@ namespace CFBSharp.Model
                 int hashCode = 41;
                 if (this.Season != null)
                     hashCode = hashCode * 59 + this.Season.GetHashCode();
-                if (this.Team != null)
-                    hashCode = hashCode * 59 + this.Team.GetHashCode();
-                if (this.Conference != null)
-                    hashCode = hashCode * 59 + this.Conference.GetHashCode();
-                if (this.Offense != null)
-                    hashCode = hashCode * 59 + this.Offense.GetHashCode();
-                if (this.Defense != null)
-                    hashCode = hashCode * 59 + this.Defense.GetHashCode();
+                if (this._Week != null)
+                    hashCode = hashCode * 59 + this._Week.GetHashCode();
+                if (this.SeasonType != null)
+                    hashCode = hashCode * 59 + this.SeasonType.GetHashCode();
+                if (this.FirstGameStart != null)
+                    hashCode = hashCode * 59 + this.FirstGameStart.GetHashCode();
+                if (this.LastGameStart != null)
+                    hashCode = hashCode * 59 + this.LastGameStart.GetHashCode();
                 return hashCode;
             }
         }

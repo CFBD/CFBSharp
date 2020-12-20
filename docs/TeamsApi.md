@@ -74,7 +74,7 @@ No authorization required
 
 <a name="getroster"></a>
 # **GetRoster**
-> ICollection<Player> GetRoster (string team, int? year = null)
+> ICollection<Player> GetRoster (string team = null, int? year = null)
 
 Team rosters
 
@@ -95,7 +95,7 @@ namespace Example
         public void main()
         {
             var apiInstance = new TeamsApi();
-            var team = team_example;  // string | Team name
+            var team = team_example;  // string | Team name (optional) 
             var year = 56;  // int? | Season year (optional) 
 
             try
@@ -117,7 +117,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **team** | **string**| Team name | 
+ **team** | **string**| Team name | [optional] 
  **year** | **int?**| Season year | [optional] 
 
 ### Return type
