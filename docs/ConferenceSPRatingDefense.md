@@ -1,18 +1,16 @@
-# CFBSharp.Model.TeamSPRatingOffense
+# CFBSharp.Model.ConferenceSPRatingDefense
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ranking** | **decimal?** |  | [optional] 
 **Rating** | **decimal?** |  | [optional] 
 **Success** | **decimal?** |  | [optional] 
 **Explosiveness** | **decimal?** |  | [optional] 
 **Rushing** | **decimal?** |  | [optional] 
-**Passing** | **decimal?** |  | [optional] 
+**Pasing** | **decimal?** |  | [optional] 
 **StandardDowns** | **decimal?** |  | [optional] 
 **PassingDowns** | **decimal?** |  | [optional] 
-**RunRate** | **decimal?** |  | [optional] 
-**Pace** | **decimal?** |  | [optional] 
+**Havoc** | [**TeamSPRatingDefenseHavoc**](TeamSPRatingDefenseHavoc.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

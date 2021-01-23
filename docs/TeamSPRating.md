@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Team** | **string** |  | [optional] 
 **Conference** | **string** |  | [optional] 
 **Rating** | **decimal?** |  | [optional] 
+**Ranking** | **decimal?** |  | [optional] 
 **SecondOrderWins** | **decimal?** |  | [optional] 
 **Sos** | **decimal?** |  | [optional] 
 **Offense** | [**TeamSPRatingOffense**](TeamSPRatingOffense.md) |  | [optional] 

@@ -23,15 +23,14 @@ using SwaggerDateConverter = CFBSharp.Client.SwaggerDateConverter;
 namespace CFBSharp.Model
 {
     /// <summary>
-    /// TeamSPRatingDefense
+    /// ConferenceSPRatingDefense
     /// </summary>
     [DataContract]
-    public partial class TeamSPRatingDefense :  IEquatable<TeamSPRatingDefense>
+    public partial class ConferenceSPRatingDefense :  IEquatable<ConferenceSPRatingDefense>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TeamSPRatingDefense" /> class.
+        /// Initializes a new instance of the <see cref="ConferenceSPRatingDefense" /> class.
         /// </summary>
-        /// <param name="ranking">ranking.</param>
         /// <param name="rating">rating.</param>
         /// <param name="success">success.</param>
         /// <param name="explosiveness">explosiveness.</param>
@@ -40,9 +39,8 @@ namespace CFBSharp.Model
         /// <param name="standardDowns">standardDowns.</param>
         /// <param name="passingDowns">passingDowns.</param>
         /// <param name="havoc">havoc.</param>
-        public TeamSPRatingDefense(decimal? ranking = default(decimal?), decimal? rating = default(decimal?), decimal? success = default(decimal?), decimal? explosiveness = default(decimal?), decimal? rushing = default(decimal?), decimal? pasing = default(decimal?), decimal? standardDowns = default(decimal?), decimal? passingDowns = default(decimal?), TeamSPRatingDefenseHavoc havoc = default(TeamSPRatingDefenseHavoc))
+        public ConferenceSPRatingDefense(decimal? rating = default(decimal?), decimal? success = default(decimal?), decimal? explosiveness = default(decimal?), decimal? rushing = default(decimal?), decimal? pasing = default(decimal?), decimal? standardDowns = default(decimal?), decimal? passingDowns = default(decimal?), TeamSPRatingDefenseHavoc havoc = default(TeamSPRatingDefenseHavoc))
         {
-            this.Ranking = ranking;
             this.Rating = rating;
             this.Success = success;
             this.Explosiveness = explosiveness;
@@ -53,12 +51,6 @@ namespace CFBSharp.Model
             this.Havoc = havoc;
         }
         
-        /// <summary>
-        /// Gets or Sets Ranking
-        /// </summary>
-        [DataMember(Name="ranking", EmitDefaultValue=false)]
-        public decimal? Ranking { get; set; }
-
         /// <summary>
         /// Gets or Sets Rating
         /// </summary>
@@ -114,8 +106,7 @@ namespace CFBSharp.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TeamSPRatingDefense {\n");
-            sb.Append("  Ranking: ").Append(Ranking).Append("\n");
+            sb.Append("class ConferenceSPRatingDefense {\n");
             sb.Append("  Rating: ").Append(Rating).Append("\n");
             sb.Append("  Success: ").Append(Success).Append("\n");
             sb.Append("  Explosiveness: ").Append(Explosiveness).Append("\n");
@@ -144,25 +135,20 @@ namespace CFBSharp.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TeamSPRatingDefense);
+            return this.Equals(input as ConferenceSPRatingDefense);
         }
 
         /// <summary>
-        /// Returns true if TeamSPRatingDefense instances are equal
+        /// Returns true if ConferenceSPRatingDefense instances are equal
         /// </summary>
-        /// <param name="input">Instance of TeamSPRatingDefense to be compared</param>
+        /// <param name="input">Instance of ConferenceSPRatingDefense to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TeamSPRatingDefense input)
+        public bool Equals(ConferenceSPRatingDefense input)
         {
             if (input == null)
                 return false;
 
             return 
-                (
-                    this.Ranking == input.Ranking ||
-                    (this.Ranking != null &&
-                    this.Ranking.Equals(input.Ranking))
-                ) && 
                 (
                     this.Rating == input.Rating ||
                     (this.Rating != null &&
@@ -214,8 +200,6 @@ namespace CFBSharp.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Ranking != null)
-                    hashCode = hashCode * 59 + this.Ranking.GetHashCode();
                 if (this.Rating != null)
                     hashCode = hashCode * 59 + this.Rating.GetHashCode();
                 if (this.Success != null)

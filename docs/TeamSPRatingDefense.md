@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Ranking** | **decimal?** |  | [optional] 
 **Rating** | **decimal?** |  | [optional] 
 **Success** | **decimal?** |  | [optional] 
 **Explosiveness** | **decimal?** |  | [optional] 
