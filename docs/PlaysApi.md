@@ -32,6 +32,11 @@ namespace Example
     {
         public void main()
         {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+
             var apiInstance = new PlaysApi();
 
             try
@@ -58,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -89,6 +94,11 @@ namespace Example
     {
         public void main()
         {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+
             var apiInstance = new PlaysApi();
             var year = 56;  // int? | Year filter (optional) 
             var week = 56;  // int? | Week filter (optional) 
@@ -133,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -164,6 +174,11 @@ namespace Example
     {
         public void main()
         {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+
             var apiInstance = new PlaysApi();
 
             try
@@ -190,7 +205,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -221,6 +236,11 @@ namespace Example
     {
         public void main()
         {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+
             var apiInstance = new PlaysApi();
             var year = 56;  // int? | Year filter
             var week = 56;  // int? | Week filter (required if team, offense, or defense, not specified)
@@ -269,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

@@ -29,6 +29,11 @@ namespace Example
     {
         public void main()
         {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+
             var apiInstance = new RankingsApi();
             var year = 56;  // int? | Year/season filter for games
             var week = 56;  // int? | Week filter (optional) 
@@ -63,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

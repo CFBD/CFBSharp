@@ -31,6 +31,11 @@ namespace Example
     {
         public void main()
         {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+
             var apiInstance = new RatingsApi();
             var year = 56;  // int? | Season filter (optional) 
             var conference = conference_example;  // string | Conference abbreviation filter (optional) 
@@ -63,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -94,6 +99,11 @@ namespace Example
     {
         public void main()
         {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+
             var apiInstance = new RatingsApi();
             var year = 56;  // int? | Season filter (required if team not specified) (optional) 
             var team = team_example;  // string | Team filter (required if year not specified) (optional) 
@@ -126,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -157,6 +167,11 @@ namespace Example
     {
         public void main()
         {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+
             var apiInstance = new RatingsApi();
             var year = 56;  // int? | Season filter (required if team not specified) (optional) 
             var team = team_example;  // string | Team filter (required if year not specified) (optional) 
@@ -191,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

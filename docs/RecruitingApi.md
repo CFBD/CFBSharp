@@ -31,6 +31,11 @@ namespace Example
     {
         public void main()
         {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+
             var apiInstance = new RecruitingApi();
             var startYear = 56;  // int? | Starting year (optional) 
             var endYear = 56;  // int? | Ending year (optional) 
@@ -67,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -98,6 +103,11 @@ namespace Example
     {
         public void main()
         {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+
             var apiInstance = new RecruitingApi();
             var year = 56;  // int? | Recruiting class year (required if team no specified) (optional) 
             var classification = classification_example;  // string | Type of recruit (HighSchool, JUCO, PrepSchool) (optional)  (default to HighSchool)
@@ -136,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -167,6 +177,11 @@ namespace Example
     {
         public void main()
         {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+
             var apiInstance = new RecruitingApi();
             var year = 56;  // int? | Recruiting class year (optional) 
             var team = team_example;  // string | Team filter (optional) 
@@ -199,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
