@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFBSharp", "src\CFBSharp\CFBSharp.csproj", "{674B0C91-0592-4DA3-AE13-8FA617521808}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFBSharp", "src\CFBSharp\CFBSharp.csproj", "{7B4AB3AC-18EC-4616-8E2E-AEEC8C80E612}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,10 +10,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{674B0C91-0592-4DA3-AE13-8FA617521808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{674B0C91-0592-4DA3-AE13-8FA617521808}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{674B0C91-0592-4DA3-AE13-8FA617521808}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{674B0C91-0592-4DA3-AE13-8FA617521808}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B4AB3AC-18EC-4616-8E2E-AEEC8C80E612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B4AB3AC-18EC-4616-8E2E-AEEC8C80E612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B4AB3AC-18EC-4616-8E2E-AEEC8C80E612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B4AB3AC-18EC-4616-8E2E-AEEC8C80E612}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU

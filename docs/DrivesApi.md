@@ -4,12 +4,12 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetDrvies**](DrivesApi.md#getdrvies) | **GET** /drives | Drive data and results
+[**GetDrives**](DrivesApi.md#getdrives) | **GET** /drives | Drive data and results
 
 
-<a name="getdrvies"></a>
-# **GetDrvies**
-> ICollection<Drive> GetDrvies (int? year, string seasonType = null, int? week = null, string team = null, string offense = null, string defense = null, string conference = null, string offenseConference = null, string defenseConference = null)
+<a name="getdrives"></a>
+# **GetDrives**
+> ICollection<Drive> GetDrives (int? year, string seasonType = null, int? week = null, string team = null, string offense = null, string defense = null, string conference = null, string offenseConference = null, string defenseConference = null)
 
 Drive data and results
 
@@ -25,7 +25,7 @@ using CFBSharp.Model;
 
 namespace Example
 {
-    public class GetDrviesExample
+    public class GetDrivesExample
     {
         public void main()
         {
@@ -48,12 +48,12 @@ namespace Example
             try
             {
                 // Drive data and results
-                ICollection&lt;Drive&gt; result = apiInstance.GetDrvies(year, seasonType, week, team, offense, defense, conference, offenseConference, defenseConference);
+                ICollection&lt;Drive&gt; result = apiInstance.GetDrives(year, seasonType, week, team, offense, defense, conference, offenseConference, defenseConference);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DrivesApi.GetDrvies: " + e.Message );
+                Debug.Print("Exception when calling DrivesApi.GetDrives: " + e.Message );
             }
         }
     }
