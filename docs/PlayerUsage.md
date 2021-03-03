@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Position** | **string** |  | [optional] 
 **Team** | **string** |  | [optional] 
 **Conference** | **string** |  | [optional] 
-**Usage** | [**PlayerUsageUsage**](PlayerUsageUsage.md) |  | [optional] 
+**Usage** | **Object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

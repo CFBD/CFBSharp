@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Team** | **string** |  | [optional] 
 **Conference** | **string** |  | [optional] 
-**PositiionGroup** | **string** |  | [optional] 
+**PositionGroup** | **string** |  | [optional] 
 **AverageRating** | **decimal?** |  | [optional] 
 **TotalRating** | **decimal?** |  | [optional] 
 **Commits** | **decimal?** |  | [optional] 

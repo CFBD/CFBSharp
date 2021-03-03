@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **Rating** | **decimal?** |  | [optional] 
 **SecondOrderWins** | **decimal?** |  | [optional] 
 **Sos** | **decimal?** |  | [optional] 
-**Offense** | [**ConferenceSPRatingOffense**](ConferenceSPRatingOffense.md) |  | [optional] 
-**Defense** | [**ConferenceSPRatingDefense**](ConferenceSPRatingDefense.md) |  | [optional] 
-**SpecialTeams** | [**TeamSPRatingSpecialTeams**](TeamSPRatingSpecialTeams.md) |  | [optional] 
+**Offense** | **Object** |  | [optional] 
+**Defense** | **Object** |  | [optional] 
+**SpecialTeams** | **Object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

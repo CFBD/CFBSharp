@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **State** | **string** |  | [optional] 
 **Zip** | **string** |  | [optional] 
 **CountryCode** | **string** |  | [optional] 
-**Location** | [**VenueLocation**](VenueLocation.md) |  | [optional] 
+**Location** | **Object** |  | [optional] 
 **Elevation** | **int?** |  | [optional] 
 **Year** | **int?** |  | [optional] 
 **Dome** | **bool?** |  | [optional] 

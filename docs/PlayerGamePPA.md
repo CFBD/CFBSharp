@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Position** | **string** |  | [optional] 
 **Team** | **string** |  | [optional] 
 **Opponent** | **string** |  | [optional] 
-**AveragePPA** | [**PlayerGamePPAAveragePPA**](PlayerGamePPAAveragePPA.md) |  | [optional] 
+**AveragePPA** | **Object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

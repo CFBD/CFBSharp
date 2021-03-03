@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **DriveId** | **int?** |  | [optional] 
 **PlayId** | **int?** |  | [optional] 
 **Period** | **int?** |  | [optional] 
-**Clock** | [**DriveStartTime**](DriveStartTime.md) |  | [optional] 
+**Clock** | **Object** |  | [optional] 
 **YardsToGoal** | **int?** |  | [optional] 
 **Down** | **int?** |  | [optional] 
 **Distance** | **int?** |  | [optional] 
