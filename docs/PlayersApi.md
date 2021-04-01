@@ -33,9 +33,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: ApiKeyAuth
-            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PlayersApi();
             var year = 56;  // int? | Year filter
@@ -111,9 +111,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: ApiKeyAuth
-            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PlayersApi();
             var year = 56;  // int? | Year filter (default to 2020)
@@ -187,9 +187,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: ApiKeyAuth
-            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PlayersApi();
             var year = 56;  // int? | Year filter (optional) 
@@ -257,9 +257,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: ApiKeyAuth
-            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PlayersApi();
             var searchTerm = searchTerm_example;  // string | Term to search on

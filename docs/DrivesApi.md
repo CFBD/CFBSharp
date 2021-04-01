@@ -30,9 +30,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: ApiKeyAuth
-            Configuration.Default.AddApiKey("Bearer", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Bearer", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new DrivesApi();
             var year = 56;  // int? | Year filter
