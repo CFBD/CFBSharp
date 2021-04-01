@@ -53,8 +53,7 @@ namespace Example
 
             // Configure API key authorization: ApiKeyAuth
             Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
             var apiInstance = new BettingApi();
             var gameId = 56;  // int? | Game id filter (optional) 
