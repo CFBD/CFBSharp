@@ -23,33 +23,41 @@ using SwaggerDateConverter = CFBSharp.Client.SwaggerDateConverter;
 namespace CFBSharp.Model
 {
     /// <summary>
-    /// PredictedPoints
+    /// Coach
     /// </summary>
     [DataContract]
-    public partial class PredictedPoints :  IEquatable<PredictedPoints>
+    public partial class Coach :  IEquatable<Coach>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PredictedPoints" /> class.
+        /// Initializes a new instance of the <see cref="Coach" /> class.
         /// </summary>
-        /// <param name="yardLine">yardLine.</param>
-        /// <param name="predictedPoints">predictedPoints.</param>
-        public PredictedPoints(int? yardLine = default(int?), decimal? predictedPoints = default(decimal?))
+        /// <param name="firstName">firstName.</param>
+        /// <param name="lastName">lastName.</param>
+        /// <param name="seasons">seasons.</param>
+        public Coach(string firstName = default(string), string lastName = default(string), List<Object> seasons = default(List<Object>))
         {
-            this.YardLine = yardLine;
-            this._PredictedPoints = predictedPoints;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Seasons = seasons;
         }
         
         /// <summary>
-        /// Gets or Sets YardLine
+        /// Gets or Sets FirstName
         /// </summary>
-        [DataMember(Name="yardLine", EmitDefaultValue=false)]
-        public int? YardLine { get; set; }
+        [DataMember(Name="first_name", EmitDefaultValue=false)]
+        public string FirstName { get; set; }
 
         /// <summary>
-        /// Gets or Sets _PredictedPoints
+        /// Gets or Sets LastName
         /// </summary>
-        [DataMember(Name="predictedPoints", EmitDefaultValue=false)]
-        public decimal? _PredictedPoints { get; set; }
+        [DataMember(Name="last_name", EmitDefaultValue=false)]
+        public string LastName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Seasons
+        /// </summary>
+        [DataMember(Name="seasons", EmitDefaultValue=false)]
+        public List<Object> Seasons { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -58,9 +66,10 @@ namespace CFBSharp.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class PredictedPoints {\n");
-            sb.Append("  YardLine: ").Append(YardLine).Append("\n");
-            sb.Append("  _PredictedPoints: ").Append(_PredictedPoints).Append("\n");
+            sb.Append("class Coach {\n");
+            sb.Append("  FirstName: ").Append(FirstName).Append("\n");
+            sb.Append("  LastName: ").Append(LastName).Append("\n");
+            sb.Append("  Seasons: ").Append(Seasons).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,29 +90,34 @@ namespace CFBSharp.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PredictedPoints);
+            return this.Equals(input as Coach);
         }
 
         /// <summary>
-        /// Returns true if PredictedPoints instances are equal
+        /// Returns true if Coach instances are equal
         /// </summary>
-        /// <param name="input">Instance of PredictedPoints to be compared</param>
+        /// <param name="input">Instance of Coach to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PredictedPoints input)
+        public bool Equals(Coach input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.YardLine == input.YardLine ||
-                    (this.YardLine != null &&
-                    this.YardLine.Equals(input.YardLine))
+                    this.FirstName == input.FirstName ||
+                    (this.FirstName != null &&
+                    this.FirstName.Equals(input.FirstName))
                 ) && 
                 (
-                    this._PredictedPoints == input._PredictedPoints ||
-                    (this._PredictedPoints != null &&
-                    this._PredictedPoints.Equals(input._PredictedPoints))
+                    this.LastName == input.LastName ||
+                    (this.LastName != null &&
+                    this.LastName.Equals(input.LastName))
+                ) && 
+                (
+                    this.Seasons == input.Seasons ||
+                    this.Seasons != null &&
+                    this.Seasons.SequenceEqual(input.Seasons)
                 );
         }
 
@@ -116,10 +130,12 @@ namespace CFBSharp.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.YardLine != null)
-                    hashCode = hashCode * 59 + this.YardLine.GetHashCode();
-                if (this._PredictedPoints != null)
-                    hashCode = hashCode * 59 + this._PredictedPoints.GetHashCode();
+                if (this.FirstName != null)
+                    hashCode = hashCode * 59 + this.FirstName.GetHashCode();
+                if (this.LastName != null)
+                    hashCode = hashCode * 59 + this.LastName.GetHashCode();
+                if (this.Seasons != null)
+                    hashCode = hashCode * 59 + this.Seasons.GetHashCode();
                 return hashCode;
             }
         }
