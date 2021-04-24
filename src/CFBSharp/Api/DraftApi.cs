@@ -21,168 +21,160 @@ namespace CFBSharp.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IRatingsApi : IApiAccessor
+    public interface IDraftApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// Historical SP+ ratings by conference
+        /// List of NFL Draft picks
         /// </summary>
         /// <remarks>
-        /// Get average SP+ historical rating data by conference
+        /// List of NFL Draft picks
         /// </remarks>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (optional)</param>
-        /// <param name="conference">Conference abbreviation filter (optional)</param>
-        /// <returns>ICollection&lt;ConferenceSPRating&gt;</returns>
-        ICollection<ConferenceSPRating> GetConferenceSPRatings (int? year = null, string conference = null);
+        /// <param name="year">Year filter (optional)</param>
+        /// <param name="nflTeam">NFL team filter (optional)</param>
+        /// <param name="college">Player college filter (optional)</param>
+        /// <param name="conference">College confrence abbreviation filter (optional)</param>
+        /// <param name="position">NFL position filter (optional)</param>
+        /// <returns>ICollection&lt;DraftPick&gt;</returns>
+        ICollection<DraftPick> GetDraftPicks (int? year = null, string nflTeam = null, string college = null, string conference = null, string position = null);
 
         /// <summary>
-        /// Historical SP+ ratings by conference
+        /// List of NFL Draft picks
         /// </summary>
         /// <remarks>
-        /// Get average SP+ historical rating data by conference
+        /// List of NFL Draft picks
         /// </remarks>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (optional)</param>
-        /// <param name="conference">Conference abbreviation filter (optional)</param>
-        /// <returns>ApiResponse of ICollection&lt;ConferenceSPRating&gt;</returns>
-        ApiResponse<ICollection<ConferenceSPRating>> GetConferenceSPRatingsWithHttpInfo (int? year = null, string conference = null);
+        /// <param name="year">Year filter (optional)</param>
+        /// <param name="nflTeam">NFL team filter (optional)</param>
+        /// <param name="college">Player college filter (optional)</param>
+        /// <param name="conference">College confrence abbreviation filter (optional)</param>
+        /// <param name="position">NFL position filter (optional)</param>
+        /// <returns>ApiResponse of ICollection&lt;DraftPick&gt;</returns>
+        ApiResponse<ICollection<DraftPick>> GetDraftPicksWithHttpInfo (int? year = null, string nflTeam = null, string college = null, string conference = null, string position = null);
         /// <summary>
-        /// Historical SP+ ratings
+        /// List of NFL positions
         /// </summary>
         /// <remarks>
-        /// SP+ rating data
+        /// List of NFL positions
         /// </remarks>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <returns>ICollection&lt;TeamSPRating&gt;</returns>
-        ICollection<TeamSPRating> GetSPRatings (int? year = null, string team = null);
+        /// <returns>ICollection&lt;DraftPosition&gt;</returns>
+        ICollection<DraftPosition> GetNFLPositions ();
 
         /// <summary>
-        /// Historical SP+ ratings
+        /// List of NFL positions
         /// </summary>
         /// <remarks>
-        /// SP+ rating data
+        /// List of NFL positions
         /// </remarks>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <returns>ApiResponse of ICollection&lt;TeamSPRating&gt;</returns>
-        ApiResponse<ICollection<TeamSPRating>> GetSPRatingsWithHttpInfo (int? year = null, string team = null);
+        /// <returns>ApiResponse of ICollection&lt;DraftPosition&gt;</returns>
+        ApiResponse<ICollection<DraftPosition>> GetNFLPositionsWithHttpInfo ();
         /// <summary>
-        /// Historical SRS ratings
+        /// List of NFL teams
         /// </summary>
         /// <remarks>
-        /// SRS rating data (requires either a year or team specified)
+        /// List of NFL teams
         /// </remarks>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <param name="conference">Conference filter (optional)</param>
-        /// <returns>ICollection&lt;TeamSRSRating&gt;</returns>
-        ICollection<TeamSRSRating> GetSRSRatings (int? year = null, string team = null, string conference = null);
+        /// <returns>ICollection&lt;DraftTeam&gt;</returns>
+        ICollection<DraftTeam> GetNFLTeams ();
 
         /// <summary>
-        /// Historical SRS ratings
+        /// List of NFL teams
         /// </summary>
         /// <remarks>
-        /// SRS rating data (requires either a year or team specified)
+        /// List of NFL teams
         /// </remarks>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <param name="conference">Conference filter (optional)</param>
-        /// <returns>ApiResponse of ICollection&lt;TeamSRSRating&gt;</returns>
-        ApiResponse<ICollection<TeamSRSRating>> GetSRSRatingsWithHttpInfo (int? year = null, string team = null, string conference = null);
+        /// <returns>ApiResponse of ICollection&lt;DraftTeam&gt;</returns>
+        ApiResponse<ICollection<DraftTeam>> GetNFLTeamsWithHttpInfo ();
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Historical SP+ ratings by conference
+        /// List of NFL Draft picks
         /// </summary>
         /// <remarks>
-        /// Get average SP+ historical rating data by conference
+        /// List of NFL Draft picks
         /// </remarks>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (optional)</param>
-        /// <param name="conference">Conference abbreviation filter (optional)</param>
-        /// <returns>Task of ICollection&lt;ConferenceSPRating&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<ConferenceSPRating>> GetConferenceSPRatingsAsync (int? year = null, string conference = null);
+        /// <param name="year">Year filter (optional)</param>
+        /// <param name="nflTeam">NFL team filter (optional)</param>
+        /// <param name="college">Player college filter (optional)</param>
+        /// <param name="conference">College confrence abbreviation filter (optional)</param>
+        /// <param name="position">NFL position filter (optional)</param>
+        /// <returns>Task of ICollection&lt;DraftPick&gt;</returns>
+        System.Threading.Tasks.Task<ICollection<DraftPick>> GetDraftPicksAsync (int? year = null, string nflTeam = null, string college = null, string conference = null, string position = null);
 
         /// <summary>
-        /// Historical SP+ ratings by conference
+        /// List of NFL Draft picks
         /// </summary>
         /// <remarks>
-        /// Get average SP+ historical rating data by conference
+        /// List of NFL Draft picks
         /// </remarks>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (optional)</param>
-        /// <param name="conference">Conference abbreviation filter (optional)</param>
-        /// <returns>Task of ApiResponse (ICollection&lt;ConferenceSPRating&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<ConferenceSPRating>>> GetConferenceSPRatingsAsyncWithHttpInfo (int? year = null, string conference = null);
+        /// <param name="year">Year filter (optional)</param>
+        /// <param name="nflTeam">NFL team filter (optional)</param>
+        /// <param name="college">Player college filter (optional)</param>
+        /// <param name="conference">College confrence abbreviation filter (optional)</param>
+        /// <param name="position">NFL position filter (optional)</param>
+        /// <returns>Task of ApiResponse (ICollection&lt;DraftPick&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ICollection<DraftPick>>> GetDraftPicksAsyncWithHttpInfo (int? year = null, string nflTeam = null, string college = null, string conference = null, string position = null);
         /// <summary>
-        /// Historical SP+ ratings
+        /// List of NFL positions
         /// </summary>
         /// <remarks>
-        /// SP+ rating data
+        /// List of NFL positions
         /// </remarks>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <returns>Task of ICollection&lt;TeamSPRating&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<TeamSPRating>> GetSPRatingsAsync (int? year = null, string team = null);
+        /// <returns>Task of ICollection&lt;DraftPosition&gt;</returns>
+        System.Threading.Tasks.Task<ICollection<DraftPosition>> GetNFLPositionsAsync ();
 
         /// <summary>
-        /// Historical SP+ ratings
+        /// List of NFL positions
         /// </summary>
         /// <remarks>
-        /// SP+ rating data
+        /// List of NFL positions
         /// </remarks>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <returns>Task of ApiResponse (ICollection&lt;TeamSPRating&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<TeamSPRating>>> GetSPRatingsAsyncWithHttpInfo (int? year = null, string team = null);
+        /// <returns>Task of ApiResponse (ICollection&lt;DraftPosition&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ICollection<DraftPosition>>> GetNFLPositionsAsyncWithHttpInfo ();
         /// <summary>
-        /// Historical SRS ratings
+        /// List of NFL teams
         /// </summary>
         /// <remarks>
-        /// SRS rating data (requires either a year or team specified)
+        /// List of NFL teams
         /// </remarks>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <param name="conference">Conference filter (optional)</param>
-        /// <returns>Task of ICollection&lt;TeamSRSRating&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<TeamSRSRating>> GetSRSRatingsAsync (int? year = null, string team = null, string conference = null);
+        /// <returns>Task of ICollection&lt;DraftTeam&gt;</returns>
+        System.Threading.Tasks.Task<ICollection<DraftTeam>> GetNFLTeamsAsync ();
 
         /// <summary>
-        /// Historical SRS ratings
+        /// List of NFL teams
         /// </summary>
         /// <remarks>
-        /// SRS rating data (requires either a year or team specified)
+        /// List of NFL teams
         /// </remarks>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <param name="conference">Conference filter (optional)</param>
-        /// <returns>Task of ApiResponse (ICollection&lt;TeamSRSRating&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<TeamSRSRating>>> GetSRSRatingsAsyncWithHttpInfo (int? year = null, string team = null, string conference = null);
+        /// <returns>Task of ApiResponse (ICollection&lt;DraftTeam&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ICollection<DraftTeam>>> GetNFLTeamsAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class RatingsApi : IRatingsApi
+    public partial class DraftApi : IDraftApi
     {
         private CFBSharp.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RatingsApi"/> class.
+        /// Initializes a new instance of the <see cref="DraftApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public RatingsApi(String basePath)
+        public DraftApi(String basePath)
         {
             this.Configuration = new CFBSharp.Client.Configuration { BasePath = basePath };
 
@@ -190,12 +182,12 @@ namespace CFBSharp.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RatingsApi"/> class
+        /// Initializes a new instance of the <see cref="DraftApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public RatingsApi(CFBSharp.Client.Configuration configuration = null)
+        public DraftApi(CFBSharp.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = CFBSharp.Client.Configuration.Default;
@@ -269,29 +261,35 @@ namespace CFBSharp.Api
         }
 
         /// <summary>
-        /// Historical SP+ ratings by conference Get average SP+ historical rating data by conference
+        /// List of NFL Draft picks List of NFL Draft picks
         /// </summary>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (optional)</param>
-        /// <param name="conference">Conference abbreviation filter (optional)</param>
-        /// <returns>ICollection&lt;ConferenceSPRating&gt;</returns>
-        public ICollection<ConferenceSPRating> GetConferenceSPRatings (int? year = null, string conference = null)
+        /// <param name="year">Year filter (optional)</param>
+        /// <param name="nflTeam">NFL team filter (optional)</param>
+        /// <param name="college">Player college filter (optional)</param>
+        /// <param name="conference">College confrence abbreviation filter (optional)</param>
+        /// <param name="position">NFL position filter (optional)</param>
+        /// <returns>ICollection&lt;DraftPick&gt;</returns>
+        public ICollection<DraftPick> GetDraftPicks (int? year = null, string nflTeam = null, string college = null, string conference = null, string position = null)
         {
-             ApiResponse<ICollection<ConferenceSPRating>> localVarResponse = GetConferenceSPRatingsWithHttpInfo(year, conference);
+             ApiResponse<ICollection<DraftPick>> localVarResponse = GetDraftPicksWithHttpInfo(year, nflTeam, college, conference, position);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Historical SP+ ratings by conference Get average SP+ historical rating data by conference
+        /// List of NFL Draft picks List of NFL Draft picks
         /// </summary>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (optional)</param>
-        /// <param name="conference">Conference abbreviation filter (optional)</param>
-        /// <returns>ApiResponse of ICollection&lt;ConferenceSPRating&gt;</returns>
-        public ApiResponse< ICollection<ConferenceSPRating> > GetConferenceSPRatingsWithHttpInfo (int? year = null, string conference = null)
+        /// <param name="year">Year filter (optional)</param>
+        /// <param name="nflTeam">NFL team filter (optional)</param>
+        /// <param name="college">Player college filter (optional)</param>
+        /// <param name="conference">College confrence abbreviation filter (optional)</param>
+        /// <param name="position">NFL position filter (optional)</param>
+        /// <returns>ApiResponse of ICollection&lt;DraftPick&gt;</returns>
+        public ApiResponse< ICollection<DraftPick> > GetDraftPicksWithHttpInfo (int? year = null, string nflTeam = null, string college = null, string conference = null, string position = null)
         {
 
-            var localVarPath = "./ratings/sp/conferences";
+            var localVarPath = "./draft/picks";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -313,7 +311,10 @@ namespace CFBSharp.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (year != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "year", year)); // query parameter
+            if (nflTeam != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nflTeam", nflTeam)); // query parameter
+            if (college != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "college", college)); // query parameter
             if (conference != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "conference", conference)); // query parameter
+            if (position != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "position", position)); // query parameter
 
             // authentication (ApiKeyAuth) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -330,40 +331,46 @@ namespace CFBSharp.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetConferenceSPRatings", localVarResponse);
+                Exception exception = ExceptionFactory("GetDraftPicks", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ICollection<ConferenceSPRating>>(localVarStatusCode,
+            return new ApiResponse<ICollection<DraftPick>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ICollection<ConferenceSPRating>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ConferenceSPRating>)));
+                (ICollection<DraftPick>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DraftPick>)));
         }
 
         /// <summary>
-        /// Historical SP+ ratings by conference Get average SP+ historical rating data by conference
+        /// List of NFL Draft picks List of NFL Draft picks
         /// </summary>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (optional)</param>
-        /// <param name="conference">Conference abbreviation filter (optional)</param>
-        /// <returns>Task of ICollection&lt;ConferenceSPRating&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<ConferenceSPRating>> GetConferenceSPRatingsAsync (int? year = null, string conference = null)
+        /// <param name="year">Year filter (optional)</param>
+        /// <param name="nflTeam">NFL team filter (optional)</param>
+        /// <param name="college">Player college filter (optional)</param>
+        /// <param name="conference">College confrence abbreviation filter (optional)</param>
+        /// <param name="position">NFL position filter (optional)</param>
+        /// <returns>Task of ICollection&lt;DraftPick&gt;</returns>
+        public async System.Threading.Tasks.Task<ICollection<DraftPick>> GetDraftPicksAsync (int? year = null, string nflTeam = null, string college = null, string conference = null, string position = null)
         {
-             ApiResponse<ICollection<ConferenceSPRating>> localVarResponse = await GetConferenceSPRatingsAsyncWithHttpInfo(year, conference);
+             ApiResponse<ICollection<DraftPick>> localVarResponse = await GetDraftPicksAsyncWithHttpInfo(year, nflTeam, college, conference, position);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Historical SP+ ratings by conference Get average SP+ historical rating data by conference
+        /// List of NFL Draft picks List of NFL Draft picks
         /// </summary>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (optional)</param>
-        /// <param name="conference">Conference abbreviation filter (optional)</param>
-        /// <returns>Task of ApiResponse (ICollection&lt;ConferenceSPRating&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ICollection<ConferenceSPRating>>> GetConferenceSPRatingsAsyncWithHttpInfo (int? year = null, string conference = null)
+        /// <param name="year">Year filter (optional)</param>
+        /// <param name="nflTeam">NFL team filter (optional)</param>
+        /// <param name="college">Player college filter (optional)</param>
+        /// <param name="conference">College confrence abbreviation filter (optional)</param>
+        /// <param name="position">NFL position filter (optional)</param>
+        /// <returns>Task of ApiResponse (ICollection&lt;DraftPick&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ICollection<DraftPick>>> GetDraftPicksAsyncWithHttpInfo (int? year = null, string nflTeam = null, string college = null, string conference = null, string position = null)
         {
 
-            var localVarPath = "./ratings/sp/conferences";
+            var localVarPath = "./draft/picks";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -385,7 +392,10 @@ namespace CFBSharp.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (year != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "year", year)); // query parameter
+            if (nflTeam != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nflTeam", nflTeam)); // query parameter
+            if (college != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "college", college)); // query parameter
             if (conference != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "conference", conference)); // query parameter
+            if (position != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "position", position)); // query parameter
 
             // authentication (ApiKeyAuth) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -402,39 +412,35 @@ namespace CFBSharp.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetConferenceSPRatings", localVarResponse);
+                Exception exception = ExceptionFactory("GetDraftPicks", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ICollection<ConferenceSPRating>>(localVarStatusCode,
+            return new ApiResponse<ICollection<DraftPick>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ICollection<ConferenceSPRating>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ConferenceSPRating>)));
+                (ICollection<DraftPick>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DraftPick>)));
         }
 
         /// <summary>
-        /// Historical SP+ ratings SP+ rating data
+        /// List of NFL positions List of NFL positions
         /// </summary>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <returns>ICollection&lt;TeamSPRating&gt;</returns>
-        public ICollection<TeamSPRating> GetSPRatings (int? year = null, string team = null)
+        /// <returns>ICollection&lt;DraftPosition&gt;</returns>
+        public ICollection<DraftPosition> GetNFLPositions ()
         {
-             ApiResponse<ICollection<TeamSPRating>> localVarResponse = GetSPRatingsWithHttpInfo(year, team);
+             ApiResponse<ICollection<DraftPosition>> localVarResponse = GetNFLPositionsWithHttpInfo();
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Historical SP+ ratings SP+ rating data
+        /// List of NFL positions List of NFL positions
         /// </summary>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <returns>ApiResponse of ICollection&lt;TeamSPRating&gt;</returns>
-        public ApiResponse< ICollection<TeamSPRating> > GetSPRatingsWithHttpInfo (int? year = null, string team = null)
+        /// <returns>ApiResponse of ICollection&lt;DraftPosition&gt;</returns>
+        public ApiResponse< ICollection<DraftPosition> > GetNFLPositionsWithHttpInfo ()
         {
 
-            var localVarPath = "./ratings/sp";
+            var localVarPath = "./draft/positions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -455,8 +461,6 @@ namespace CFBSharp.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (year != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "year", year)); // query parameter
-            if (team != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "team", team)); // query parameter
 
             // authentication (ApiKeyAuth) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -473,40 +477,36 @@ namespace CFBSharp.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetSPRatings", localVarResponse);
+                Exception exception = ExceptionFactory("GetNFLPositions", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ICollection<TeamSPRating>>(localVarStatusCode,
+            return new ApiResponse<ICollection<DraftPosition>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ICollection<TeamSPRating>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TeamSPRating>)));
+                (ICollection<DraftPosition>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DraftPosition>)));
         }
 
         /// <summary>
-        /// Historical SP+ ratings SP+ rating data
+        /// List of NFL positions List of NFL positions
         /// </summary>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <returns>Task of ICollection&lt;TeamSPRating&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<TeamSPRating>> GetSPRatingsAsync (int? year = null, string team = null)
+        /// <returns>Task of ICollection&lt;DraftPosition&gt;</returns>
+        public async System.Threading.Tasks.Task<ICollection<DraftPosition>> GetNFLPositionsAsync ()
         {
-             ApiResponse<ICollection<TeamSPRating>> localVarResponse = await GetSPRatingsAsyncWithHttpInfo(year, team);
+             ApiResponse<ICollection<DraftPosition>> localVarResponse = await GetNFLPositionsAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Historical SP+ ratings SP+ rating data
+        /// List of NFL positions List of NFL positions
         /// </summary>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <returns>Task of ApiResponse (ICollection&lt;TeamSPRating&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ICollection<TeamSPRating>>> GetSPRatingsAsyncWithHttpInfo (int? year = null, string team = null)
+        /// <returns>Task of ApiResponse (ICollection&lt;DraftPosition&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ICollection<DraftPosition>>> GetNFLPositionsAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "./ratings/sp";
+            var localVarPath = "./draft/positions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -527,8 +527,6 @@ namespace CFBSharp.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (year != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "year", year)); // query parameter
-            if (team != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "team", team)); // query parameter
 
             // authentication (ApiKeyAuth) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -545,41 +543,35 @@ namespace CFBSharp.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetSPRatings", localVarResponse);
+                Exception exception = ExceptionFactory("GetNFLPositions", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ICollection<TeamSPRating>>(localVarStatusCode,
+            return new ApiResponse<ICollection<DraftPosition>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ICollection<TeamSPRating>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TeamSPRating>)));
+                (ICollection<DraftPosition>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DraftPosition>)));
         }
 
         /// <summary>
-        /// Historical SRS ratings SRS rating data (requires either a year or team specified)
+        /// List of NFL teams List of NFL teams
         /// </summary>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <param name="conference">Conference filter (optional)</param>
-        /// <returns>ICollection&lt;TeamSRSRating&gt;</returns>
-        public ICollection<TeamSRSRating> GetSRSRatings (int? year = null, string team = null, string conference = null)
+        /// <returns>ICollection&lt;DraftTeam&gt;</returns>
+        public ICollection<DraftTeam> GetNFLTeams ()
         {
-             ApiResponse<ICollection<TeamSRSRating>> localVarResponse = GetSRSRatingsWithHttpInfo(year, team, conference);
+             ApiResponse<ICollection<DraftTeam>> localVarResponse = GetNFLTeamsWithHttpInfo();
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Historical SRS ratings SRS rating data (requires either a year or team specified)
+        /// List of NFL teams List of NFL teams
         /// </summary>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <param name="conference">Conference filter (optional)</param>
-        /// <returns>ApiResponse of ICollection&lt;TeamSRSRating&gt;</returns>
-        public ApiResponse< ICollection<TeamSRSRating> > GetSRSRatingsWithHttpInfo (int? year = null, string team = null, string conference = null)
+        /// <returns>ApiResponse of ICollection&lt;DraftTeam&gt;</returns>
+        public ApiResponse< ICollection<DraftTeam> > GetNFLTeamsWithHttpInfo ()
         {
 
-            var localVarPath = "./ratings/srs";
+            var localVarPath = "./draft/teams";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -600,9 +592,6 @@ namespace CFBSharp.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (year != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "year", year)); // query parameter
-            if (team != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "team", team)); // query parameter
-            if (conference != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "conference", conference)); // query parameter
 
             // authentication (ApiKeyAuth) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -619,42 +608,36 @@ namespace CFBSharp.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetSRSRatings", localVarResponse);
+                Exception exception = ExceptionFactory("GetNFLTeams", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ICollection<TeamSRSRating>>(localVarStatusCode,
+            return new ApiResponse<ICollection<DraftTeam>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ICollection<TeamSRSRating>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TeamSRSRating>)));
+                (ICollection<DraftTeam>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DraftTeam>)));
         }
 
         /// <summary>
-        /// Historical SRS ratings SRS rating data (requires either a year or team specified)
+        /// List of NFL teams List of NFL teams
         /// </summary>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <param name="conference">Conference filter (optional)</param>
-        /// <returns>Task of ICollection&lt;TeamSRSRating&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<TeamSRSRating>> GetSRSRatingsAsync (int? year = null, string team = null, string conference = null)
+        /// <returns>Task of ICollection&lt;DraftTeam&gt;</returns>
+        public async System.Threading.Tasks.Task<ICollection<DraftTeam>> GetNFLTeamsAsync ()
         {
-             ApiResponse<ICollection<TeamSRSRating>> localVarResponse = await GetSRSRatingsAsyncWithHttpInfo(year, team, conference);
+             ApiResponse<ICollection<DraftTeam>> localVarResponse = await GetNFLTeamsAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Historical SRS ratings SRS rating data (requires either a year or team specified)
+        /// List of NFL teams List of NFL teams
         /// </summary>
         /// <exception cref="CFBSharp.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="year">Season filter (required if team not specified) (optional)</param>
-        /// <param name="team">Team filter (required if year not specified) (optional)</param>
-        /// <param name="conference">Conference filter (optional)</param>
-        /// <returns>Task of ApiResponse (ICollection&lt;TeamSRSRating&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ICollection<TeamSRSRating>>> GetSRSRatingsAsyncWithHttpInfo (int? year = null, string team = null, string conference = null)
+        /// <returns>Task of ApiResponse (ICollection&lt;DraftTeam&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ICollection<DraftTeam>>> GetNFLTeamsAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "./ratings/srs";
+            var localVarPath = "./draft/teams";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -675,9 +658,6 @@ namespace CFBSharp.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (year != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "year", year)); // query parameter
-            if (team != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "team", team)); // query parameter
-            if (conference != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "conference", conference)); // query parameter
 
             // authentication (ApiKeyAuth) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -694,13 +674,13 @@ namespace CFBSharp.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetSRSRatings", localVarResponse);
+                Exception exception = ExceptionFactory("GetNFLTeams", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ICollection<TeamSRSRating>>(localVarStatusCode,
+            return new ApiResponse<ICollection<DraftTeam>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ICollection<TeamSRSRating>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TeamSRSRating>)));
+                (ICollection<DraftTeam>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DraftTeam>)));
         }
 
     }

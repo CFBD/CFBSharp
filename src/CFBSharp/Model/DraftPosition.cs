@@ -23,41 +23,33 @@ using SwaggerDateConverter = CFBSharp.Client.SwaggerDateConverter;
 namespace CFBSharp.Model
 {
     /// <summary>
-    /// TeamTalent
+    /// DraftPosition
     /// </summary>
     [DataContract]
-    public partial class TeamTalent :  IEquatable<TeamTalent>
+    public partial class DraftPosition :  IEquatable<DraftPosition>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TeamTalent" /> class.
+        /// Initializes a new instance of the <see cref="DraftPosition" /> class.
         /// </summary>
-        /// <param name="year">year.</param>
-        /// <param name="school">school.</param>
-        /// <param name="talent">talent.</param>
-        public TeamTalent(int? year = default(int?), string school = default(string), decimal? talent = default(decimal?))
+        /// <param name="name">name.</param>
+        /// <param name="abbreviation">abbreviation.</param>
+        public DraftPosition(string name = default(string), string abbreviation = default(string))
         {
-            this.Year = year;
-            this.School = school;
-            this.Talent = talent;
+            this.Name = name;
+            this.Abbreviation = abbreviation;
         }
         
         /// <summary>
-        /// Gets or Sets Year
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="year", EmitDefaultValue=false)]
-        public int? Year { get; set; }
+        [DataMember(Name="name", EmitDefaultValue=false)]
+        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets School
+        /// Gets or Sets Abbreviation
         /// </summary>
-        [DataMember(Name="school", EmitDefaultValue=false)]
-        public string School { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Talent
-        /// </summary>
-        [DataMember(Name="talent", EmitDefaultValue=false)]
-        public decimal? Talent { get; set; }
+        [DataMember(Name="abbreviation", EmitDefaultValue=false)]
+        public string Abbreviation { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -66,10 +58,9 @@ namespace CFBSharp.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TeamTalent {\n");
-            sb.Append("  Year: ").Append(Year).Append("\n");
-            sb.Append("  School: ").Append(School).Append("\n");
-            sb.Append("  Talent: ").Append(Talent).Append("\n");
+            sb.Append("class DraftPosition {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Abbreviation: ").Append(Abbreviation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,34 +81,29 @@ namespace CFBSharp.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TeamTalent);
+            return this.Equals(input as DraftPosition);
         }
 
         /// <summary>
-        /// Returns true if TeamTalent instances are equal
+        /// Returns true if DraftPosition instances are equal
         /// </summary>
-        /// <param name="input">Instance of TeamTalent to be compared</param>
+        /// <param name="input">Instance of DraftPosition to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TeamTalent input)
+        public bool Equals(DraftPosition input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Year == input.Year ||
-                    (this.Year != null &&
-                    this.Year.Equals(input.Year))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.School == input.School ||
-                    (this.School != null &&
-                    this.School.Equals(input.School))
-                ) && 
-                (
-                    this.Talent == input.Talent ||
-                    (this.Talent != null &&
-                    this.Talent.Equals(input.Talent))
+                    this.Abbreviation == input.Abbreviation ||
+                    (this.Abbreviation != null &&
+                    this.Abbreviation.Equals(input.Abbreviation))
                 );
         }
 
@@ -130,12 +116,10 @@ namespace CFBSharp.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Year != null)
-                    hashCode = hashCode * 59 + this.Year.GetHashCode();
-                if (this.School != null)
-                    hashCode = hashCode * 59 + this.School.GetHashCode();
-                if (this.Talent != null)
-                    hashCode = hashCode * 59 + this.Talent.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Abbreviation != null)
+                    hashCode = hashCode * 59 + this.Abbreviation.GetHashCode();
                 return hashCode;
             }
         }
