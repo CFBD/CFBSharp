@@ -3,6 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **int?** |  | [optional] 
+**AthleteId** | **int?** |  | [optional] 
 **RecruitType** | **string** |  | [optional] 
 **Year** | **int?** |  | [optional] 
 **Ranking** | **int?** |  | [optional] 
