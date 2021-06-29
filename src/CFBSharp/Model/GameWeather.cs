@@ -23,13 +23,13 @@ using SwaggerDateConverter = CFBSharp.Client.SwaggerDateConverter;
 namespace CFBSharp.Model
 {
     /// <summary>
-    /// GameMedia
+    /// GameWeather
     /// </summary>
     [DataContract]
-    public partial class GameMedia :  IEquatable<GameMedia>
+    public partial class GameWeather :  IEquatable<GameWeather>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GameMedia" /> class.
+        /// Initializes a new instance of the <see cref="GameWeather" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="season">season.</param>
@@ -41,9 +41,18 @@ namespace CFBSharp.Model
         /// <param name="homeConference">homeConference.</param>
         /// <param name="awayTeam">awayTeam.</param>
         /// <param name="awayConference">awayConference.</param>
-        /// <param name="mediaType">mediaType.</param>
-        /// <param name="outlet">outlet.</param>
-        public GameMedia(int? id = default(int?), int? season = default(int?), int? week = default(int?), string seasonType = default(string), string startTime = default(string), bool? isStartTimeTBD = default(bool?), string homeTeam = default(string), string homeConference = default(string), string awayTeam = default(string), string awayConference = default(string), string mediaType = default(string), string outlet = default(string))
+        /// <param name="venueId">venueId.</param>
+        /// <param name="venue">venue.</param>
+        /// <param name="temperature">temperature.</param>
+        /// <param name="dewPoint">dewPoint.</param>
+        /// <param name="humidity">humidity.</param>
+        /// <param name="precipitation">precipitation.</param>
+        /// <param name="snowfall">snowfall.</param>
+        /// <param name="windDirection">windDirection.</param>
+        /// <param name="windSpeed">windSpeed.</param>
+        /// <param name="pressure">pressure.</param>
+        /// <param name="weatherConditionCode">weatherConditionCode.</param>
+        public GameWeather(int? id = default(int?), int? season = default(int?), int? week = default(int?), string seasonType = default(string), string startTime = default(string), bool? isStartTimeTBD = default(bool?), string homeTeam = default(string), string homeConference = default(string), string awayTeam = default(string), string awayConference = default(string), int? venueId = default(int?), string venue = default(string), decimal? temperature = default(decimal?), decimal? dewPoint = default(decimal?), decimal? humidity = default(decimal?), decimal? precipitation = default(decimal?), decimal? snowfall = default(decimal?), decimal? windDirection = default(decimal?), decimal? windSpeed = default(decimal?), decimal? pressure = default(decimal?), int? weatherConditionCode = default(int?))
         {
             this.Id = id;
             this.Season = season;
@@ -55,8 +64,17 @@ namespace CFBSharp.Model
             this.HomeConference = homeConference;
             this.AwayTeam = awayTeam;
             this.AwayConference = awayConference;
-            this.MediaType = mediaType;
-            this.Outlet = outlet;
+            this.VenueId = venueId;
+            this.Venue = venue;
+            this.Temperature = temperature;
+            this.DewPoint = dewPoint;
+            this.Humidity = humidity;
+            this.Precipitation = precipitation;
+            this.Snowfall = snowfall;
+            this.WindDirection = windDirection;
+            this.WindSpeed = windSpeed;
+            this.Pressure = pressure;
+            this.WeatherConditionCode = weatherConditionCode;
         }
         
         /// <summary>
@@ -120,16 +138,70 @@ namespace CFBSharp.Model
         public string AwayConference { get; set; }
 
         /// <summary>
-        /// Gets or Sets MediaType
+        /// Gets or Sets VenueId
         /// </summary>
-        [DataMember(Name="mediaType", EmitDefaultValue=false)]
-        public string MediaType { get; set; }
+        [DataMember(Name="venueId", EmitDefaultValue=false)]
+        public int? VenueId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Outlet
+        /// Gets or Sets Venue
         /// </summary>
-        [DataMember(Name="outlet", EmitDefaultValue=false)]
-        public string Outlet { get; set; }
+        [DataMember(Name="venue", EmitDefaultValue=false)]
+        public string Venue { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Temperature
+        /// </summary>
+        [DataMember(Name="temperature", EmitDefaultValue=false)]
+        public decimal? Temperature { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DewPoint
+        /// </summary>
+        [DataMember(Name="dewPoint", EmitDefaultValue=false)]
+        public decimal? DewPoint { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Humidity
+        /// </summary>
+        [DataMember(Name="humidity", EmitDefaultValue=false)]
+        public decimal? Humidity { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Precipitation
+        /// </summary>
+        [DataMember(Name="precipitation", EmitDefaultValue=false)]
+        public decimal? Precipitation { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Snowfall
+        /// </summary>
+        [DataMember(Name="snowfall", EmitDefaultValue=false)]
+        public decimal? Snowfall { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WindDirection
+        /// </summary>
+        [DataMember(Name="windDirection", EmitDefaultValue=false)]
+        public decimal? WindDirection { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WindSpeed
+        /// </summary>
+        [DataMember(Name="windSpeed", EmitDefaultValue=false)]
+        public decimal? WindSpeed { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Pressure
+        /// </summary>
+        [DataMember(Name="pressure", EmitDefaultValue=false)]
+        public decimal? Pressure { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WeatherConditionCode
+        /// </summary>
+        [DataMember(Name="weatherConditionCode", EmitDefaultValue=false)]
+        public int? WeatherConditionCode { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -138,7 +210,7 @@ namespace CFBSharp.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class GameMedia {\n");
+            sb.Append("class GameWeather {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Season: ").Append(Season).Append("\n");
             sb.Append("  Week: ").Append(Week).Append("\n");
@@ -149,8 +221,17 @@ namespace CFBSharp.Model
             sb.Append("  HomeConference: ").Append(HomeConference).Append("\n");
             sb.Append("  AwayTeam: ").Append(AwayTeam).Append("\n");
             sb.Append("  AwayConference: ").Append(AwayConference).Append("\n");
-            sb.Append("  MediaType: ").Append(MediaType).Append("\n");
-            sb.Append("  Outlet: ").Append(Outlet).Append("\n");
+            sb.Append("  VenueId: ").Append(VenueId).Append("\n");
+            sb.Append("  Venue: ").Append(Venue).Append("\n");
+            sb.Append("  Temperature: ").Append(Temperature).Append("\n");
+            sb.Append("  DewPoint: ").Append(DewPoint).Append("\n");
+            sb.Append("  Humidity: ").Append(Humidity).Append("\n");
+            sb.Append("  Precipitation: ").Append(Precipitation).Append("\n");
+            sb.Append("  Snowfall: ").Append(Snowfall).Append("\n");
+            sb.Append("  WindDirection: ").Append(WindDirection).Append("\n");
+            sb.Append("  WindSpeed: ").Append(WindSpeed).Append("\n");
+            sb.Append("  Pressure: ").Append(Pressure).Append("\n");
+            sb.Append("  WeatherConditionCode: ").Append(WeatherConditionCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -171,15 +252,15 @@ namespace CFBSharp.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as GameMedia);
+            return this.Equals(input as GameWeather);
         }
 
         /// <summary>
-        /// Returns true if GameMedia instances are equal
+        /// Returns true if GameWeather instances are equal
         /// </summary>
-        /// <param name="input">Instance of GameMedia to be compared</param>
+        /// <param name="input">Instance of GameWeather to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(GameMedia input)
+        public bool Equals(GameWeather input)
         {
             if (input == null)
                 return false;
@@ -236,14 +317,59 @@ namespace CFBSharp.Model
                     this.AwayConference.Equals(input.AwayConference))
                 ) && 
                 (
-                    this.MediaType == input.MediaType ||
-                    (this.MediaType != null &&
-                    this.MediaType.Equals(input.MediaType))
+                    this.VenueId == input.VenueId ||
+                    (this.VenueId != null &&
+                    this.VenueId.Equals(input.VenueId))
                 ) && 
                 (
-                    this.Outlet == input.Outlet ||
-                    (this.Outlet != null &&
-                    this.Outlet.Equals(input.Outlet))
+                    this.Venue == input.Venue ||
+                    (this.Venue != null &&
+                    this.Venue.Equals(input.Venue))
+                ) && 
+                (
+                    this.Temperature == input.Temperature ||
+                    (this.Temperature != null &&
+                    this.Temperature.Equals(input.Temperature))
+                ) && 
+                (
+                    this.DewPoint == input.DewPoint ||
+                    (this.DewPoint != null &&
+                    this.DewPoint.Equals(input.DewPoint))
+                ) && 
+                (
+                    this.Humidity == input.Humidity ||
+                    (this.Humidity != null &&
+                    this.Humidity.Equals(input.Humidity))
+                ) && 
+                (
+                    this.Precipitation == input.Precipitation ||
+                    (this.Precipitation != null &&
+                    this.Precipitation.Equals(input.Precipitation))
+                ) && 
+                (
+                    this.Snowfall == input.Snowfall ||
+                    (this.Snowfall != null &&
+                    this.Snowfall.Equals(input.Snowfall))
+                ) && 
+                (
+                    this.WindDirection == input.WindDirection ||
+                    (this.WindDirection != null &&
+                    this.WindDirection.Equals(input.WindDirection))
+                ) && 
+                (
+                    this.WindSpeed == input.WindSpeed ||
+                    (this.WindSpeed != null &&
+                    this.WindSpeed.Equals(input.WindSpeed))
+                ) && 
+                (
+                    this.Pressure == input.Pressure ||
+                    (this.Pressure != null &&
+                    this.Pressure.Equals(input.Pressure))
+                ) && 
+                (
+                    this.WeatherConditionCode == input.WeatherConditionCode ||
+                    (this.WeatherConditionCode != null &&
+                    this.WeatherConditionCode.Equals(input.WeatherConditionCode))
                 );
         }
 
@@ -276,10 +402,28 @@ namespace CFBSharp.Model
                     hashCode = hashCode * 59 + this.AwayTeam.GetHashCode();
                 if (this.AwayConference != null)
                     hashCode = hashCode * 59 + this.AwayConference.GetHashCode();
-                if (this.MediaType != null)
-                    hashCode = hashCode * 59 + this.MediaType.GetHashCode();
-                if (this.Outlet != null)
-                    hashCode = hashCode * 59 + this.Outlet.GetHashCode();
+                if (this.VenueId != null)
+                    hashCode = hashCode * 59 + this.VenueId.GetHashCode();
+                if (this.Venue != null)
+                    hashCode = hashCode * 59 + this.Venue.GetHashCode();
+                if (this.Temperature != null)
+                    hashCode = hashCode * 59 + this.Temperature.GetHashCode();
+                if (this.DewPoint != null)
+                    hashCode = hashCode * 59 + this.DewPoint.GetHashCode();
+                if (this.Humidity != null)
+                    hashCode = hashCode * 59 + this.Humidity.GetHashCode();
+                if (this.Precipitation != null)
+                    hashCode = hashCode * 59 + this.Precipitation.GetHashCode();
+                if (this.Snowfall != null)
+                    hashCode = hashCode * 59 + this.Snowfall.GetHashCode();
+                if (this.WindDirection != null)
+                    hashCode = hashCode * 59 + this.WindDirection.GetHashCode();
+                if (this.WindSpeed != null)
+                    hashCode = hashCode * 59 + this.WindSpeed.GetHashCode();
+                if (this.Pressure != null)
+                    hashCode = hashCode * 59 + this.Pressure.GetHashCode();
+                if (this.WeatherConditionCode != null)
+                    hashCode = hashCode * 59 + this.WeatherConditionCode.GetHashCode();
                 return hashCode;
             }
         }

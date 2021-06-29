@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**GetAdvancedBoxScore**](GamesApi.md#getadvancedboxscore) | **GET** /game/box/advanced | Advanced box scores
 [**GetCalendar**](GamesApi.md#getcalendar) | **GET** /calendar | Season calendar
 [**GetGameMedia**](GamesApi.md#getgamemedia) | **GET** /games/media | Game media information and schedules
+[**GetGameWeather**](GamesApi.md#getgameweather) | **GET** /games/weather | Game weather information (Patreon only)
 [**GetGames**](GamesApi.md#getgames) | **GET** /games | Games and results
 [**GetPlayerGameStats**](GamesApi.md#getplayergamestats) | **GET** /games/players | Player game stats
 [**GetTeamGameStats**](GamesApi.md#getteamgamestats) | **GET** /games/teams | Team game stats
@@ -209,6 +210,80 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ICollection<GameMedia>**](GameMedia.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getgameweather"></a>
+# **GetGameWeather**
+> ICollection<GameWeather> GetGameWeather (int? year, int? week = null, string seasonType = null, string team = null, string conference = null)
+
+Game weather information (Patreon only)
+
+Weather information for the hour of kickoff
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using CFBSharp.Api;
+using CFBSharp.Client;
+using CFBSharp.Model;
+
+namespace Example
+{
+    public class GetGameWeatherExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new GamesApi();
+            var year = 56;  // int? | Year filter
+            var week = 56;  // int? | Week filter (optional) 
+            var seasonType = seasonType_example;  // string | Season type filter (regular, postseason, or both) (optional) 
+            var team = team_example;  // string | Team filter (optional) 
+            var conference = conference_example;  // string | Conference filter (optional) 
+
+            try
+            {
+                // Game weather information (Patreon only)
+                ICollection&lt;GameWeather&gt; result = apiInstance.GetGameWeather(year, week, seasonType, team, conference);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling GamesApi.GetGameWeather: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int?**| Year filter | 
+ **week** | **int?**| Week filter | [optional] 
+ **seasonType** | **string**| Season type filter (regular, postseason, or both) | [optional] 
+ **team** | **string**| Team filter | [optional] 
+ **conference** | **string**| Conference filter | [optional] 
+
+### Return type
+
+[**ICollection<GameWeather>**](GameWeather.md)
 
 ### Authorization
 
