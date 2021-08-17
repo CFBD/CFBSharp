@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 <a name="getteammatchup"></a>
 # **GetTeamMatchup**
-> ICollection<TeamMatchup> GetTeamMatchup (string team1, string team2, int? minYear = null, int? maxYear = null)
+> TeamMatchup GetTeamMatchup (string team1, string team2, int? minYear = null, int? maxYear = null)
 
 Team matchup history
 
@@ -247,7 +247,7 @@ namespace Example
             try
             {
                 // Team matchup history
-                ICollection&lt;TeamMatchup&gt; result = apiInstance.GetTeamMatchup(team1, team2, minYear, maxYear);
+                TeamMatchup result = apiInstance.GetTeamMatchup(team1, team2, minYear, maxYear);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ICollection<TeamMatchup>**](TeamMatchup.md)
+[**TeamMatchup**](TeamMatchup.md)
 
 ### Authorization
 
