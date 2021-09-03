@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**GetGameWeather**](GamesApi.md#getgameweather) | **GET** /games/weather | Game weather information (Patreon only)
 [**GetGames**](GamesApi.md#getgames) | **GET** /games | Games and results
 [**GetPlayerGameStats**](GamesApi.md#getplayergamestats) | **GET** /games/players | Player game stats
+[**GetScoreboard**](GamesApi.md#getscoreboard) | **GET** /scoreboard | Live game results (Patreon only)
 [**GetTeamGameStats**](GamesApi.md#getteamgamestats) | **GET** /games/teams | Team game stats
 [**GetTeamRecords**](GamesApi.md#getteamrecords) | **GET** /records | Team records
 
@@ -442,6 +443,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ICollection<PlayerGame>**](PlayerGame.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getscoreboard"></a>
+# **GetScoreboard**
+> ICollection<ScoreboardGame> GetScoreboard ()
+
+Live game results (Patreon only)
+
+Get live game results
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using CFBSharp.Api;
+using CFBSharp.Client;
+using CFBSharp.Model;
+
+namespace Example
+{
+    public class GetScoreboardExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new GamesApi();
+
+            try
+            {
+                // Live game results (Patreon only)
+                ICollection&lt;ScoreboardGame&gt; result = apiInstance.GetScoreboard();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling GamesApi.GetScoreboard: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ICollection<ScoreboardGame>**](ScoreboardGame.md)
 
 ### Authorization
 
