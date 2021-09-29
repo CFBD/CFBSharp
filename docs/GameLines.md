@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Season** | **int?** |  | [optional] 
 **Week** | **int?** |  | [optional] 
 **SeasonType** | **string** |  | [optional] 
+**StartDate** | **string** |  | [optional] 
 **HomeTeam** | **string** |  | [optional] 
 **HomeConference** | **string** |  | [optional] 
 **HomeScore** | **int?** |  | [optional] 

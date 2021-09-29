@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 <a name="getgameweather"></a>
 # **GetGameWeather**
-> ICollection<GameWeather> GetGameWeather (int? year, int? week = null, string seasonType = null, string team = null, string conference = null)
+> ICollection<GameWeather> GetGameWeather (int? gameId = null, int? year = null, int? week = null, string seasonType = null, string team = null, string conference = null)
 
 Game weather information (Patreon only)
 
@@ -251,7 +251,8 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GamesApi();
-            var year = 56;  // int? | Year filter
+            var gameId = 56;  // int? | Game id filter (required if no year) (optional) 
+            var year = 56;  // int? | Year filter (required if no game id) (optional) 
             var week = 56;  // int? | Week filter (optional) 
             var seasonType = seasonType_example;  // string | Season type filter (regular, postseason, or both) (optional) 
             var team = team_example;  // string | Team filter (optional) 
@@ -260,7 +261,7 @@ namespace Example
             try
             {
                 // Game weather information (Patreon only)
-                ICollection&lt;GameWeather&gt; result = apiInstance.GetGameWeather(year, week, seasonType, team, conference);
+                ICollection&lt;GameWeather&gt; result = apiInstance.GetGameWeather(gameId, year, week, seasonType, team, conference);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -276,7 +277,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int?**| Year filter | 
+ **gameId** | **int?**| Game id filter (required if no year) | [optional] 
+ **year** | **int?**| Year filter (required if no game id) | [optional] 
  **week** | **int?**| Week filter | [optional] 
  **seasonType** | **string**| Season type filter (regular, postseason, or both) | [optional] 
  **team** | **string**| Team filter | [optional] 

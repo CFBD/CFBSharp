@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Team** | **string** |  | [optional] 
 **Conference** | **string** |  | [optional] 
 **Division** | **string** |  | [optional] 
+**ExpectedWins** | **decimal?** |  | [optional] 
 **Total** | **Object** |  | [optional] 
 **ConferenceGames** | **Object** |  | [optional] 
 **HomeGames** | **Object** |  | [optional] 

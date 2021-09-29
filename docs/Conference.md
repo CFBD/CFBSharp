@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **ShortName** | **string** |  | [optional] 
 **Abbreviation** | **string** |  | [optional] 
+**Classification** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

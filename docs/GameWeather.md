@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Week** | **int?** |  | [optional] 
 **SeasonType** | **string** |  | [optional] 
 **StartTime** | **string** |  | [optional] 
-**IsStartTimeTBD** | **bool?** |  | [optional] 
+**GameIndoors** | **bool?** |  | [optional] 
 **HomeTeam** | **string** |  | [optional] 
 **HomeConference** | **string** |  | [optional] 
 **AwayTeam** | **string** |  | [optional] 
