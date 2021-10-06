@@ -3,12 +3,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int?** |  | [optional] 
+**GameId** | **int?** |  | [optional] 
 **Season** | **int?** |  | [optional] 
 **Week** | **int?** |  | [optional] 
 **Team** | **string** |  | [optional] 
 **Conference** | **string** |  | [optional] 
-**Opponnent** | **string** |  | [optional] 
+**Opponent** | **string** |  | [optional] 
 **Offense** | **Object** |  | [optional] 
 **Defense** | **Object** |  | [optional] 
 
