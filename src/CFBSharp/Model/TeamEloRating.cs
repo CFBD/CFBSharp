@@ -23,22 +23,24 @@ using SwaggerDateConverter = CFBSharp.Client.SwaggerDateConverter;
 namespace CFBSharp.Model
 {
     /// <summary>
-    /// TeamTalent
+    /// TeamEloRating
     /// </summary>
     [DataContract]
-    public partial class TeamTalent :  IEquatable<TeamTalent>
+    public partial class TeamEloRating :  IEquatable<TeamEloRating>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TeamTalent" /> class.
+        /// Initializes a new instance of the <see cref="TeamEloRating" /> class.
         /// </summary>
         /// <param name="year">year.</param>
-        /// <param name="school">school.</param>
-        /// <param name="talent">talent.</param>
-        public TeamTalent(int? year = default(int?), string school = default(string), decimal? talent = default(decimal?))
+        /// <param name="team">team.</param>
+        /// <param name="conference">conference.</param>
+        /// <param name="elo">elo.</param>
+        public TeamEloRating(int? year = default(int?), string team = default(string), string conference = default(string), decimal? elo = default(decimal?))
         {
             this.Year = year;
-            this.School = school;
-            this.Talent = talent;
+            this.Team = team;
+            this.Conference = conference;
+            this.Elo = elo;
         }
         
         /// <summary>
@@ -48,16 +50,22 @@ namespace CFBSharp.Model
         public int? Year { get; set; }
 
         /// <summary>
-        /// Gets or Sets School
+        /// Gets or Sets Team
         /// </summary>
-        [DataMember(Name="school", EmitDefaultValue=false)]
-        public string School { get; set; }
+        [DataMember(Name="team", EmitDefaultValue=false)]
+        public string Team { get; set; }
 
         /// <summary>
-        /// Gets or Sets Talent
+        /// Gets or Sets Conference
         /// </summary>
-        [DataMember(Name="talent", EmitDefaultValue=false)]
-        public decimal? Talent { get; set; }
+        [DataMember(Name="conference", EmitDefaultValue=false)]
+        public string Conference { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Elo
+        /// </summary>
+        [DataMember(Name="elo", EmitDefaultValue=false)]
+        public decimal? Elo { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -66,10 +74,11 @@ namespace CFBSharp.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TeamTalent {\n");
+            sb.Append("class TeamEloRating {\n");
             sb.Append("  Year: ").Append(Year).Append("\n");
-            sb.Append("  School: ").Append(School).Append("\n");
-            sb.Append("  Talent: ").Append(Talent).Append("\n");
+            sb.Append("  Team: ").Append(Team).Append("\n");
+            sb.Append("  Conference: ").Append(Conference).Append("\n");
+            sb.Append("  Elo: ").Append(Elo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,15 +99,15 @@ namespace CFBSharp.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TeamTalent);
+            return this.Equals(input as TeamEloRating);
         }
 
         /// <summary>
-        /// Returns true if TeamTalent instances are equal
+        /// Returns true if TeamEloRating instances are equal
         /// </summary>
-        /// <param name="input">Instance of TeamTalent to be compared</param>
+        /// <param name="input">Instance of TeamEloRating to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TeamTalent input)
+        public bool Equals(TeamEloRating input)
         {
             if (input == null)
                 return false;
@@ -110,14 +119,19 @@ namespace CFBSharp.Model
                     this.Year.Equals(input.Year))
                 ) && 
                 (
-                    this.School == input.School ||
-                    (this.School != null &&
-                    this.School.Equals(input.School))
+                    this.Team == input.Team ||
+                    (this.Team != null &&
+                    this.Team.Equals(input.Team))
                 ) && 
                 (
-                    this.Talent == input.Talent ||
-                    (this.Talent != null &&
-                    this.Talent.Equals(input.Talent))
+                    this.Conference == input.Conference ||
+                    (this.Conference != null &&
+                    this.Conference.Equals(input.Conference))
+                ) && 
+                (
+                    this.Elo == input.Elo ||
+                    (this.Elo != null &&
+                    this.Elo.Equals(input.Elo))
                 );
         }
 
@@ -132,10 +146,12 @@ namespace CFBSharp.Model
                 int hashCode = 41;
                 if (this.Year != null)
                     hashCode = hashCode * 59 + this.Year.GetHashCode();
-                if (this.School != null)
-                    hashCode = hashCode * 59 + this.School.GetHashCode();
-                if (this.Talent != null)
-                    hashCode = hashCode * 59 + this.Talent.GetHashCode();
+                if (this.Team != null)
+                    hashCode = hashCode * 59 + this.Team.GetHashCode();
+                if (this.Conference != null)
+                    hashCode = hashCode * 59 + this.Conference.GetHashCode();
+                if (this.Elo != null)
+                    hashCode = hashCode * 59 + this.Elo.GetHashCode();
                 return hashCode;
             }
         }
