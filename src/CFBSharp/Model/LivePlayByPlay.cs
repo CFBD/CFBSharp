@@ -23,20 +23,22 @@ using SwaggerDateConverter = CFBSharp.Client.SwaggerDateConverter;
 namespace CFBSharp.Model
 {
     /// <summary>
-    /// PlayStatType
+    /// LivePlayByPlay
     /// </summary>
     [DataContract]
-    public partial class PlayStatType :  IEquatable<PlayStatType>
+    public partial class LivePlayByPlay :  IEquatable<LivePlayByPlay>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PlayStatType" /> class.
+        /// Initializes a new instance of the <see cref="LivePlayByPlay" /> class.
         /// </summary>
         /// <param name="id">id.</param>
-        /// <param name="name">name.</param>
-        public PlayStatType(int? id = default(int?), string name = default(string))
+        /// <param name="teams">teams.</param>
+        /// <param name="plays">plays.</param>
+        public LivePlayByPlay(int? id = default(int?), List<Object> teams = default(List<Object>), List<Object> plays = default(List<Object>))
         {
             this.Id = id;
-            this.Name = name;
+            this.Teams = teams;
+            this.Plays = plays;
         }
         
         /// <summary>
@@ -46,10 +48,16 @@ namespace CFBSharp.Model
         public int? Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets Teams
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
-        public string Name { get; set; }
+        [DataMember(Name="teams", EmitDefaultValue=false)]
+        public List<Object> Teams { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Plays
+        /// </summary>
+        [DataMember(Name="plays", EmitDefaultValue=false)]
+        public List<Object> Plays { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -58,9 +66,10 @@ namespace CFBSharp.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class PlayStatType {\n");
+            sb.Append("class LivePlayByPlay {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Teams: ").Append(Teams).Append("\n");
+            sb.Append("  Plays: ").Append(Plays).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,15 +90,15 @@ namespace CFBSharp.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PlayStatType);
+            return this.Equals(input as LivePlayByPlay);
         }
 
         /// <summary>
-        /// Returns true if PlayStatType instances are equal
+        /// Returns true if LivePlayByPlay instances are equal
         /// </summary>
-        /// <param name="input">Instance of PlayStatType to be compared</param>
+        /// <param name="input">Instance of LivePlayByPlay to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PlayStatType input)
+        public bool Equals(LivePlayByPlay input)
         {
             if (input == null)
                 return false;
@@ -101,9 +110,14 @@ namespace CFBSharp.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Teams == input.Teams ||
+                    this.Teams != null &&
+                    this.Teams.SequenceEqual(input.Teams)
+                ) && 
+                (
+                    this.Plays == input.Plays ||
+                    this.Plays != null &&
+                    this.Plays.SequenceEqual(input.Plays)
                 );
         }
 
@@ -118,8 +132,10 @@ namespace CFBSharp.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Teams != null)
+                    hashCode = hashCode * 59 + this.Teams.GetHashCode();
+                if (this.Plays != null)
+                    hashCode = hashCode * 59 + this.Plays.GetHashCode();
                 return hashCode;
             }
         }

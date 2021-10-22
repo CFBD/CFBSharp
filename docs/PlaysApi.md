@@ -4,11 +4,78 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**GetLivePlays**](PlaysApi.md#getliveplays) | **GET** /live/plays | Live metrics and PBP (Patreon Tier 2)
 [**GetPlayStatTypes**](PlaysApi.md#getplaystattypes) | **GET** /play/stat/types | Types of player play stats
 [**GetPlayStats**](PlaysApi.md#getplaystats) | **GET** /play/stats | Play stats by play
 [**GetPlayTypes**](PlaysApi.md#getplaytypes) | **GET** /play/types | Play types
 [**GetPlays**](PlaysApi.md#getplays) | **GET** /plays | Play by play data
 
+
+<a name="getliveplays"></a>
+# **GetLivePlays**
+> LivePlayByPlay GetLivePlays (int? id)
+
+Live metrics and PBP (Patreon Tier 2)
+
+Get live metrics and PBP
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using CFBSharp.Api;
+using CFBSharp.Client;
+using CFBSharp.Model;
+
+namespace Example
+{
+    public class GetLivePlaysExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new PlaysApi();
+            var id = 56;  // int? | Game id
+
+            try
+            {
+                // Live metrics and PBP (Patreon Tier 2)
+                LivePlayByPlay result = apiInstance.GetLivePlays(id);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling PlaysApi.GetLivePlays: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int?**| Game id | 
+
+### Return type
+
+[**LivePlayByPlay**](LivePlayByPlay.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getplaystattypes"></a>
 # **GetPlayStatTypes**
