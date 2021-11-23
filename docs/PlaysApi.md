@@ -4,7 +4,7 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetLivePlays**](PlaysApi.md#getliveplays) | **GET** /live/plays | Live metrics and PBP (Patreon Tier 2)
+[**GetLivePlays**](PlaysApi.md#getliveplays) | **GET** /live/plays | Live metrics and PBP (Patreon only)
 [**GetPlayStatTypes**](PlaysApi.md#getplaystattypes) | **GET** /play/stat/types | Types of player play stats
 [**GetPlayStats**](PlaysApi.md#getplaystats) | **GET** /play/stats | Play stats by play
 [**GetPlayTypes**](PlaysApi.md#getplaytypes) | **GET** /play/types | Play types
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 # **GetLivePlays**
 > LivePlayByPlay GetLivePlays (int? id)
 
-Live metrics and PBP (Patreon Tier 2)
+Live metrics and PBP (Patreon only)
 
 Get live metrics and PBP
 
@@ -43,7 +43,7 @@ namespace Example
 
             try
             {
-                // Live metrics and PBP (Patreon Tier 2)
+                // Live metrics and PBP (Patreon only)
                 LivePlayByPlay result = apiInstance.GetLivePlays(id);
                 Debug.WriteLine(result);
             }
