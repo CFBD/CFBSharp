@@ -4,6 +4,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int?** |  | [optional] 
+**Status** | **string** |  | [optional] 
+**Period** | **int?** |  | [optional] 
+**Clock** | **string** |  | [optional] 
+**Possession** | **string** |  | [optional] 
+**Down** | **int?** |  | [optional] 
+**Distance** | **int?** |  | [optional] 
+**YardsToGoal** | **int?** |  | [optional] 
 **Teams** | **List&lt;Object&gt;** |  | [optional] 
 **Plays** | **List&lt;Object&gt;** |  | [optional] 
 
