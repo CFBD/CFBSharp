@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**GetPlayerSeasonStats**](PlayersApi.md#getplayerseasonstats) | **GET** /stats/player/season | Player stats by season
 [**GetPlayerUsage**](PlayersApi.md#getplayerusage) | **GET** /player/usage | Player usage metrics broken down by season
 [**GetReturningProduction**](PlayersApi.md#getreturningproduction) | **GET** /player/returning | Team returning production metrics
+[**GetTransferPortal**](PlayersApi.md#gettransferportal) | **GET** /player/portal | Transfer portal by season
 [**PlayerSearch**](PlayersApi.md#playersearch) | **GET** /player/search | Search for player information
 
 
@@ -222,6 +223,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ICollection<ReturningProduction>**](ReturningProduction.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="gettransferportal"></a>
+# **GetTransferPortal**
+> ICollection<PortalPlayer> GetTransferPortal (int? year)
+
+Transfer portal by season
+
+Transfer portal by season
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using CFBSharp.Api;
+using CFBSharp.Client;
+using CFBSharp.Model;
+
+namespace Example
+{
+    public class GetTransferPortalExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new PlayersApi();
+            var year = 56;  // int? | Year filter
+
+            try
+            {
+                // Transfer portal by season
+                ICollection&lt;PortalPlayer&gt; result = apiInstance.GetTransferPortal(year);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling PlayersApi.GetTransferPortal: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **year** | **int?**| Year filter | 
+
+### Return type
+
+[**ICollection<PortalPlayer>**](PortalPlayer.md)
 
 ### Authorization
 
