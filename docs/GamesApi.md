@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 <a name="getgames"></a>
 # **GetGames**
-> ICollection<Game> GetGames (int? year, int? week = null, string seasonType = null, string team = null, string home = null, string away = null, string conference = null, int? id = null)
+> ICollection<Game> GetGames (int? year, int? week = null, string seasonType = null, string team = null, string home = null, string away = null, string conference = null, string division = null, int? id = null)
 
 Games and results
 
@@ -334,12 +334,13 @@ namespace Example
             var home = home_example;  // string | Home team filter (optional) 
             var away = away_example;  // string | Away team filter (optional) 
             var conference = conference_example;  // string | Conference abbreviation filter (optional) 
+            var division = division_example;  // string | Division filter (fbs/fcs/ii/iii) (optional) 
             var id = 56;  // int? | id filter for querying a single game (optional) 
 
             try
             {
                 // Games and results
-                ICollection&lt;Game&gt; result = apiInstance.GetGames(year, week, seasonType, team, home, away, conference, id);
+                ICollection&lt;Game&gt; result = apiInstance.GetGames(year, week, seasonType, team, home, away, conference, division, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -362,6 +363,7 @@ Name | Type | Description  | Notes
  **home** | **string**| Home team filter | [optional] 
  **away** | **string**| Away team filter | [optional] 
  **conference** | **string**| Conference abbreviation filter | [optional] 
+ **division** | **string**| Division filter (fbs/fcs/ii/iii) | [optional] 
  **id** | **int?**| id filter for querying a single game | [optional] 
 
 ### Return type
