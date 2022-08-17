@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **TeamScore** | **int?** |  | [optional] 
 **OpponentScore** | **int?** |  | [optional] 
 **DriveId** | **int?** |  | [optional] 
-**PlayId** | **int?** |  | [optional] 
+**PlayId** | **long?** |  | [optional] 
 **Period** | **int?** |  | [optional] 
 **Clock** | **Object** |  | [optional] 
 **YardsToGoal** | **int?** |  | [optional] 

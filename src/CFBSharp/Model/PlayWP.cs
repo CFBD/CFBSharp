@@ -48,7 +48,7 @@ namespace CFBSharp.Model
         /// <param name="distance">distance.</param>
         /// <param name="homeWinProb">homeWinProb.</param>
         /// <param name="playNumber">playNumber.</param>
-        public PlayWP(int? gamesId = default(int?), int? playId = default(int?), string playText = default(string), int? homeId = default(int?), string home = default(string), int? awayId = default(int?), string away = default(string), decimal? spread = default(decimal?), bool? homeBall = default(bool?), int? homeScore = default(int?), int? awayScore = default(int?), int? timeRemaining = default(int?), int? yardLine = default(int?), int? down = default(int?), int? distance = default(int?), decimal? homeWinProb = default(decimal?), int? playNumber = default(int?))
+        public PlayWP(int? gamesId = default(int?), long? playId = default(int?), string playText = default(string), int? homeId = default(int?), string home = default(string), int? awayId = default(int?), string away = default(string), decimal? spread = default(decimal?), bool? homeBall = default(bool?), int? homeScore = default(int?), int? awayScore = default(int?), int? timeRemaining = default(int?), int? yardLine = default(int?), int? down = default(int?), int? distance = default(int?), decimal? homeWinProb = default(decimal?), int? playNumber = default(int?))
         {
             this.GamesId = gamesId;
             this.PlayId = playId;
@@ -79,7 +79,7 @@ namespace CFBSharp.Model
         /// Gets or Sets PlayId
         /// </summary>
         [DataMember(Name="playId", EmitDefaultValue=false)]
-        public int? PlayId { get; set; }
+        public long? PlayId { get; set; }
 
         /// <summary>
         /// Gets or Sets PlayText

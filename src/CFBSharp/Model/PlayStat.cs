@@ -50,7 +50,7 @@ namespace CFBSharp.Model
         /// <param name="athleteName">athleteName.</param>
         /// <param name="statType">statType.</param>
         /// <param name="stat">stat.</param>
-        public PlayStat(int? gameId = default(int?), int? season = default(int?), int? week = default(int?), string team = default(string), string conference = default(string), string opponent = default(string), int? teamScore = default(int?), int? opponentScore = default(int?), int? driveId = default(int?), int? playId = default(int?), int? period = default(int?), Object clock = default(Object), int? yardsToGoal = default(int?), int? down = default(int?), int? distance = default(int?), int? athleteId = default(int?), string athleteName = default(string), string statType = default(string), int? stat = default(int?))
+        public PlayStat(int? gameId = default(int?), int? season = default(int?), int? week = default(int?), string team = default(string), string conference = default(string), string opponent = default(string), int? teamScore = default(int?), int? opponentScore = default(int?), int? driveId = default(int?), long? playId = default(long?), int? period = default(int?), Object clock = default(Object), int? yardsToGoal = default(int?), int? down = default(int?), int? distance = default(int?), int? athleteId = default(int?), string athleteName = default(string), string statType = default(string), int? stat = default(int?))
         {
             this.GameId = gameId;
             this.Season = season;
@@ -131,7 +131,7 @@ namespace CFBSharp.Model
         /// Gets or Sets PlayId
         /// </summary>
         [DataMember(Name="playId", EmitDefaultValue=false)]
-        public int? PlayId { get; set; }
+        public long? PlayId { get; set; }
 
         /// <summary>
         /// Gets or Sets Period
