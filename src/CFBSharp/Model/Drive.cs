@@ -55,7 +55,7 @@ namespace CFBSharp.Model
         /// <param name="startDefenseScore">startDefenseScore.</param>
         /// <param name="endOffenseScore">endOffenseScore.</param>
         /// <param name="endDefenseScore">endDefenseScore.</param>
-        public Drive(string offense = default(string), string offenseConference = default(string), string defense = default(string), string defenseConference = default(string), int? gameId = default(int?), int? id = default(int?), int? driveNumber = default(int?), bool? scoring = default(bool?), int? startPeriod = default(int?), int? startYardline = default(int?), int? startYardsToGoal = default(int?), Object startTime = default(Object), int? endPeriod = default(int?), int? endYardline = default(int?), int? endYardsToGoal = default(int?), Object endTime = default(Object), int? plays = default(int?), int? yards = default(int?), string driveResult = default(string), bool? isHomeOffense = default(bool?), int? startOffenseScore = default(int?), int? startDefenseScore = default(int?), int? endOffenseScore = default(int?), int? endDefenseScore = default(int?))
+        public Drive(string offense = default(string), string offenseConference = default(string), string defense = default(string), string defenseConference = default(string), int? gameId = default(int?), long? id = default(int?), int? driveNumber = default(int?), bool? scoring = default(bool?), int? startPeriod = default(int?), int? startYardline = default(int?), int? startYardsToGoal = default(int?), Object startTime = default(Object), int? endPeriod = default(int?), int? endYardline = default(int?), int? endYardsToGoal = default(int?), Object endTime = default(Object), int? plays = default(int?), int? yards = default(int?), string driveResult = default(string), bool? isHomeOffense = default(bool?), int? startOffenseScore = default(int?), int? startDefenseScore = default(int?), int? endOffenseScore = default(int?), int? endDefenseScore = default(int?))
         {
             this.Offense = offense;
             this.OffenseConference = offenseConference;
@@ -117,7 +117,7 @@ namespace CFBSharp.Model
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
-        public int? Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// Gets or Sets DriveNumber
