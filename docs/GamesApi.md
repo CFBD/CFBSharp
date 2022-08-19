@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 <a name="getscoreboard"></a>
 # **GetScoreboard**
-> ICollection<ScoreboardGame> GetScoreboard ()
+> ICollection<ScoreboardGame> GetScoreboard (string classification = null, string conference = null)
 
 Live game results (Patreon only)
 
@@ -487,11 +487,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GamesApi();
+            var classification = classification_example;  // string | Classification filter (fbs, fcs, ii, or iii). Defaults to fbs. (optional) 
+            var conference = conference_example;  // string | Conference abbreviation filter. (optional) 
 
             try
             {
                 // Live game results (Patreon only)
-                ICollection&lt;ScoreboardGame&gt; result = apiInstance.GetScoreboard();
+                ICollection&lt;ScoreboardGame&gt; result = apiInstance.GetScoreboard(classification, conference);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -504,7 +506,11 @@ namespace Example
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **classification** | **string**| Classification filter (fbs, fcs, ii, or iii). Defaults to fbs. | [optional] 
+ **conference** | **string**| Conference abbreviation filter. | [optional] 
 
 ### Return type
 
