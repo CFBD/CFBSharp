@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GamesId** | **int?** |  | [optional] 
-**PlayId** | **int?** |  | [optional] 
+**PlayId** | **long?** |  | [optional] 
 **PlayText** | **string** |  | [optional] 
 **HomeId** | **int?** |  | [optional] 
 **Home** | **string** |  | [optional] 

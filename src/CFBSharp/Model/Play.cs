@@ -58,7 +58,7 @@ namespace CFBSharp.Model
         /// <param name="playText">playText.</param>
         /// <param name="ppa">ppa.</param>
         /// <param name="wallclock">wallclock.</param>
-        public Play(int? id = default(int?), int? driveId = default(int?), int? gameId = default(int?), int? driveNumber = default(int?), int? playNumber = default(int?), string offense = default(string), string offenseConference = default(string), int? offenseScore = default(int?), string defense = default(string), string home = default(string), string away = default(string), string defenseConference = default(string), int? defenseScore = default(int?), int? period = default(int?), Object clock = default(Object), int? offenseTimeouts = default(int?), int? defenseTimeouts = default(int?), int? yardLine = default(int?), int? yardsToGoal = default(int?), int? down = default(int?), int? distance = default(int?), int? yardsGained = default(int?), bool? scoring = default(bool?), string playType = default(string), string playText = default(string), decimal? ppa = default(decimal?), string wallclock = default(string))
+        public Play(long? id = default(long?), long? driveId = default(int?), int? gameId = default(int?), int? driveNumber = default(int?), int? playNumber = default(int?), string offense = default(string), string offenseConference = default(string), int? offenseScore = default(int?), string defense = default(string), string home = default(string), string away = default(string), string defenseConference = default(string), int? defenseScore = default(int?), int? period = default(int?), Object clock = default(Object), int? offenseTimeouts = default(int?), int? defenseTimeouts = default(int?), int? yardLine = default(int?), int? yardsToGoal = default(int?), int? down = default(int?), int? distance = default(int?), int? yardsGained = default(int?), bool? scoring = default(bool?), string playType = default(string), string playText = default(string), decimal? ppa = default(decimal?), string wallclock = default(string))
         {
             this.Id = id;
             this.DriveId = driveId;
@@ -93,13 +93,13 @@ namespace CFBSharp.Model
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
-        public int? Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// Gets or Sets DriveId
         /// </summary>
         [DataMember(Name="drive_id", EmitDefaultValue=false)]
-        public int? DriveId { get; set; }
+        public long? DriveId { get; set; }
 
         /// <summary>
         /// Gets or Sets GameId
