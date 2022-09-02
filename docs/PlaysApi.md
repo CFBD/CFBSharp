@@ -283,7 +283,7 @@ This endpoint does not need any parameter.
 
 <a name="getplays"></a>
 # **GetPlays**
-> ICollection<Play> GetPlays (int? year, int? week, string seasonType = null, string team = null, string offense = null, string defense = null, string conference = null, string offenseConference = null, string defenseConference = null, int? playType = null)
+> ICollection<Play> GetPlays (int? year, int? week, string seasonType = null, string team = null, string offense = null, string defense = null, string conference = null, string offenseConference = null, string defenseConference = null, int? playType = null, string classification = null)
 
 Play by play data
 
@@ -319,11 +319,12 @@ namespace Example
             var offenseConference = offenseConference_example;  // string | Offensive conference filter (optional) 
             var defenseConference = defenseConference_example;  // string | Defensive conference filter (optional) 
             var playType = 56;  // int? | Play type filter (optional) 
+            var classification = classification_example;  // string | Division classification filter (fbs/fcs/ii/iii) (optional) 
 
             try
             {
                 // Play by play data
-                ICollection&lt;Play&gt; result = apiInstance.GetPlays(year, week, seasonType, team, offense, defense, conference, offenseConference, defenseConference, playType);
+                ICollection&lt;Play&gt; result = apiInstance.GetPlays(year, week, seasonType, team, offense, defense, conference, offenseConference, defenseConference, playType, classification);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -349,6 +350,7 @@ Name | Type | Description  | Notes
  **offenseConference** | **string**| Offensive conference filter | [optional] 
  **defenseConference** | **string**| Defensive conference filter | [optional] 
  **playType** | **int?**| Play type filter | [optional] 
+ **classification** | **string**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
 
 ### Return type
 

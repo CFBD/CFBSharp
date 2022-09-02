@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getdrives"></a>
 # **GetDrives**
-> ICollection<Drive> GetDrives (int? year, string seasonType = null, int? week = null, string team = null, string offense = null, string defense = null, string conference = null, string offenseConference = null, string defenseConference = null)
+> ICollection<Drive> GetDrives (int? year, string seasonType = null, int? week = null, string team = null, string offense = null, string defense = null, string conference = null, string offenseConference = null, string defenseConference = null, string classification = null)
 
 Drive data and results
 
@@ -44,11 +44,12 @@ namespace Example
             var conference = conference_example;  // string | Conference filter (optional) 
             var offenseConference = offenseConference_example;  // string | Offensive conference filter (optional) 
             var defenseConference = defenseConference_example;  // string | Defensive conference filter (optional) 
+            var classification = classification_example;  // string | Division classification filter (fbs/fcs/ii/iii) (optional) 
 
             try
             {
                 // Drive data and results
-                ICollection&lt;Drive&gt; result = apiInstance.GetDrives(year, seasonType, week, team, offense, defense, conference, offenseConference, defenseConference);
+                ICollection&lt;Drive&gt; result = apiInstance.GetDrives(year, seasonType, week, team, offense, defense, conference, offenseConference, defenseConference, classification);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -73,6 +74,7 @@ Name | Type | Description  | Notes
  **conference** | **string**| Conference filter | [optional] 
  **offenseConference** | **string**| Offensive conference filter | [optional] 
  **defenseConference** | **string**| Defensive conference filter | [optional] 
+ **classification** | **string**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
 
 ### Return type
 

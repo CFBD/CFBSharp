@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 <a name="getgamemedia"></a>
 # **GetGameMedia**
-> ICollection<GameMedia> GetGameMedia (int? year, int? week = null, string seasonType = null, string team = null, string conference = null, string mediaType = null)
+> ICollection<GameMedia> GetGameMedia (int? year, int? week = null, string seasonType = null, string team = null, string conference = null, string mediaType = null, string classification = null)
 
 Game media information and schedules
 
@@ -181,11 +181,12 @@ namespace Example
             var team = team_example;  // string | Team filter (optional) 
             var conference = conference_example;  // string | Conference filter (optional) 
             var mediaType = mediaType_example;  // string | Media type filter (tv, radio, web, ppv, or mobile) (optional) 
+            var classification = classification_example;  // string | Division classification filter (fbs/fcs/ii/iii) (optional) 
 
             try
             {
                 // Game media information and schedules
-                ICollection&lt;GameMedia&gt; result = apiInstance.GetGameMedia(year, week, seasonType, team, conference, mediaType);
+                ICollection&lt;GameMedia&gt; result = apiInstance.GetGameMedia(year, week, seasonType, team, conference, mediaType, classification);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -207,6 +208,7 @@ Name | Type | Description  | Notes
  **team** | **string**| Team filter | [optional] 
  **conference** | **string**| Conference filter | [optional] 
  **mediaType** | **string**| Media type filter (tv, radio, web, ppv, or mobile) | [optional] 
+ **classification** | **string**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
 
 ### Return type
 
@@ -225,7 +227,7 @@ Name | Type | Description  | Notes
 
 <a name="getgameweather"></a>
 # **GetGameWeather**
-> ICollection<GameWeather> GetGameWeather (int? gameId = null, int? year = null, int? week = null, string seasonType = null, string team = null, string conference = null)
+> ICollection<GameWeather> GetGameWeather (int? gameId = null, int? year = null, int? week = null, string seasonType = null, string team = null, string conference = null, string classification = null)
 
 Game weather information (Patreon only)
 
@@ -257,11 +259,12 @@ namespace Example
             var seasonType = seasonType_example;  // string | Season type filter (regular, postseason, or both) (optional) 
             var team = team_example;  // string | Team filter (optional) 
             var conference = conference_example;  // string | Conference filter (optional) 
+            var classification = classification_example;  // string | Division classification filter (fbs/fcs/ii/iii) (optional) 
 
             try
             {
                 // Game weather information (Patreon only)
-                ICollection&lt;GameWeather&gt; result = apiInstance.GetGameWeather(gameId, year, week, seasonType, team, conference);
+                ICollection&lt;GameWeather&gt; result = apiInstance.GetGameWeather(gameId, year, week, seasonType, team, conference, classification);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -283,6 +286,7 @@ Name | Type | Description  | Notes
  **seasonType** | **string**| Season type filter (regular, postseason, or both) | [optional] 
  **team** | **string**| Team filter | [optional] 
  **conference** | **string**| Conference filter | [optional] 
+ **classification** | **string**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
 
 ### Return type
 
@@ -334,7 +338,7 @@ namespace Example
             var home = home_example;  // string | Home team filter (optional) 
             var away = away_example;  // string | Away team filter (optional) 
             var conference = conference_example;  // string | Conference abbreviation filter (optional) 
-            var division = division_example;  // string | Division filter (fbs/fcs/ii/iii) (optional) 
+            var division = division_example;  // string | Division classification filter (fbs/fcs/ii/iii) (optional) 
             var id = 56;  // int? | id filter for querying a single game (optional) 
 
             try
@@ -363,7 +367,7 @@ Name | Type | Description  | Notes
  **home** | **string**| Home team filter | [optional] 
  **away** | **string**| Away team filter | [optional] 
  **conference** | **string**| Conference abbreviation filter | [optional] 
- **division** | **string**| Division filter (fbs/fcs/ii/iii) | [optional] 
+ **division** | **string**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
  **id** | **int?**| id filter for querying a single game | [optional] 
 
 ### Return type
