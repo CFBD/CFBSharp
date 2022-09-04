@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 <a name="getteamgamestats"></a>
 # **GetTeamGameStats**
-> ICollection<TeamGame> GetTeamGameStats (int? year, int? week = null, string seasonType = null, string team = null, string conference = null, int? gameId = null)
+> ICollection<TeamGame> GetTeamGameStats (int? year, int? week = null, string seasonType = null, string team = null, string conference = null, int? gameId = null, string classification = null)
 
 Team game stats
 
@@ -565,11 +565,12 @@ namespace Example
             var team = team_example;  // string | Team filter (optional) 
             var conference = conference_example;  // string | Conference abbreviation filter (optional) 
             var gameId = 56;  // int? | Game id filter (optional) 
+            var classification = classification_example;  // string | Division classification filter (fbs/fcs/ii/iii) (optional) 
 
             try
             {
                 // Team game stats
-                ICollection&lt;TeamGame&gt; result = apiInstance.GetTeamGameStats(year, week, seasonType, team, conference, gameId);
+                ICollection&lt;TeamGame&gt; result = apiInstance.GetTeamGameStats(year, week, seasonType, team, conference, gameId, classification);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -591,6 +592,7 @@ Name | Type | Description  | Notes
  **team** | **string**| Team filter | [optional] 
  **conference** | **string**| Conference abbreviation filter | [optional] 
  **gameId** | **int?**| Game id filter | [optional] 
+ **classification** | **string**| Division classification filter (fbs/fcs/ii/iii) | [optional] 
 
 ### Return type
 
