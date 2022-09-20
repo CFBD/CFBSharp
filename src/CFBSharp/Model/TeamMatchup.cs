@@ -39,7 +39,7 @@ namespace CFBSharp.Model
         /// <param name="team2Wins">team2Wins.</param>
         /// <param name="ties">ties.</param>
         /// <param name="games">games.</param>
-        public TeamMatchup(string team1 = default(string), string team2 = default(string), int? startYear = default(int?), int? endYear = default(int?), int? team1Wins = default(int?), int? team2Wins = default(int?), int? ties = default(int?), List<Object> games = default(List<Object>))
+        public TeamMatchup(string team1 = default(string), string team2 = default(string), int? startYear = default(int?), int? endYear = default(int?), int? team1Wins = default(int?), int? team2Wins = default(int?), int? ties = default(int?), List<TeamMatchupGames> games = default(List<TeamMatchupGames>))
         {
             this.Team1 = team1;
             this.Team2 = team2;
@@ -97,7 +97,7 @@ namespace CFBSharp.Model
         /// Gets or Sets Games
         /// </summary>
         [DataMember(Name="games", EmitDefaultValue=false)]
-        public List<Object> Games { get; set; }
+        public List<TeamMatchupGames> Games { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -40,7 +40,7 @@ namespace CFBSharp.Model
         /// <param name="conferenceGames">conferenceGames.</param>
         /// <param name="homeGames">homeGames.</param>
         /// <param name="awayGames">awayGames.</param>
-        public TeamRecord(int? year = default(int?), string team = default(string), string conference = default(string), string division = default(string), decimal? expectedWins = default(decimal?), Object total = default(Object), Object conferenceGames = default(Object), Object homeGames = default(Object), Object awayGames = default(Object))
+        public TeamRecord(int? year = default(int?), string team = default(string), string conference = default(string), string division = default(string), decimal? expectedWins = default(decimal?), TeamRecordTotal total = default(TeamRecordTotal), TeamRecordTotal conferenceGames = default(TeamRecordTotal), TeamRecordTotal homeGames = default(TeamRecordTotal), TeamRecordTotal awayGames = default(TeamRecordTotal))
         {
             this.Year = year;
             this.Team = team;
@@ -87,25 +87,25 @@ namespace CFBSharp.Model
         /// Gets or Sets Total
         /// </summary>
         [DataMember(Name="total", EmitDefaultValue=false)]
-        public Object Total { get; set; }
+        public TeamRecordTotal Total { get; set; }
 
         /// <summary>
         /// Gets or Sets ConferenceGames
         /// </summary>
         [DataMember(Name="conferenceGames", EmitDefaultValue=false)]
-        public Object ConferenceGames { get; set; }
+        public TeamRecordTotal ConferenceGames { get; set; }
 
         /// <summary>
         /// Gets or Sets HomeGames
         /// </summary>
         [DataMember(Name="homeGames", EmitDefaultValue=false)]
-        public Object HomeGames { get; set; }
+        public TeamRecordTotal HomeGames { get; set; }
 
         /// <summary>
         /// Gets or Sets AwayGames
         /// </summary>
         [DataMember(Name="awayGames", EmitDefaultValue=false)]
-        public Object AwayGames { get; set; }
+        public TeamRecordTotal AwayGames { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

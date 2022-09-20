@@ -12,11 +12,11 @@ Name | Type | Description | Notes
 **Status** | **string** |  | [optional] 
 **Period** | **int?** |  | [optional] 
 **Clock** | **string** |  | [optional] 
-**Venue** | **Object** |  | [optional] 
-**HomeTeam** | **Object** |  | [optional] 
-**AwayTeam** | **Object** |  | [optional] 
-**Weather** | **Object** |  | [optional] 
-**Betting** | **Object** |  | [optional] 
+**Venue** | [**ScoreboardGameVenue**](ScoreboardGameVenue.md) |  | [optional] 
+**HomeTeam** | [**ScoreboardGameHomeTeam**](ScoreboardGameHomeTeam.md) |  | [optional] 
+**AwayTeam** | [**ScoreboardGameHomeTeam**](ScoreboardGameHomeTeam.md) |  | [optional] 
+**Weather** | [**ScoreboardGameWeather**](ScoreboardGameWeather.md) |  | [optional] 
+**Betting** | [**ScoreboardGameBetting**](ScoreboardGameBetting.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

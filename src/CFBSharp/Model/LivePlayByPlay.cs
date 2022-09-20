@@ -41,7 +41,7 @@ namespace CFBSharp.Model
         /// <param name="yardsToGoal">yardsToGoal.</param>
         /// <param name="teams">teams.</param>
         /// <param name="drives">drives.</param>
-        public LivePlayByPlay(int? id = default(int?), string status = default(string), int? period = default(int?), string clock = default(string), string possession = default(string), int? down = default(int?), int? distance = default(int?), int? yardsToGoal = default(int?), List<Object> teams = default(List<Object>), List<Object> drives = default(List<Object>))
+        public LivePlayByPlay(int? id = default(int?), string status = default(string), int? period = default(int?), string clock = default(string), string possession = default(string), int? down = default(int?), int? distance = default(int?), int? yardsToGoal = default(int?), List<LivePlayByPlayTeams> teams = default(List<LivePlayByPlayTeams>), List<LivePlayByPlayDrives> drives = default(List<LivePlayByPlayDrives>))
         {
             this.Id = id;
             this.Status = status;
@@ -107,13 +107,13 @@ namespace CFBSharp.Model
         /// Gets or Sets Teams
         /// </summary>
         [DataMember(Name="teams", EmitDefaultValue=false)]
-        public List<Object> Teams { get; set; }
+        public List<LivePlayByPlayTeams> Teams { get; set; }
 
         /// <summary>
         /// Gets or Sets Drives
         /// </summary>
         [DataMember(Name="drives", EmitDefaultValue=false)]
-        public List<Object> Drives { get; set; }
+        public List<LivePlayByPlayDrives> Drives { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

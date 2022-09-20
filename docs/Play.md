@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **DefenseConference** | **string** |  | [optional] 
 **DefenseScore** | **int?** |  | [optional] 
 **Period** | **int?** |  | [optional] 
-**Clock** | **Object** |  | [optional] 
+**Clock** | [**DriveStartTime**](DriveStartTime.md) |  | [optional] 
 **OffenseTimeouts** | **int?** |  | [optional] 
 **DefenseTimeouts** | **int?** |  | [optional] 
 **YardLine** | **int?** |  | [optional] 

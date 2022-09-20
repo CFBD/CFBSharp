@@ -39,7 +39,7 @@ namespace CFBSharp.Model
         /// <param name="opponent">opponent.</param>
         /// <param name="offense">offense.</param>
         /// <param name="defense">defense.</param>
-        public GamePPA(int? gameId = default(int?), int? season = default(int?), int? week = default(int?), string team = default(string), string conference = default(string), string opponent = default(string), Object offense = default(Object), Object defense = default(Object))
+        public GamePPA(int? gameId = default(int?), int? season = default(int?), int? week = default(int?), string team = default(string), string conference = default(string), string opponent = default(string), GamePPAOffense offense = default(GamePPAOffense), GamePPAOffense defense = default(GamePPAOffense))
         {
             this.GameId = gameId;
             this.Season = season;
@@ -91,13 +91,13 @@ namespace CFBSharp.Model
         /// Gets or Sets Offense
         /// </summary>
         [DataMember(Name="offense", EmitDefaultValue=false)]
-        public Object Offense { get; set; }
+        public GamePPAOffense Offense { get; set; }
 
         /// <summary>
         /// Gets or Sets Defense
         /// </summary>
         [DataMember(Name="defense", EmitDefaultValue=false)]
-        public Object Defense { get; set; }
+        public GamePPAOffense Defense { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

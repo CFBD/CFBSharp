@@ -43,7 +43,7 @@ namespace CFBSharp.Model
         /// <param name="awayConference">awayConference.</param>
         /// <param name="awayScore">awayScore.</param>
         /// <param name="lines">lines.</param>
-        public GameLines(int? id = default(int?), int? season = default(int?), int? week = default(int?), string seasonType = default(string), string startDate = default(string), string homeTeam = default(string), string homeConference = default(string), int? homeScore = default(int?), string awayTeam = default(string), string awayConference = default(string), int? awayScore = default(int?), List<Object> lines = default(List<Object>))
+        public GameLines(int? id = default(int?), int? season = default(int?), int? week = default(int?), string seasonType = default(string), string startDate = default(string), string homeTeam = default(string), string homeConference = default(string), int? homeScore = default(int?), string awayTeam = default(string), string awayConference = default(string), int? awayScore = default(int?), List<GameLinesLines> lines = default(List<GameLinesLines>))
         {
             this.Id = id;
             this.Season = season;
@@ -129,7 +129,7 @@ namespace CFBSharp.Model
         /// Gets or Sets Lines
         /// </summary>
         [DataMember(Name="lines", EmitDefaultValue=false)]
-        public List<Object> Lines { get; set; }
+        public List<GameLinesLines> Lines { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

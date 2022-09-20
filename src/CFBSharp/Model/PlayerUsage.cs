@@ -38,7 +38,7 @@ namespace CFBSharp.Model
         /// <param name="team">team.</param>
         /// <param name="conference">conference.</param>
         /// <param name="usage">usage.</param>
-        public PlayerUsage(int? season = default(int?), int? id = default(int?), string name = default(string), string position = default(string), string team = default(string), string conference = default(string), Object usage = default(Object))
+        public PlayerUsage(int? season = default(int?), int? id = default(int?), string name = default(string), string position = default(string), string team = default(string), string conference = default(string), PlayerUsageUsage usage = default(PlayerUsageUsage))
         {
             this.Season = season;
             this.Id = id;
@@ -89,7 +89,7 @@ namespace CFBSharp.Model
         /// Gets or Sets Usage
         /// </summary>
         [DataMember(Name="usage", EmitDefaultValue=false)]
-        public Object Usage { get; set; }
+        public PlayerUsageUsage Usage { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

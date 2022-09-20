@@ -55,7 +55,7 @@ namespace CFBSharp.Model
         /// <param name="startDefenseScore">startDefenseScore.</param>
         /// <param name="endOffenseScore">endOffenseScore.</param>
         /// <param name="endDefenseScore">endDefenseScore.</param>
-        public Drive(string offense = default(string), string offenseConference = default(string), string defense = default(string), string defenseConference = default(string), int? gameId = default(int?), int? id = default(int?), int? driveNumber = default(int?), bool? scoring = default(bool?), int? startPeriod = default(int?), int? startYardline = default(int?), int? startYardsToGoal = default(int?), Object startTime = default(Object), int? endPeriod = default(int?), int? endYardline = default(int?), int? endYardsToGoal = default(int?), Object endTime = default(Object), int? plays = default(int?), int? yards = default(int?), string driveResult = default(string), bool? isHomeOffense = default(bool?), int? startOffenseScore = default(int?), int? startDefenseScore = default(int?), int? endOffenseScore = default(int?), int? endDefenseScore = default(int?))
+        public Drive(string offense = default(string), string offenseConference = default(string), string defense = default(string), string defenseConference = default(string), int? gameId = default(int?), int? id = default(int?), int? driveNumber = default(int?), bool? scoring = default(bool?), int? startPeriod = default(int?), int? startYardline = default(int?), int? startYardsToGoal = default(int?), DriveStartTime startTime = default(DriveStartTime), int? endPeriod = default(int?), int? endYardline = default(int?), int? endYardsToGoal = default(int?), DriveStartTime endTime = default(DriveStartTime), int? plays = default(int?), int? yards = default(int?), string driveResult = default(string), bool? isHomeOffense = default(bool?), int? startOffenseScore = default(int?), int? startDefenseScore = default(int?), int? endOffenseScore = default(int?), int? endDefenseScore = default(int?))
         {
             this.Offense = offense;
             this.OffenseConference = offenseConference;
@@ -153,7 +153,7 @@ namespace CFBSharp.Model
         /// Gets or Sets StartTime
         /// </summary>
         [DataMember(Name="start_time", EmitDefaultValue=false)]
-        public Object StartTime { get; set; }
+        public DriveStartTime StartTime { get; set; }
 
         /// <summary>
         /// Gets or Sets EndPeriod
@@ -177,7 +177,7 @@ namespace CFBSharp.Model
         /// Gets or Sets EndTime
         /// </summary>
         [DataMember(Name="end_time", EmitDefaultValue=false)]
-        public Object EndTime { get; set; }
+        public DriveStartTime EndTime { get; set; }
 
         /// <summary>
         /// Gets or Sets Plays

@@ -33,7 +33,7 @@ namespace CFBSharp.Model
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="teams">teams.</param>
-        public TeamGame(int? id = default(int?), List<Object> teams = default(List<Object>))
+        public TeamGame(int? id = default(int?), List<TeamGameTeams> teams = default(List<TeamGameTeams>))
         {
             this.Id = id;
             this.Teams = teams;
@@ -49,7 +49,7 @@ namespace CFBSharp.Model
         /// Gets or Sets Teams
         /// </summary>
         [DataMember(Name="teams", EmitDefaultValue=false)]
-        public List<Object> Teams { get; set; }
+        public List<TeamGameTeams> Teams { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

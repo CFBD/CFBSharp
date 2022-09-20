@@ -33,7 +33,7 @@ namespace CFBSharp.Model
         /// </summary>
         /// <param name="teams">teams.</param>
         /// <param name="players">players.</param>
-        public BoxScore(Object teams = default(Object), Object players = default(Object))
+        public BoxScore(BoxScoreTeams teams = default(BoxScoreTeams), BoxScorePlayers players = default(BoxScorePlayers))
         {
             this.Teams = teams;
             this.Players = players;
@@ -43,13 +43,13 @@ namespace CFBSharp.Model
         /// Gets or Sets Teams
         /// </summary>
         [DataMember(Name="teams", EmitDefaultValue=false)]
-        public Object Teams { get; set; }
+        public BoxScoreTeams Teams { get; set; }
 
         /// <summary>
         /// Gets or Sets Players
         /// </summary>
         [DataMember(Name="players", EmitDefaultValue=false)]
-        public Object Players { get; set; }
+        public BoxScorePlayers Players { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

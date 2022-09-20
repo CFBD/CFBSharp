@@ -49,7 +49,7 @@ namespace CFBSharp.Model
         /// <param name="preDraftPositionRanking">preDraftPositionRanking.</param>
         /// <param name="preDraftGrade">preDraftGrade.</param>
         /// <param name="hometownInfo">hometownInfo.</param>
-        public DraftPick(int? collegeAthleteId = default(int?), int? nflAthleteId = default(int?), int? collegeId = default(int?), string collegeTeam = default(string), string collegeConference = default(string), string nflTeam = default(string), int? year = default(int?), int? overall = default(int?), int? round = default(int?), int? pick = default(int?), string name = default(string), string position = default(string), int? height = default(int?), int? weight = default(int?), int? preDraftRanking = default(int?), int? preDraftPositionRanking = default(int?), int? preDraftGrade = default(int?), Object hometownInfo = default(Object))
+        public DraftPick(int? collegeAthleteId = default(int?), int? nflAthleteId = default(int?), int? collegeId = default(int?), string collegeTeam = default(string), string collegeConference = default(string), string nflTeam = default(string), int? year = default(int?), int? overall = default(int?), int? round = default(int?), int? pick = default(int?), string name = default(string), string position = default(string), int? height = default(int?), int? weight = default(int?), int? preDraftRanking = default(int?), int? preDraftPositionRanking = default(int?), int? preDraftGrade = default(int?), DraftPickHometownInfo hometownInfo = default(DraftPickHometownInfo))
         {
             this.CollegeAthleteId = collegeAthleteId;
             this.NflAthleteId = nflAthleteId;
@@ -177,7 +177,7 @@ namespace CFBSharp.Model
         /// Gets or Sets HometownInfo
         /// </summary>
         [DataMember(Name="hometownInfo", EmitDefaultValue=false)]
-        public Object HometownInfo { get; set; }
+        public DraftPickHometownInfo HometownInfo { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

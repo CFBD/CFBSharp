@@ -35,7 +35,7 @@ namespace CFBSharp.Model
         /// <param name="seasonType">seasonType.</param>
         /// <param name="week">week.</param>
         /// <param name="polls">polls.</param>
-        public RankingWeek(int? season = default(int?), string seasonType = default(string), int? week = default(int?), List<Object> polls = default(List<Object>))
+        public RankingWeek(int? season = default(int?), string seasonType = default(string), int? week = default(int?), List<RankingWeekPolls> polls = default(List<RankingWeekPolls>))
         {
             this.Season = season;
             this.SeasonType = seasonType;
@@ -65,7 +65,7 @@ namespace CFBSharp.Model
         /// Gets or Sets Polls
         /// </summary>
         [DataMember(Name="polls", EmitDefaultValue=false)]
-        public List<Object> Polls { get; set; }
+        public List<RankingWeekPolls> Polls { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

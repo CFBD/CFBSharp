@@ -45,7 +45,7 @@ namespace CFBSharp.Model
         /// <param name="altColor">altColor.</param>
         /// <param name="logos">logos.</param>
         /// <param name="location">location.</param>
-        public Team(int? id = default(int?), string school = default(string), string mascot = default(string), string abbreviation = default(string), string altName1 = default(string), string altName2 = default(string), string altName3 = default(string), string classification = default(string), string conference = default(string), string division = default(string), string color = default(string), string altColor = default(string), List<string> logos = default(List<string>), Object location = default(Object))
+        public Team(int? id = default(int?), string school = default(string), string mascot = default(string), string abbreviation = default(string), string altName1 = default(string), string altName2 = default(string), string altName3 = default(string), string classification = default(string), string conference = default(string), string division = default(string), string color = default(string), string altColor = default(string), List<string> logos = default(List<string>), TeamLocation location = default(TeamLocation))
         {
             this.Id = id;
             this.School = school;
@@ -145,7 +145,7 @@ namespace CFBSharp.Model
         /// Gets or Sets Location
         /// </summary>
         [DataMember(Name="location", EmitDefaultValue=false)]
-        public Object Location { get; set; }
+        public TeamLocation Location { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

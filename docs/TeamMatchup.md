@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Team1Wins** | **int?** |  | [optional] 
 **Team2Wins** | **int?** |  | [optional] 
 **Ties** | **int?** |  | [optional] 
-**Games** | **List&lt;Object&gt;** |  | [optional] 
+**Games** | [**List&lt;TeamMatchupGames&gt;**](TeamMatchupGames.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

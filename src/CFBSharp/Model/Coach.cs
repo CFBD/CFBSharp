@@ -35,7 +35,7 @@ namespace CFBSharp.Model
         /// <param name="lastName">lastName.</param>
         /// <param name="hireDate">hireDate.</param>
         /// <param name="seasons">seasons.</param>
-        public Coach(string firstName = default(string), string lastName = default(string), string hireDate = default(string), List<Object> seasons = default(List<Object>))
+        public Coach(string firstName = default(string), string lastName = default(string), string hireDate = default(string), List<CoachSeasons> seasons = default(List<CoachSeasons>))
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -65,7 +65,7 @@ namespace CFBSharp.Model
         /// Gets or Sets Seasons
         /// </summary>
         [DataMember(Name="seasons", EmitDefaultValue=false)]
-        public List<Object> Seasons { get; set; }
+        public List<CoachSeasons> Seasons { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

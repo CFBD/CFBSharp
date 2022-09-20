@@ -39,7 +39,7 @@ namespace CFBSharp.Model
         /// <param name="offense">offense.</param>
         /// <param name="defense">defense.</param>
         /// <param name="specialTeams">specialTeams.</param>
-        public ConferenceSPRating(int? year = default(int?), string conference = default(string), decimal? rating = default(decimal?), decimal? secondOrderWins = default(decimal?), decimal? sos = default(decimal?), Object offense = default(Object), Object defense = default(Object), Object specialTeams = default(Object))
+        public ConferenceSPRating(int? year = default(int?), string conference = default(string), decimal? rating = default(decimal?), decimal? secondOrderWins = default(decimal?), decimal? sos = default(decimal?), ConferenceSPRatingOffense offense = default(ConferenceSPRatingOffense), ConferenceSPRatingDefense defense = default(ConferenceSPRatingDefense), TeamSPRatingSpecialTeams specialTeams = default(TeamSPRatingSpecialTeams))
         {
             this.Year = year;
             this.Conference = conference;
@@ -85,19 +85,19 @@ namespace CFBSharp.Model
         /// Gets or Sets Offense
         /// </summary>
         [DataMember(Name="offense", EmitDefaultValue=false)]
-        public Object Offense { get; set; }
+        public ConferenceSPRatingOffense Offense { get; set; }
 
         /// <summary>
         /// Gets or Sets Defense
         /// </summary>
         [DataMember(Name="defense", EmitDefaultValue=false)]
-        public Object Defense { get; set; }
+        public ConferenceSPRatingDefense Defense { get; set; }
 
         /// <summary>
         /// Gets or Sets SpecialTeams
         /// </summary>
         [DataMember(Name="specialTeams", EmitDefaultValue=false)]
-        public Object SpecialTeams { get; set; }
+        public TeamSPRatingSpecialTeams SpecialTeams { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

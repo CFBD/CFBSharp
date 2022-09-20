@@ -38,7 +38,7 @@ namespace CFBSharp.Model
         /// <param name="team">team.</param>
         /// <param name="opponent">opponent.</param>
         /// <param name="averagePPA">averagePPA.</param>
-        public PlayerGamePPA(int? season = default(int?), int? week = default(int?), string name = default(string), string position = default(string), string team = default(string), string opponent = default(string), Object averagePPA = default(Object))
+        public PlayerGamePPA(int? season = default(int?), int? week = default(int?), string name = default(string), string position = default(string), string team = default(string), string opponent = default(string), PlayerGamePPAAveragePPA averagePPA = default(PlayerGamePPAAveragePPA))
         {
             this.Season = season;
             this.Week = week;
@@ -89,7 +89,7 @@ namespace CFBSharp.Model
         /// Gets or Sets AveragePPA
         /// </summary>
         [DataMember(Name="averagePPA", EmitDefaultValue=false)]
-        public Object AveragePPA { get; set; }
+        public PlayerGamePPAAveragePPA AveragePPA { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

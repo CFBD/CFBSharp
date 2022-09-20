@@ -45,7 +45,7 @@ namespace CFBSharp.Model
         /// <param name="awayTeam">awayTeam.</param>
         /// <param name="weather">weather.</param>
         /// <param name="betting">betting.</param>
-        public ScoreboardGame(int? id = default(int?), string startDate = default(string), bool? startTimeTBD = default(bool?), string tv = default(string), bool? neutralSite = default(bool?), bool? conferenceGame = default(bool?), string status = default(string), int? period = default(int?), string clock = default(string), Object venue = default(Object), Object homeTeam = default(Object), Object awayTeam = default(Object), Object weather = default(Object), Object betting = default(Object))
+        public ScoreboardGame(int? id = default(int?), string startDate = default(string), bool? startTimeTBD = default(bool?), string tv = default(string), bool? neutralSite = default(bool?), bool? conferenceGame = default(bool?), string status = default(string), int? period = default(int?), string clock = default(string), ScoreboardGameVenue venue = default(ScoreboardGameVenue), ScoreboardGameHomeTeam homeTeam = default(ScoreboardGameHomeTeam), ScoreboardGameHomeTeam awayTeam = default(ScoreboardGameHomeTeam), ScoreboardGameWeather weather = default(ScoreboardGameWeather), ScoreboardGameBetting betting = default(ScoreboardGameBetting))
         {
             this.Id = id;
             this.StartDate = startDate;
@@ -121,31 +121,31 @@ namespace CFBSharp.Model
         /// Gets or Sets Venue
         /// </summary>
         [DataMember(Name="venue", EmitDefaultValue=false)]
-        public Object Venue { get; set; }
+        public ScoreboardGameVenue Venue { get; set; }
 
         /// <summary>
         /// Gets or Sets HomeTeam
         /// </summary>
         [DataMember(Name="homeTeam", EmitDefaultValue=false)]
-        public Object HomeTeam { get; set; }
+        public ScoreboardGameHomeTeam HomeTeam { get; set; }
 
         /// <summary>
         /// Gets or Sets AwayTeam
         /// </summary>
         [DataMember(Name="awayTeam", EmitDefaultValue=false)]
-        public Object AwayTeam { get; set; }
+        public ScoreboardGameHomeTeam AwayTeam { get; set; }
 
         /// <summary>
         /// Gets or Sets Weather
         /// </summary>
         [DataMember(Name="weather", EmitDefaultValue=false)]
-        public Object Weather { get; set; }
+        public ScoreboardGameWeather Weather { get; set; }
 
         /// <summary>
         /// Gets or Sets Betting
         /// </summary>
         [DataMember(Name="betting", EmitDefaultValue=false)]
-        public Object Betting { get; set; }
+        public ScoreboardGameBetting Betting { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

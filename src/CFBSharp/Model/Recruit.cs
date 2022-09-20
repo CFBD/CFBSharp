@@ -48,7 +48,7 @@ namespace CFBSharp.Model
         /// <param name="stateProvince">stateProvince.</param>
         /// <param name="country">country.</param>
         /// <param name="hometownInfo">hometownInfo.</param>
-        public Recruit(int? id = default(int?), int? athleteId = default(int?), string recruitType = default(string), int? year = default(int?), int? ranking = default(int?), string name = default(string), string school = default(string), string committedTo = default(string), string position = default(string), decimal? height = default(decimal?), int? weight = default(int?), int? stars = default(int?), decimal? rating = default(decimal?), string city = default(string), string stateProvince = default(string), string country = default(string), Object hometownInfo = default(Object))
+        public Recruit(int? id = default(int?), int? athleteId = default(int?), string recruitType = default(string), int? year = default(int?), int? ranking = default(int?), string name = default(string), string school = default(string), string committedTo = default(string), string position = default(string), decimal? height = default(decimal?), int? weight = default(int?), int? stars = default(int?), decimal? rating = default(decimal?), string city = default(string), string stateProvince = default(string), string country = default(string), RecruitHometownInfo hometownInfo = default(RecruitHometownInfo))
         {
             this.Id = id;
             this.AthleteId = athleteId;
@@ -169,7 +169,7 @@ namespace CFBSharp.Model
         /// Gets or Sets HometownInfo
         /// </summary>
         [DataMember(Name="hometownInfo", EmitDefaultValue=false)]
-        public Object HometownInfo { get; set; }
+        public RecruitHometownInfo HometownInfo { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

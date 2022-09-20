@@ -44,7 +44,7 @@ namespace CFBSharp.Model
         /// <param name="yearConstructed">yearConstructed.</param>
         /// <param name="dome">dome.</param>
         /// <param name="timezone">timezone.</param>
-        public Venue(int? id = default(int?), string name = default(string), int? capacity = default(int?), bool? grass = default(bool?), string city = default(string), string state = default(string), string zip = default(string), string countryCode = default(string), Object location = default(Object), decimal? elevation = default(decimal?), int? yearConstructed = default(int?), bool? dome = default(bool?), string timezone = default(string))
+        public Venue(int? id = default(int?), string name = default(string), int? capacity = default(int?), bool? grass = default(bool?), string city = default(string), string state = default(string), string zip = default(string), string countryCode = default(string), VenueLocation location = default(VenueLocation), decimal? elevation = default(decimal?), int? yearConstructed = default(int?), bool? dome = default(bool?), string timezone = default(string))
         {
             this.Id = id;
             this.Name = name;
@@ -113,7 +113,7 @@ namespace CFBSharp.Model
         /// Gets or Sets Location
         /// </summary>
         [DataMember(Name="location", EmitDefaultValue=false)]
-        public Object Location { get; set; }
+        public VenueLocation Location { get; set; }
 
         /// <summary>
         /// Gets or Sets Elevation
