@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **Color** | **string** |  | [optional] 
 **AltColor** | **string** |  | [optional] 
 **Logos** | **List&lt;string&gt;** |  | [optional] 
+**Twitter** | **string** |  | [optional] 
 **Location** | [**TeamLocation**](TeamLocation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
