@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Spread** | **int?** |  | [optional] 
+**Spread** | **decimal?** |  | [optional] 
 **OverUnder** | **int?** |  | [optional] 
 **HomeMoneyline** | **int?** |  | [optional] 
 **AwayMoneyline** | **int?** |  | [optional] 

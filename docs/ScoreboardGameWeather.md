@@ -3,10 +3,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Temperature** | **int?** |  | [optional] 
+**Temperature** | **decimal?** |  | [optional] 
 **Description** | **string** |  | [optional] 
-**WindSpeed** | **int?** |  | [optional] 
-**WindDirection** | **int?** |  | [optional] 
+**WindSpeed** | **decimal?** |  | [optional] 
+**WindDirection** | **decimal?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
