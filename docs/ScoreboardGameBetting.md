@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Spread** | **decimal?** |  | [optional] 
-**OverUnder** | **int?** |  | [optional] 
+**OverUnder** | **decimal?** |  | [optional] 
 **HomeMoneyline** | **int?** |  | [optional] 
 **AwayMoneyline** | **int?** |  | [optional] 
 
