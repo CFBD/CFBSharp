@@ -117,7 +117,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PlayersApi();
-            var year = 56;  // int? | Year filter (default to 2020)
+            var year = 56;  // int? | Year filter (default to 2022)
             var team = team_example;  // string | Team filter (optional) 
             var conference = conference_example;  // string | Conference abbreviation filter (optional) 
             var position = position_example;  // string | Position abbreviation filter (optional) 
@@ -143,7 +143,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int?**| Year filter | [default to 2020]
+ **year** | **int?**| Year filter | [default to 2022]
  **team** | **string**| Team filter | [optional] 
  **conference** | **string**| Conference abbreviation filter | [optional] 
  **position** | **string**| Position abbreviation filter | [optional] 

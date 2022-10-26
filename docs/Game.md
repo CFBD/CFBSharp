@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **SeasonType** | **string** |  | [optional] 
 **StartDate** | **string** |  | [optional] 
 **StartTimeTbd** | **bool?** |  | [optional] 
+**Completed** | **bool?** |  | [optional] 
 **NeutralSite** | **bool?** |  | [optional] 
 **ConferenceGame** | **bool?** |  | [optional] 
 **Attendance** | **int?** |  | [optional] 
