@@ -32,12 +32,14 @@ namespace CFBSharp.Model
         /// Initializes a new instance of the <see cref="PlayerGameTeams" /> class.
         /// </summary>
         /// <param name="school">school.</param>
+        /// <param name="conference">conference.</param>
         /// <param name="homeAway">homeAway.</param>
         /// <param name="points">points.</param>
         /// <param name="categories">categories.</param>
-        public PlayerGameTeams(PlayerGameSchool school = default(PlayerGameSchool), bool? homeAway = default(bool?), int? points = default(int?), List<PlayerGameCategories> categories = default(List<PlayerGameCategories>))
+        public PlayerGameTeams(string school = default(string), string conference = default(string),string homeAway = default(string), int? points = default(int?), List<PlayerGameCategories> categories = default(List<PlayerGameCategories>))
         {
             this.School = school;
+            this.Conference = conference;
             this.HomeAway = homeAway;
             this.Points = points;
             this.Categories = categories;
@@ -47,13 +49,19 @@ namespace CFBSharp.Model
         /// Gets or Sets School
         /// </summary>
         [DataMember(Name="school", EmitDefaultValue=false)]
-        public PlayerGameSchool School { get; set; }
+        public string School { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Conference
+        /// </summary>
+        [DataMember(Name="conference", EmitDefaultValue=false)]
+        public string Conference { get; set; }
 
         /// <summary>
         /// Gets or Sets HomeAway
         /// </summary>
         [DataMember(Name="homeAway", EmitDefaultValue=false)]
-        public bool? HomeAway { get; set; }
+        public string HomeAway { get; set; }
 
         /// <summary>
         /// Gets or Sets Points
@@ -76,6 +84,7 @@ namespace CFBSharp.Model
             var sb = new StringBuilder();
             sb.Append("class PlayerGameTeams {\n");
             sb.Append("  School: ").Append(School).Append("\n");
+            sb.Append("  Conference: ").Append(Conference).Append("\n");
             sb.Append("  HomeAway: ").Append(HomeAway).Append("\n");
             sb.Append("  Points: ").Append(Points).Append("\n");
             sb.Append("  Categories: ").Append(Categories).Append("\n");
@@ -117,7 +126,12 @@ namespace CFBSharp.Model
                     this.School == input.School ||
                     (this.School != null &&
                     this.School.Equals(input.School))
-                ) && 
+                ) &&
+                (
+                    this.Conference == input.Conference ||
+                    (this.Conference != null &&
+                    this.Conference.Equals(input.Conference))
+                ) &&
                 (
                     this.HomeAway == input.HomeAway ||
                     (this.HomeAway != null &&
@@ -146,6 +160,8 @@ namespace CFBSharp.Model
                 int hashCode = 41;
                 if (this.School != null)
                     hashCode = hashCode * 59 + this.School.GetHashCode();
+                if (this.Conference != null)
+                    hashCode = hashCode * 59 + this.Conference.GetHashCode();
                 if (this.HomeAway != null)
                     hashCode = hashCode * 59 + this.HomeAway.GetHashCode();
                 if (this.Points != null)
