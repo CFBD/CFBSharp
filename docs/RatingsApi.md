@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 <a name="geteloratings"></a>
 # **GetEloRatings**
-> ICollection<TeamEloRating> GetEloRatings (int? year = null, int? week = null, string team = null, string conference = null)
+> ICollection<TeamEloRating> GetEloRatings (int? year = null, int? week = null, Object seasonType = null, string team = null, string conference = null)
 
 Historical Elo ratings
 
@@ -108,13 +108,14 @@ namespace Example
             var apiInstance = new RatingsApi();
             var year = 56;  // int? | Season filter (optional) 
             var week = 56;  // int? | Maximum week filter (optional) 
+            var seasonType = new Object(); // Object | Maximum season type to consider (defaults to regular if week is specified else defaults to postseason) (optional) 
             var team = team_example;  // string | Team filter (optional) 
             var conference = conference_example;  // string | Conference filter (optional) 
 
             try
             {
                 // Historical Elo ratings
-                ICollection&lt;TeamEloRating&gt; result = apiInstance.GetEloRatings(year, week, team, conference);
+                ICollection&lt;TeamEloRating&gt; result = apiInstance.GetEloRatings(year, week, seasonType, team, conference);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -132,6 +133,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **year** | **int?**| Season filter | [optional] 
  **week** | **int?**| Maximum week filter | [optional] 
+ **seasonType** | [**Object**](Object.md)| Maximum season type to consider (defaults to regular if week is specified else defaults to postseason) | [optional] 
  **team** | **string**| Team filter | [optional] 
  **conference** | **string**| Conference filter | [optional] 
 
