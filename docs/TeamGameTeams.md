@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**SchoolId** | **int?** |  | [optional] 
 **School** | **string** |  | [optional] 
 **Conference** | **string** |  | [optional] 
 **HomeAway** | **string** |  | [optional] 
