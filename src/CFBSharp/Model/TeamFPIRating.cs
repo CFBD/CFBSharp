@@ -23,24 +23,28 @@ using SwaggerDateConverter = CFBSharp.Client.SwaggerDateConverter;
 namespace CFBSharp.Model
 {
     /// <summary>
-    /// TeamRecruitingRank
+    /// TeamFPIRating
     /// </summary>
     [DataContract]
-    public partial class TeamRecruitingRank :  IEquatable<TeamRecruitingRank>
+    public partial class TeamFPIRating :  IEquatable<TeamFPIRating>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TeamRecruitingRank" /> class.
+        /// Initializes a new instance of the <see cref="TeamFPIRating" /> class.
         /// </summary>
         /// <param name="year">year.</param>
-        /// <param name="rank">rank.</param>
         /// <param name="team">team.</param>
-        /// <param name="points">points.</param>
-        public TeamRecruitingRank(int? year = default(int?), int? rank = default(int?), string team = default(string), decimal? points = default(decimal?))
+        /// <param name="conference">conference.</param>
+        /// <param name="fpi">fpi.</param>
+        /// <param name="resumeRanks">resumeRanks.</param>
+        /// <param name="efficiencies">efficiencies.</param>
+        public TeamFPIRating(int? year = default(int?), string team = default(string), string conference = default(string), decimal? fpi = default(decimal?), TeamFPIRatingResumeRanks resumeRanks = default(TeamFPIRatingResumeRanks), TeamFPIRatingEfficiencies efficiencies = default(TeamFPIRatingEfficiencies))
         {
             this.Year = year;
-            this.Rank = rank;
             this.Team = team;
-            this.Points = points;
+            this.Conference = conference;
+            this.Fpi = fpi;
+            this.ResumeRanks = resumeRanks;
+            this.Efficiencies = efficiencies;
         }
         
         /// <summary>
@@ -50,22 +54,34 @@ namespace CFBSharp.Model
         public int? Year { get; set; }
 
         /// <summary>
-        /// Gets or Sets Rank
-        /// </summary>
-        [DataMember(Name="rank", EmitDefaultValue=false)]
-        public int? Rank { get; set; }
-
-        /// <summary>
         /// Gets or Sets Team
         /// </summary>
         [DataMember(Name="team", EmitDefaultValue=false)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Gets or Sets Points
+        /// Gets or Sets Conference
         /// </summary>
-        [DataMember(Name="points", EmitDefaultValue=false)]
-        public decimal? Points { get; set; }
+        [DataMember(Name="conference", EmitDefaultValue=false)]
+        public string Conference { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Fpi
+        /// </summary>
+        [DataMember(Name="fpi", EmitDefaultValue=false)]
+        public decimal? Fpi { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ResumeRanks
+        /// </summary>
+        [DataMember(Name="resumeRanks", EmitDefaultValue=false)]
+        public TeamFPIRatingResumeRanks ResumeRanks { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Efficiencies
+        /// </summary>
+        [DataMember(Name="efficiencies", EmitDefaultValue=false)]
+        public TeamFPIRatingEfficiencies Efficiencies { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,11 +90,13 @@ namespace CFBSharp.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TeamRecruitingRank {\n");
+            sb.Append("class TeamFPIRating {\n");
             sb.Append("  Year: ").Append(Year).Append("\n");
-            sb.Append("  Rank: ").Append(Rank).Append("\n");
             sb.Append("  Team: ").Append(Team).Append("\n");
-            sb.Append("  Points: ").Append(Points).Append("\n");
+            sb.Append("  Conference: ").Append(Conference).Append("\n");
+            sb.Append("  Fpi: ").Append(Fpi).Append("\n");
+            sb.Append("  ResumeRanks: ").Append(ResumeRanks).Append("\n");
+            sb.Append("  Efficiencies: ").Append(Efficiencies).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,15 +117,15 @@ namespace CFBSharp.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TeamRecruitingRank);
+            return this.Equals(input as TeamFPIRating);
         }
 
         /// <summary>
-        /// Returns true if TeamRecruitingRank instances are equal
+        /// Returns true if TeamFPIRating instances are equal
         /// </summary>
-        /// <param name="input">Instance of TeamRecruitingRank to be compared</param>
+        /// <param name="input">Instance of TeamFPIRating to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TeamRecruitingRank input)
+        public bool Equals(TeamFPIRating input)
         {
             if (input == null)
                 return false;
@@ -119,19 +137,29 @@ namespace CFBSharp.Model
                     this.Year.Equals(input.Year))
                 ) && 
                 (
-                    this.Rank == input.Rank ||
-                    (this.Rank != null &&
-                    this.Rank.Equals(input.Rank))
-                ) && 
-                (
                     this.Team == input.Team ||
                     (this.Team != null &&
                     this.Team.Equals(input.Team))
                 ) && 
                 (
-                    this.Points == input.Points ||
-                    (this.Points != null &&
-                    this.Points.Equals(input.Points))
+                    this.Conference == input.Conference ||
+                    (this.Conference != null &&
+                    this.Conference.Equals(input.Conference))
+                ) && 
+                (
+                    this.Fpi == input.Fpi ||
+                    (this.Fpi != null &&
+                    this.Fpi.Equals(input.Fpi))
+                ) && 
+                (
+                    this.ResumeRanks == input.ResumeRanks ||
+                    (this.ResumeRanks != null &&
+                    this.ResumeRanks.Equals(input.ResumeRanks))
+                ) && 
+                (
+                    this.Efficiencies == input.Efficiencies ||
+                    (this.Efficiencies != null &&
+                    this.Efficiencies.Equals(input.Efficiencies))
                 );
         }
 
@@ -146,12 +174,16 @@ namespace CFBSharp.Model
                 int hashCode = 41;
                 if (this.Year != null)
                     hashCode = hashCode * 59 + this.Year.GetHashCode();
-                if (this.Rank != null)
-                    hashCode = hashCode * 59 + this.Rank.GetHashCode();
                 if (this.Team != null)
                     hashCode = hashCode * 59 + this.Team.GetHashCode();
-                if (this.Points != null)
-                    hashCode = hashCode * 59 + this.Points.GetHashCode();
+                if (this.Conference != null)
+                    hashCode = hashCode * 59 + this.Conference.GetHashCode();
+                if (this.Fpi != null)
+                    hashCode = hashCode * 59 + this.Fpi.GetHashCode();
+                if (this.ResumeRanks != null)
+                    hashCode = hashCode * 59 + this.ResumeRanks.GetHashCode();
+                if (this.Efficiencies != null)
+                    hashCode = hashCode * 59 + this.Efficiencies.GetHashCode();
                 return hashCode;
             }
         }

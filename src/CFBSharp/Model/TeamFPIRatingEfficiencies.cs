@@ -23,57 +23,49 @@ using SwaggerDateConverter = CFBSharp.Client.SwaggerDateConverter;
 namespace CFBSharp.Model
 {
     /// <summary>
-    /// TeamPPA
+    /// TeamFPIRatingEfficiencies
     /// </summary>
     [DataContract]
-    public partial class TeamPPA :  IEquatable<TeamPPA>
+    public partial class TeamFPIRatingEfficiencies :  IEquatable<TeamFPIRatingEfficiencies>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TeamPPA" /> class.
+        /// Initializes a new instance of the <see cref="TeamFPIRatingEfficiencies" /> class.
         /// </summary>
-        /// <param name="season">season.</param>
-        /// <param name="team">team.</param>
-        /// <param name="conference">conference.</param>
+        /// <param name="overall">overall.</param>
         /// <param name="offense">offense.</param>
         /// <param name="defense">defense.</param>
-        public TeamPPA(int? season = default(int?), string team = default(string), string conference = default(string), TeamPPAOffense offense = default(TeamPPAOffense), TeamPPAOffense defense = default(TeamPPAOffense))
+        /// <param name="specialTeams">specialTeams.</param>
+        public TeamFPIRatingEfficiencies(decimal? overall = default(decimal?), decimal? offense = default(decimal?), decimal? defense = default(decimal?), decimal? specialTeams = default(decimal?))
         {
-            this.Season = season;
-            this.Team = team;
-            this.Conference = conference;
+            this.Overall = overall;
             this.Offense = offense;
             this.Defense = defense;
+            this.SpecialTeams = specialTeams;
         }
         
         /// <summary>
-        /// Gets or Sets Season
+        /// Gets or Sets Overall
         /// </summary>
-        [DataMember(Name="season", EmitDefaultValue=false)]
-        public int? Season { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Team
-        /// </summary>
-        [DataMember(Name="team", EmitDefaultValue=false)]
-        public string Team { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Conference
-        /// </summary>
-        [DataMember(Name="conference", EmitDefaultValue=false)]
-        public string Conference { get; set; }
+        [DataMember(Name="overall", EmitDefaultValue=false)]
+        public decimal? Overall { get; set; }
 
         /// <summary>
         /// Gets or Sets Offense
         /// </summary>
         [DataMember(Name="offense", EmitDefaultValue=false)]
-        public TeamPPAOffense Offense { get; set; }
+        public decimal? Offense { get; set; }
 
         /// <summary>
         /// Gets or Sets Defense
         /// </summary>
         [DataMember(Name="defense", EmitDefaultValue=false)]
-        public TeamPPAOffense Defense { get; set; }
+        public decimal? Defense { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SpecialTeams
+        /// </summary>
+        [DataMember(Name="specialTeams", EmitDefaultValue=false)]
+        public decimal? SpecialTeams { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -82,12 +74,11 @@ namespace CFBSharp.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TeamPPA {\n");
-            sb.Append("  Season: ").Append(Season).Append("\n");
-            sb.Append("  Team: ").Append(Team).Append("\n");
-            sb.Append("  Conference: ").Append(Conference).Append("\n");
+            sb.Append("class TeamFPIRatingEfficiencies {\n");
+            sb.Append("  Overall: ").Append(Overall).Append("\n");
             sb.Append("  Offense: ").Append(Offense).Append("\n");
             sb.Append("  Defense: ").Append(Defense).Append("\n");
+            sb.Append("  SpecialTeams: ").Append(SpecialTeams).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -108,34 +99,24 @@ namespace CFBSharp.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TeamPPA);
+            return this.Equals(input as TeamFPIRatingEfficiencies);
         }
 
         /// <summary>
-        /// Returns true if TeamPPA instances are equal
+        /// Returns true if TeamFPIRatingEfficiencies instances are equal
         /// </summary>
-        /// <param name="input">Instance of TeamPPA to be compared</param>
+        /// <param name="input">Instance of TeamFPIRatingEfficiencies to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TeamPPA input)
+        public bool Equals(TeamFPIRatingEfficiencies input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Season == input.Season ||
-                    (this.Season != null &&
-                    this.Season.Equals(input.Season))
-                ) && 
-                (
-                    this.Team == input.Team ||
-                    (this.Team != null &&
-                    this.Team.Equals(input.Team))
-                ) && 
-                (
-                    this.Conference == input.Conference ||
-                    (this.Conference != null &&
-                    this.Conference.Equals(input.Conference))
+                    this.Overall == input.Overall ||
+                    (this.Overall != null &&
+                    this.Overall.Equals(input.Overall))
                 ) && 
                 (
                     this.Offense == input.Offense ||
@@ -146,6 +127,11 @@ namespace CFBSharp.Model
                     this.Defense == input.Defense ||
                     (this.Defense != null &&
                     this.Defense.Equals(input.Defense))
+                ) && 
+                (
+                    this.SpecialTeams == input.SpecialTeams ||
+                    (this.SpecialTeams != null &&
+                    this.SpecialTeams.Equals(input.SpecialTeams))
                 );
         }
 
@@ -158,16 +144,14 @@ namespace CFBSharp.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Season != null)
-                    hashCode = hashCode * 59 + this.Season.GetHashCode();
-                if (this.Team != null)
-                    hashCode = hashCode * 59 + this.Team.GetHashCode();
-                if (this.Conference != null)
-                    hashCode = hashCode * 59 + this.Conference.GetHashCode();
+                if (this.Overall != null)
+                    hashCode = hashCode * 59 + this.Overall.GetHashCode();
                 if (this.Offense != null)
                     hashCode = hashCode * 59 + this.Offense.GetHashCode();
                 if (this.Defense != null)
                     hashCode = hashCode * 59 + this.Defense.GetHashCode();
+                if (this.SpecialTeams != null)
+                    hashCode = hashCode * 59 + this.SpecialTeams.GetHashCode();
                 return hashCode;
             }
         }
