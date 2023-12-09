@@ -23,41 +23,41 @@ using SwaggerDateConverter = CFBSharp.Client.SwaggerDateConverter;
 namespace CFBSharp.Model
 {
     /// <summary>
-    /// ScoreboardGameVenue
+    /// FieldGoalExpectedPoints
     /// </summary>
     [DataContract]
-    public partial class ScoreboardGameVenue :  IEquatable<ScoreboardGameVenue>
+    public partial class FieldGoalExpectedPoints :  IEquatable<FieldGoalExpectedPoints>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScoreboardGameVenue" /> class.
+        /// Initializes a new instance of the <see cref="FieldGoalExpectedPoints" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="city">city.</param>
-        /// <param name="state">state.</param>
-        public ScoreboardGameVenue(string name = default(string), string city = default(string), string state = default(string))
+        /// <param name="yardsToGoal">yardsToGoal.</param>
+        /// <param name="distance">distance.</param>
+        /// <param name="expectedPoints">expectedPoints.</param>
+        public FieldGoalExpectedPoints(int? yardsToGoal = default(int?), int? distance = default(int?), decimal? expectedPoints = default(decimal?))
         {
-            this.Name = name;
-            this.City = city;
-            this.State = state;
+            this.YardsToGoal = yardsToGoal;
+            this.Distance = distance;
+            this.ExpectedPoints = expectedPoints;
         }
         
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets YardsToGoal
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
-        public string Name { get; set; }
+        [DataMember(Name="yardsToGoal", EmitDefaultValue=false)]
+        public int? YardsToGoal { get; set; }
 
         /// <summary>
-        /// Gets or Sets City
+        /// Gets or Sets Distance
         /// </summary>
-        [DataMember(Name="city", EmitDefaultValue=false)]
-        public string City { get; set; }
+        [DataMember(Name="distance", EmitDefaultValue=false)]
+        public int? Distance { get; set; }
 
         /// <summary>
-        /// Gets or Sets State
+        /// Gets or Sets ExpectedPoints
         /// </summary>
-        [DataMember(Name="state", EmitDefaultValue=false)]
-        public string State { get; set; }
+        [DataMember(Name="expectedPoints", EmitDefaultValue=false)]
+        public decimal? ExpectedPoints { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -66,10 +66,10 @@ namespace CFBSharp.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ScoreboardGameVenue {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  City: ").Append(City).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
+            sb.Append("class FieldGoalExpectedPoints {\n");
+            sb.Append("  YardsToGoal: ").Append(YardsToGoal).Append("\n");
+            sb.Append("  Distance: ").Append(Distance).Append("\n");
+            sb.Append("  ExpectedPoints: ").Append(ExpectedPoints).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,34 +90,34 @@ namespace CFBSharp.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ScoreboardGameVenue);
+            return this.Equals(input as FieldGoalExpectedPoints);
         }
 
         /// <summary>
-        /// Returns true if ScoreboardGameVenue instances are equal
+        /// Returns true if FieldGoalExpectedPoints instances are equal
         /// </summary>
-        /// <param name="input">Instance of ScoreboardGameVenue to be compared</param>
+        /// <param name="input">Instance of FieldGoalExpectedPoints to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ScoreboardGameVenue input)
+        public bool Equals(FieldGoalExpectedPoints input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.YardsToGoal == input.YardsToGoal ||
+                    (this.YardsToGoal != null &&
+                    this.YardsToGoal.Equals(input.YardsToGoal))
                 ) && 
                 (
-                    this.City == input.City ||
-                    (this.City != null &&
-                    this.City.Equals(input.City))
+                    this.Distance == input.Distance ||
+                    (this.Distance != null &&
+                    this.Distance.Equals(input.Distance))
                 ) && 
                 (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
+                    this.ExpectedPoints == input.ExpectedPoints ||
+                    (this.ExpectedPoints != null &&
+                    this.ExpectedPoints.Equals(input.ExpectedPoints))
                 );
         }
 
@@ -130,12 +130,12 @@ namespace CFBSharp.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.City != null)
-                    hashCode = hashCode * 59 + this.City.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.YardsToGoal != null)
+                    hashCode = hashCode * 59 + this.YardsToGoal.GetHashCode();
+                if (this.Distance != null)
+                    hashCode = hashCode * 59 + this.Distance.GetHashCode();
+                if (this.ExpectedPoints != null)
+                    hashCode = hashCode * 59 + this.ExpectedPoints.GetHashCode();
                 return hashCode;
             }
         }

@@ -4,6 +4,7 @@ All URIs are relative to *https://api.collegefootballdata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**GetFGEP**](MetricsApi.md#getfgep) | **GET** /metrics/fg/ep | Field Goal Expected Points
 [**GetGamePPA**](MetricsApi.md#getgameppa) | **GET** /ppa/games | Team Predicated Points Added (PPA/EPA) by game
 [**GetPlayerGamePPA**](MetricsApi.md#getplayergameppa) | **GET** /ppa/players/games | Player Predicated Points Added (PPA/EPA) broken down by game
 [**GetPlayerSeasonPPA**](MetricsApi.md#getplayerseasonppa) | **GET** /ppa/players/season | Player Predicated Points Added (PPA/EPA) broken down by season
@@ -12,6 +13,68 @@ Method | HTTP request | Description
 [**GetTeamPPA**](MetricsApi.md#getteamppa) | **GET** /ppa/teams | Predicted Points Added (PPA/EPA) data by team
 [**GetWinProbabilityData**](MetricsApi.md#getwinprobabilitydata) | **GET** /metrics/wp | Win probability chart data
 
+
+<a name="getfgep"></a>
+# **GetFGEP**
+> ICollection<FieldGoalExpectedPoints> GetFGEP ()
+
+Field Goal Expected Points
+
+Field Goal Expected Poitns
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using CFBSharp.Api;
+using CFBSharp.Client;
+using CFBSharp.Model;
+
+namespace Example
+{
+    public class GetFGEPExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyAuth
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new MetricsApi();
+
+            try
+            {
+                // Field Goal Expected Points
+                ICollection&lt;FieldGoalExpectedPoints&gt; result = apiInstance.GetFGEP();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling MetricsApi.GetFGEP: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ICollection<FieldGoalExpectedPoints>**](FieldGoalExpectedPoints.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getgameppa"></a>
 # **GetGamePPA**
